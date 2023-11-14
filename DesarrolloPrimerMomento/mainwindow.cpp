@@ -9,30 +9,47 @@ MainWindow::MainWindow(QWidget *parent)
 
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
 
-    elipse = new MiElipse();            //crear objeto
-
-    elipse->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
-    elipse->setFocus();         //enfoco el KeyPressEvent en el objeto
+    //escena->setForegroundBrush(QBrush(Qt::blue,Qt::Dense2Pattern));       //Set fondo
 
 
-    elipse->setRect(0,0,50,50);     //x, y, ancho y alto
-    elipse->setStartAngle(90*16);       //cada ángulo tiene 16 porciones, set una porción de la figura
-    elipse->setSpanAngle(270*16);       //cada ángulo tiene 16 porciones, set una porción de la figura
+
+    jugador = new MiCaracter();            //crear objeto
+    jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
+    jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
+
+
+    jugador->setRect(0,0,50,50);     //x, y, ancho y alto
     QPen lapiz(Qt::darkRed, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);        //contorno de objeto -> color, grosor, propiedades de contorno
-    elipse->setPen(lapiz);      //asignarle el contorno a la elipse
+    jugador->setPen(lapiz);      //asignarle el contorno a la elipse
     QBrush fondo("#2E86C1", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
-    elipse->setBrush(fondo);        //asignar color a la figura
+    jugador->setBrush(fondo);        //asignar color a la figura
 
-    escena->addItem(elipse);
+    escena->addItem(jugador);
 
 
     vista = new QGraphicsView();        //decirle a quién mirar, en un punto puede mirar una escena y en otro punto puede mirar otra escena
+
+
+
     vista->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vista->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    MiCaracter *enemigo = new MiCaracter;
+    enemigo->setRect(1000,600,50,50);
+    QPen colorEnemigo(Qt::black, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    enemigo->setPen(colorEnemigo);
+    QBrush fondoEnemigo("#85929E", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
+    enemigo->setBrush(fondoEnemigo);
+    escena->addItem(enemigo);
+
     vista->setScene(escena);
 
     vista->show();              //mostrar la vista
 
+    vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
+    escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
+
+    jugador->setPos(vista->width()/2,vista->height()- jugador->rect().height());        //posición de un objeto (ancho de la vista / 2, alto de la vista - la altura del objeto)
 
     /*
 
@@ -57,7 +74,7 @@ MainWindow::~MainWindow()
 void MainWindow::moverObjeto()
 {
     static int contador = 0;
-    elipse->setPos(10+contador, 10);        //mover elipse (únicamente en x en este caso)
+    jugador->setPos(10+contador, 10);        //mover elipse (únicamente en x en este caso)
     contador += 5;
 }
 

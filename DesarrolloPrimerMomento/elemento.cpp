@@ -4,7 +4,7 @@
 
 
 
-void MiElipse::keyPressEvent(QKeyEvent *event)
+void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_A){
         setPos(x()-10,y());      //Cantidad de distancia que me moveré
@@ -18,6 +18,7 @@ void MiElipse::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_W){
         setPos(x(),y()-10);      //Cantidad de distancia que me moveré
     }
+
     else if (event->key() == Qt::Key_Space){
         Bala * bala = new Bala();           //Generar el disparo
         bala->setPos(x(),y());

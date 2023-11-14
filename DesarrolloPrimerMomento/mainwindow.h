@@ -29,7 +29,7 @@ private:
     Ui::MainWindow *ui;
 
     QGraphicsScene *escena;
-    MiElipse *elipse;
+    MiCaracter *jugador;
     QGraphicsView *vista;
     QTimer *tiempo;
 

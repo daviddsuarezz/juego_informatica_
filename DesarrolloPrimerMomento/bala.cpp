@@ -1,4 +1,5 @@
 #include "bala.h"
+#include "qgraphicsscene.h"
 
 Bala::Bala()
 {
@@ -17,6 +18,10 @@ Bala::Bala()
 void Bala::desplazamiento()
 {
     setPos(x(),y()-10);             //Mover bala hacia arriba
+    if (pos().y() + rect().height() < 0){
+        scene()->removeItem(this);              //referencia a una escena
+        delete this;
+    }
 }
 
 

@@ -6,7 +6,7 @@
 #include <QKeyEvent> // Captura de teclas
 #include "bala.h"
 
-class MiElipse: public QGraphicsEllipseItem
+class MiCaracter: public QGraphicsRectItem
 {
 public:
     void keyPressEvent(QKeyEvent * event);      //evento de presionar tecla

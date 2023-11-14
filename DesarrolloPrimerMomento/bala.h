@@ -4,6 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QTimer>
 #include <QObject>
+#include <QGraphicsScene>
 
 class Bala: public QObject, public QGraphicsRectItem
 {

@@ -11,12 +11,14 @@ CONFIG += c++17
 SOURCES += \
     MiCaracter.cpp \
     bala.cpp \
+    enemigo.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     MiCaracter.h \
     bala.h \
+    enemigo.h \
     mainwindow.h
 
 FORMS += \

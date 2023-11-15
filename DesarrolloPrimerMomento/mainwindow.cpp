@@ -55,9 +55,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     Enemigo * oponente = new Enemigo();
 
-    escena->addItem(oponente);
-    vista->setScene(escena);
+    QTimer * time = new QTimer();
 
+QObject:connect(time, SIGNAL(timeout), jugador, SLOT(aparecer()));
+    time->start(2000);
 
 
 

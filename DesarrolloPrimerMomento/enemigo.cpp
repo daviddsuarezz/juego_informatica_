@@ -7,6 +7,7 @@ Enemigo::Enemigo()
 {
     unsigned seed = time(0);
     srand(seed);
+
     int randX = rand() % 1001;
     setPos(randX,0);
 

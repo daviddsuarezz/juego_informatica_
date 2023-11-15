@@ -20,8 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
 
 
-    jugador->setRect(0,0,50,50);     //x, y, ancho y alto
-    QPen lapiz(Qt::darkRed, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);        //contorno de objeto -> color, grosor, propiedades de contorno
+    jugador->setRect(0,0,15,15);     //x, y, ancho y alto
+    QPen lapiz(Qt::darkRed, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);        //contorno de objeto -> color, grosor, propiedades de contorno
     jugador->setPen(lapiz);      //asignarle el contorno a la elipse
     QBrush fondo("#2E86C1", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
     jugador->setBrush(fondo);        //asignar color a la figura
@@ -50,14 +50,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
+    escena->setBackgroundBrush(QBrush(QImage(":/Imagenes/Laberinto Fondo.png")));
 
-    jugador->setPos(vista->width()/2,vista->height()- jugador->rect().height());        //posición de un objeto (ancho de la vista / 2, alto de la vista - la altura del objeto)
 
+
+
+    /*
     QTimer * time = new QTimer();
-
     connect(time,SIGNAL(timeout()),this,SLOT(aparecerEnemigos()));
     time->start(2000);
-
+*/
 
 
 }

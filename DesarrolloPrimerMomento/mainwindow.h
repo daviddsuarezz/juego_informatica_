@@ -4,8 +4,19 @@
 #include "enemigo.h"
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QWidget>
 #include <QGraphicsView>
 #include <QTimer>           //reloj para dar movimiento automático
+
+
+
+#include <QBrush>
+#include <QFont>
+#include <QGraphicsTextItem>
+
+#include <QImage>
+
+
 
 
 QT_BEGIN_NAMESPACE

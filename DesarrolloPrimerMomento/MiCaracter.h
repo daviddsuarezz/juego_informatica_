@@ -12,7 +12,6 @@ class MiCaracter: public QGraphicsRectItem, public QObject
 public:
     void keyPressEvent(QKeyEvent * event);      //evento de presionar tecla
 public slots:
-    //void aparecer();
 };
 
 #endif // MICARACTER_H

@@ -5,13 +5,20 @@
 
 Enemigo::Enemigo(int x, int y)
 {
+    unsigned seed = time(0);
+    srand(seed);
+
+    int randX = rand() % 1001;
+    setPos(randX,0);
+
+
     setRect(0,0,15,15);         //crear la 'Enemigo'
     setPos(x,y);
 
 
     tiempo = new QTimer();
 
-    //connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
+    connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
 
     tiempo->start(50);          //cada 50ms se moverá la bala
 

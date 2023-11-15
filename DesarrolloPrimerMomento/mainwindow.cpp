@@ -21,10 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     jugador->setRect(0,0,15,15);     //x, y, ancho y alto
-    QPen lapiz(Qt::darkRed, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);        //contorno de objeto -> color, grosor, propiedades de contorno
-    jugador->setPen(lapiz);      //asignarle el contorno a la elipse
-    QBrush fondo("#2E86C1", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
-    jugador->setBrush(fondo);        //asignar color a la figura
+
+    jugador->setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
+
 
     escena->addItem(jugador);
 
@@ -44,11 +43,11 @@ MainWindow::MainWindow(QWidget *parent)
     escena->addItem(enemigo);
 
 
-    /*
+
     QTimer * time = new QTimer();
     connect(time,SIGNAL(timeout()),this,SLOT(aparecerEnemigos()));
     time->start(2000);
-*/
+
 
 
 }

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/Imagenes">
         <file>Laberinto Fondo.png</file>
+        <file>MortyIzq.png</file>
     </qresource>
 </RCC>

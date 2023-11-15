@@ -1,4 +1,5 @@
 #include "bala.h"
+#include "qgraphicsscene.h"
 
 Bala::Bala()
 {

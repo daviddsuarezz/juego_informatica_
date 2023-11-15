@@ -11,14 +11,12 @@ CONFIG += c++17
 SOURCES += \
     MiCaracter.cpp \
     bala.cpp \
-    enemigo.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     MiCaracter.h \
     bala.h \
-    enemigo.h \
     mainwindow.h
 
 FORMS += \
@@ -28,3 +26,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Imagenes.qrc

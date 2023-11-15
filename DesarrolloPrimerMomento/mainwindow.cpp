@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
 
-    //escena->setForegroundBrush(QBrush(Qt::lightGray,Qt::SolidPattern));       //Set fondo
+    //escena->setForegroundBrush(QBrush(Qt::blue,Qt::Dense2Pattern));       //Set fondo
 
 
 
@@ -49,27 +49,31 @@ MainWindow::MainWindow(QWidget *parent)
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
 
-    //jugador->setPos(vista->width()/2,vista->height()- jugador->rect().height());        //posición de un objeto (ancho de la vista / 2, alto de la vista - la altura del objeto)
+    jugador->setPos(vista->width()/2,vista->height()- jugador->rect().height());        //posición de un objeto (ancho de la vista / 2, alto de la vista - la altura del objeto)
+
+    /*
 
 
+    escena->addItem(elipse);            //agregar elemento a la escena
+
+    ui->Grafica->setScene(escena);     //agregar la escena a la vista gráfica
+*/
     tiempo = new QTimer();
-    connect(tiempo,SIGNAL(timeout()), this, SLOT(aparecer()));
-    tiempo->start(2000);
+    //connect(tiempo, SIGNAL(timeout()), this, SLOT(moverObjeto()));       //slot: cons|ecuencia después de haber activado el timer
+    tiempo->start(50);     //cada 100 ms me va a llamar mover objeto)
+
+
 
 }
-
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void MainWindow::aparecer()
+void MainWindow::moverObjeto()
 {
-    Enemigo *enemigo = new Enemigo();
-    escena->addItem(enemigo);
+    static int contador = 0;
+    jugador->setPos(10+contador, 10);        //mover elipse (únicamente en x en este caso)
+    contador += 5;
 }
-
-
-
-

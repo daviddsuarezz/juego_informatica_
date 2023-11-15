@@ -23,7 +23,7 @@ public:
 
 public slots:
     void moverObjeto();             //evento por el timer
-
+    void aparecerEnemigos();
 
 private:
     Ui::MainWindow *ui;

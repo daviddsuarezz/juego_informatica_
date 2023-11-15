@@ -4,12 +4,12 @@
 
 
 Enemigo::Enemigo()
-{/*
+{
     unsigned seed = time(0);
     srand(seed);
 
     int randX = rand() % 1001;
-    setPos(randX,0);*/
+    setPos(randX,0);
 
     setRect(0,0,50,50);         //crear la 'bala'
     tiempo = new QTimer();

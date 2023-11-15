@@ -31,12 +31,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
 
 }
 
-void MiCaracter::aparecer()
-{
-    Enemigo * enemigo = new Enemigo();
-    scene()->addItem(enemigo);
 
-}
 
 
 

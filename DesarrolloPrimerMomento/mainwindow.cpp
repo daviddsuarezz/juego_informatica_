@@ -55,12 +55,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     QTimer * time = new QTimer();
 
-    connect(time,SIGNAL(timeout()),jugador,SLOT(aparecer()));
+    connect(time,SIGNAL(timeout()),this,SLOT(aparecerEnemigos()));
     time->start(2000);
-
-
-
-
 
 
 
@@ -76,4 +72,11 @@ void MainWindow::moverObjeto()
     static int contador = 0;
     jugador->setPos(10+contador, 10);        //mover elipse (únicamente en x en este caso)
     contador += 5;
+}
+
+
+void MainWindow::aparecerEnemigos()
+{
+    Enemigo * enemigo = new Enemigo();
+    escena->addItem(enemigo);
 }

@@ -4,12 +4,12 @@
 
 
 Enemigo::Enemigo()
-{
+{/*
     unsigned seed = time(0);
     srand(seed);
 
     int randX = rand() % 1001;
-    setPos(randX,0);
+    setPos(randX,0);*/
 
     setRect(0,0,50,50);         //crear la 'bala'
     tiempo = new QTimer();
@@ -26,7 +26,7 @@ Enemigo::Enemigo()
 void Enemigo::desplazamiento()
 {
     setPos(x(),y()+5);             //Mover bala hacia arriba
-    if (pos().y() + rect().height() < 0){
+    if (pos().y() + rect().height() > 600){
         scene()->removeItem(this);              //referencia a una escena
         delete this;
     }

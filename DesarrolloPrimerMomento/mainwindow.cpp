@@ -53,25 +53,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     jugador->setPos(vista->width()/2,vista->height()- jugador->rect().height());        //posición de un objeto (ancho de la vista / 2, alto de la vista - la altura del objeto)
 
-    Enemigo * oponente = new Enemigo();
-
     QTimer * time = new QTimer();
 
-QObject:connect(time, SIGNAL(timeout), jugador, SLOT(aparecer()));
+    connect(time,SIGNAL(timeout()),jugador,SLOT(aparecer()));
     time->start(2000);
 
 
 
-    /*
 
-
-    escena->addItem(elipse);            //agregar elemento a la escena
-
-    ui->Grafica->setScene(escena);     //agregar la escena a la vista gráfica
-*/
-    tiempo = new QTimer();
-    //connect(tiempo, SIGNAL(timeout()), this, SLOT(moverObjeto()));       //slot: cons|ecuencia después de haber activado el timer
-    tiempo->start(50);     //cada 100 ms me va a llamar mover objeto)
 
 
 

@@ -14,7 +14,7 @@ class Enemigo: public QObject, public QGraphicsRectItem
 private:
     QTimer *tiempo;
 public:
-    Enemigo();
+    Enemigo(int x, int y);
     ~Enemigo();
 public slots:
     void desplazamiento();

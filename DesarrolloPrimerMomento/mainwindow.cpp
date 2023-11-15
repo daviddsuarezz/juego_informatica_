@@ -35,24 +35,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     vista->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vista->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    MiCaracter *enemigo = new MiCaracter;
-    enemigo->setRect(1000,600,50,50);
-    QPen colorEnemigo(Qt::black, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
-    enemigo->setPen(colorEnemigo);
-    QBrush fondoEnemigo("#85929E", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
-    enemigo->setBrush(fondoEnemigo);
-    escena->addItem(enemigo);
-
     vista->setScene(escena);
-
     vista->show();              //mostrar la vista
-
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
     escena->setBackgroundBrush(QBrush(QImage(":/Imagenes/Laberinto Fondo.png")));
-
-
+    Enemigo * enemigo = new Enemigo(20,10);
+    escena->addItem(enemigo);
 
 
     /*
@@ -79,6 +68,6 @@ void MainWindow::moverObjeto()
 
 void MainWindow::aparecerEnemigos()
 {
-    Enemigo * enemigo = new Enemigo();
+    Enemigo * enemigo = new Enemigo(20,10);
     escena->addItem(enemigo);
 }

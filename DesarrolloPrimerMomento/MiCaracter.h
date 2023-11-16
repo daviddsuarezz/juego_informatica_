@@ -5,7 +5,7 @@
 #include <QDebug>
 #include <QKeyEvent> // Captura de teclas
 #include "bala.h"
-#include "enemigo.h"
+
 
 class MiCaracter: public QGraphicsRectItem, public QObject
 {

@@ -8,14 +8,14 @@
 #include <cstdlib>
 #include<ctime>
 
+
+
+
 class Enemigo: public QObject, public QGraphicsRectItem
 {
     Q_OBJECT            //Macro     necesario para hacer uso de slots
-private:
-    QTimer *tiempo;
 public:
     Enemigo();
-    ~Enemigo();
 public slots:
     void desplazamiento();
 };

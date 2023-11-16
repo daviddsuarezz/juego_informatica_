@@ -3,20 +3,21 @@
 
 
 
-Enemigo::Enemigo()
+Enemigo::Enemigo(): QObject(), QGraphicsRectItem()
 {
-    unsigned seed = time(0);
-    srand(seed);
+
 
     int randX = rand() % 1001;
     setPos(randX,0);
+
 
 
     setRect(0,0,50,50);         //crear la 'Enemigo'
 
     QBrush fondo("#2E86C1", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
     setBrush(fondo);
-    tiempo = new QTimer();
+
+    QTimer * tiempo = new QTimer(this);
 
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
 
@@ -41,7 +42,4 @@ void Enemigo::desplazamiento()
 
 
 
-Enemigo::~Enemigo()
-{
-    delete tiempo;
-}
+

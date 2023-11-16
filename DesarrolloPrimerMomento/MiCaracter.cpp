@@ -19,7 +19,12 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_W){
         if (y()>0)
-            setPos(x(),y()-10);      //Cantidad de distancia que me moveré
+            setPos(x(),y()-10);      //Cantidad de distancia que me moveré        
+    }
+    else if (event->key() == Qt::Key_Space){
+        Bala * bala = new Bala();           //Generar el disparo
+        bala->setPos(x(),y());
+        scene()->addItem(bala);
     }
 }
 

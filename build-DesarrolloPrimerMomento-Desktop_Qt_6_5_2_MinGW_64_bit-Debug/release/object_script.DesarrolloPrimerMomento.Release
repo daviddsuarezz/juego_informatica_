@@ -1,0 +1,10 @@
+release/MiCaracter.o
+release/bala.o
+release/enemigo.o
+release/main.o
+release/mainwindow.o
+release/qrc_Recursos.o
+release/moc_MiCaracter.o
+release/moc_bala.o
+release/moc_enemigo.o
+release/moc_mainwindow.o

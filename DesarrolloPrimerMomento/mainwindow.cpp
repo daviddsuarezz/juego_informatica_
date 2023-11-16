@@ -48,9 +48,11 @@ MainWindow::MainWindow(QWidget *parent)
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
 
+    QTimer * tiemp = new QTimer();
+    QObject::connect(tiemp,SIGNAL(timeout()), this, SLOT(aparecerEnemigos()));
+    tiemp->start(2000);
 
-
-    vista.show();
+    vista->show();
 
 
 

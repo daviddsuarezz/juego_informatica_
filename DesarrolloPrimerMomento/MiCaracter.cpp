@@ -3,7 +3,6 @@
 
 
 
-
 void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_A){

@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
 
 
-    jugador->setRect(0,0,15,15);     //x, y, ancho y alto
+    jugador->setRect(0,0,30,30);     //x, y, ancho y alto
 
     jugador->setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
 
@@ -38,9 +38,13 @@ MainWindow::MainWindow(QWidget *parent)
     vista->show();              //mostrar la vista
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
-    escena->setBackgroundBrush(QBrush(QImage(":/Imagenes/Laberinto Fondo.png")));
-    Enemigo * enemigo = new Enemigo(20,10);
+
+
+    /*
+    Enemigo * enemigo = new Enemigo();
     escena->addItem(enemigo);
+*/
+
 
 
 
@@ -67,6 +71,6 @@ void MainWindow::moverObjeto()
 
 void MainWindow::aparecerEnemigos()
 {
-    Enemigo * enemigo = new Enemigo(20,10);
+    Enemigo * enemigo = new Enemigo();
     escena->addItem(enemigo);
 }

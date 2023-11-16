@@ -3,7 +3,7 @@
 
 
 
-Enemigo::Enemigo(int x, int y)
+Enemigo::Enemigo()
 {
     unsigned seed = time(0);
     srand(seed);
@@ -12,10 +12,10 @@ Enemigo::Enemigo(int x, int y)
     setPos(randX,0);
 
 
-    setRect(0,0,15,15);         //crear la 'Enemigo'
-    setPos(x,y);
+    setRect(0,0,50,50);         //crear la 'Enemigo'
 
-
+    QBrush fondo("#2E86C1", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
+    setBrush(fondo);
     tiempo = new QTimer();
 
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover

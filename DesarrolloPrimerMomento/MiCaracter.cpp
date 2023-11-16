@@ -11,11 +11,11 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
             setPos(x()-10,y());      //Cantidad de distancia que me moveré
     }
     else if (event->key() == Qt::Key_D){
-        if (pos().x() < scene()->width() - 15)
+        if (pos().x() < scene()->width() - 30)
             setPos(x()+10,y());      //Cantidad de distancia que me moveré
     }
     else if (event->key() == Qt::Key_S){
-        if (pos().y() < scene()->height() - 15)
+        if (pos().y() < scene()->height() - 30)
         setPos(x(),y()+10);      //Cantidad de distancia que me moveré
     }
     else if (event->key() == Qt::Key_W){

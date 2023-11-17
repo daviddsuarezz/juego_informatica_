@@ -3,8 +3,8 @@ debug/bala.o
 debug/enemigo.o
 debug/main.o
 debug/mainwindow.o
+debug/obstaculos.o
 debug/qrc_Recursos.o
-debug/moc_MiCaracter.o
 debug/moc_bala.o
 debug/moc_enemigo.o
 debug/moc_mainwindow.o

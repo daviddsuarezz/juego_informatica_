@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "MiCaracter.h"
 #include "enemigo.h"
+
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QWidget>

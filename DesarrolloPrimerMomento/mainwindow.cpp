@@ -4,7 +4,7 @@
 
 
 
-bool collidesWithOthers(QGraphicsItem *item, const QSet<QGraphicsItem *> *items) {
+bool colisiona(QGraphicsItem *item, const QSet<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
         if (item->collidesWithItem(other))
             return true;
@@ -67,10 +67,6 @@ MainWindow::MainWindow(QWidget *parent)
     }
     crearEnemigos();
 
-
-
-
-
     vista->show();
 
 
@@ -85,12 +81,6 @@ MainWindow::~MainWindow()
     }
 }
 
-void MainWindow::moverObjeto()
-{
-    static int contador = 0;
-    jugador->setPos(10+contador, 10);        //mover elipse (únicamente en x en este caso)
-    contador += 5;
-}
 
 
 void MainWindow::crearEnemigos()
@@ -105,14 +95,11 @@ void MainWindow::crearEnemigos()
             int x = rand() % 35;
             int y = rand() % 25;
             enemigo->setPos(x * 30, y * 30);
-        }while(collidesWithOthers(enemigo, &items));
+        }while(colisiona(enemigo, &items));
         enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
         enemigo->setPen(QPen(Qt::black));
         escena->addItem(enemigo);
     }
-
-
-
-
-
 }
+
+

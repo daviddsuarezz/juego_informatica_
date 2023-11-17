@@ -33,7 +33,7 @@ public:
     void crearEnemigos();
 
 public slots:
-    void moverObjeto();             //evento por el timer
+
 
 
 private:

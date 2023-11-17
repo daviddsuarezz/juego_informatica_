@@ -1,8 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QTime>
-#include <QSet>
+
 
 bool collidesWithOthers(QGraphicsItem *item, const QSet<QGraphicsItem *> &items) {
     foreach (QGraphicsItem *other, items) {
@@ -53,7 +52,25 @@ MainWindow::MainWindow(QWidget *parent)
 
     const int numRectangles = 10;
 
+    const int gridSize = 20; // Tamaño de la cuadrícula
+    const int cellSize = 30; // Tamaño de cada celda
 
+    // Genera el laberinto
+    for (int i = 0; i < gridSize; ++i) {
+        for (int j = 0; j < gridSize; ++j) {
+            // Genera un obstáculo con cierta probabilidad
+            if (rand() % 5 == 0) {
+                QGraphicsRectItem *obstacle = new QGraphicsRectItem(j * cellSize, i * cellSize, cellSize, cellSize);
+                obstacle->setBrush(Qt::darkGray);
+                escena->addItem(obstacle);
+            }
+        }
+    }
+
+
+
+
+/*
     for (int i = 0; i < numRectangles; ++i) {
         int ancho = 200;
         int alto = 60;
@@ -86,7 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
 
-
+*/
 
 /*
     QTimer * tiemp = new QTimer();

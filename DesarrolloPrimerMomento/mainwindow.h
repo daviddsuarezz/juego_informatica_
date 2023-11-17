@@ -14,7 +14,8 @@
 #include <QGraphicsTextItem>
 #include <QImage>
 
-
+#include <QTime>
+#include <QSet>
 
 
 QT_BEGIN_NAMESPACE

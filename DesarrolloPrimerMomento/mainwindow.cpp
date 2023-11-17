@@ -1,16 +1,10 @@
 #include "mainwindow.h"
-#include "obstaculos.h"
+
 #include "ui_mainwindow.h"
 
 
 
-bool collidesWithOthers(QGraphicsItem *item, const QSet<QGraphicsItem *> &items) {
-    foreach (QGraphicsItem *other, items) {
-        if (item->collidesWithItem(other))
-            return true;
-    }
-    return false;
-}
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -42,26 +36,43 @@ MainWindow::MainWindow(QWidget *parent)
     vista->setFixedSize(1050,750);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,750);             //tamaño de la escena desde el origen de la vista, tamaño
 
-    Enemigo * enemigo = new Enemigo();
+
+
+
+
+    QTime time = QTime::currentTime();
+    srand((uint)time.msec());
+    const int tamañoCuadricula = 25; // Tamaño de la cuadrícula     Forma vertical, capacidad de 25 bloques
+    const int tamañoBloque = 30; // Tamaño de cada celda
+
+    // Genera el obstáculos
+    for (int i = 0; i < tamañoCuadricula; ++i) {
+        for (int j = 0; j < (tamañoCuadricula + 10); ++j) {     //tamaño de forma horizontal (35 bloques)
+            // Genera un obstáculo con cierta probabilidad
+            if(rand() % 4 == 0 ){
+                QGraphicsRectItem *obstaculo = new QGraphicsRectItem(j * tamañoBloque, i * tamañoBloque, tamañoBloque, tamañoBloque);
+                obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
+                obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
+                escena->addItem(obstaculo);
+                items.insert(obstaculo);
+            }
+        }
+    }
+
+    Enemigo * enemigo = new Enemigo(&items);
     escena->addItem(enemigo);
 
-    Enemigo * enemigo1 = new Enemigo();
+    Enemigo * enemigo1 = new Enemigo(&items);
     escena->addItem(enemigo1);
 
-    Enemigo * enemigo2 = new Enemigo();
+    Enemigo * enemigo2 = new Enemigo(&items);
     escena->addItem(enemigo2);
 
-    Enemigo * enemigo3 = new Enemigo();
+    Enemigo * enemigo3 = new Enemigo(&items);
     escena->addItem(enemigo3);
 
-    Enemigo * enemigo4 = new Enemigo();
+    Enemigo * enemigo4 = new Enemigo(&items);
     escena->addItem(enemigo4);
-
-
-
-
-    Obstaculos * obstaculo = new Obstaculos(items) ;
-
 
 
 
@@ -90,9 +101,9 @@ void MainWindow::moverObjeto()
 }
 
 
-void MainWindow::aparecerEnemigos()
+void MainWindow::crearEnemigos()
 {
-    Enemigo * enemigo1 = new Enemigo(),*enemigo2 = new Enemigo(),* enemigo3 = new Enemigo(), * enemigo4 = new Enemigo();
-    items.insert(enemigo1),items.insert(enemigo2),items.insert(enemigo3),items.insert(enemigo4);
+    Enemigo * enemigo1 = new Enemigo(&items),*enemigo2 = new Enemigo(&items),* enemigo3 = new Enemigo(&items), * enemigo4 = new Enemigo(&items);
+
 
 }

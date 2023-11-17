@@ -3,22 +3,35 @@
 
 
 
-Enemigo::Enemigo(): QObject(), QGraphicsRectItem()
+
+bool collidesWithOthers(QGraphicsItem *item, const QSet<QGraphicsItem *> *items) {
+    foreach (QGraphicsItem *other, *items) {
+        if (item->collidesWithItem(other))
+            return true;
+    }
+    return false;
+}
+
+
+Enemigo::Enemigo(const QSet<QGraphicsItem *> *items): QObject(), QGraphicsRectItem()
 {
-
-    int x = rand() % 35;
-    int y = rand() % 25;
-    setPos(x * 30,y * 30);
-
-    setRect(0,0,30,30);         //crear la 'Enemigo'
-
+    QGraphicsRectItem *enemigo = nullptr;
+    do{
+        int x = rand() % 35;
+        int y = rand() % 25;
+        enemigo = new QGraphicsRectItem(0, 0, 30, 30);         //crear la 'Enemigo'
+        enemigo->setPos(x * 30, y * 30);
+    }while(collidesWithOthers(enemigo, items));
     setBrush(QBrush("#2E86C1"));        //color a la figura     Código del color, estilo del color
     setPen(QPen(Qt::black));
+
+
+    /*
     QTimer * tiempo = new QTimer(this);
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
 
     tiempo->start(500);          //cada 500ms se moverá la bala
-
+*/
 
 
 }
@@ -54,7 +67,6 @@ void Enemigo::desplazamiento()
 
     }
 }
-
 
 
 

@@ -30,7 +30,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void aparecerEnemigos();
+    void crearEnemigos();
 
 public slots:
     void moverObjeto();             //evento por el timer

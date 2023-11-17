@@ -9,11 +9,9 @@
 #include <QTimer>           //reloj para dar movimiento automático
 
 
-
 #include <QBrush>
 #include <QFont>
 #include <QGraphicsTextItem>
-
 #include <QImage>
 
 

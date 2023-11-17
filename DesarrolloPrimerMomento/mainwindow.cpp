@@ -1,14 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QApplication>
-#include <QGraphicsScene>
-#include <QGraphicsRectItem>
-#include <QGraphicsView>
 #include <QTime>
-#include <QTimer>
 #include <QSet>
-
 
 bool collidesWithOthers(QGraphicsItem *item, const QSet<QGraphicsItem *> &items) {
     foreach (QGraphicsItem *other, items) {
@@ -48,10 +42,36 @@ MainWindow::MainWindow(QWidget *parent)
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
 
+    QTime time = QTime::currentTime();
+    srand((uint)time.msec());
+
+    const int numRectangles = 5;
+    QSet<QGraphicsItem *> items;
+
+    for (int i = 0; i < numRectangles; ++i) {
+        int ancho = 100 + rand() % 100;
+        int alto = 150 + rand() % 50;
+        QGraphicsRectItem *rect = nullptr;
+        do {
+            int x = rand() % 1050-ancho;
+            int y = rand() % 650-alto;
+
+            rect = new QGraphicsRectItem(x, y, ancho, alto);
+        }while (collidesWithOthers(rect, items));
+        rect->setBrush(Qt::red);
+        escena->addItem(rect);
+        items.insert(rect);
+
+    }
+
+
+
+
+/*
     QTimer * tiemp = new QTimer();
     QObject::connect(tiemp,SIGNAL(timeout()), this, SLOT(aparecerEnemigos()));
     tiemp->start(2000);
-
+*/
     vista->show();
 
 

@@ -17,6 +17,21 @@ Bala::Bala()
 
 void Bala::desplazamiento()
 {
+    QList<QGraphicsItem *> colisiones = collidingItems();        //lista de punteros a otros QGraphicsItems con los que se está colisionando
+
+    for(int i = 0, n = colisiones.size(); i < n; i++){
+        if(typeid(*(colisiones[i]))== typeid(Enemigo)){
+            scene()->removeItem(colisiones[i]);
+            scene()->removeItem(this);
+            delete colisiones[i];
+            delete this;
+            return;
+        }
+    }
+
+
+
+
     setPos(x(),y()-10);             //Mover bala hacia arriba
     if (pos().y() + rect().height() < 0){
         scene()->removeItem(this);              //referencia a una escena

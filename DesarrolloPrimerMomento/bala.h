@@ -4,6 +4,8 @@
 #include <QGraphicsRectItem>
 #include <QTimer>
 #include <QObject>
+#include <QList>
+#include "enemigo.h"
 
 class Bala: public QObject, public QGraphicsRectItem
 {

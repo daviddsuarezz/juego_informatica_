@@ -19,16 +19,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);      //Configurar la escena
 
-
-
-
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
+    escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
 
-    //escena->setForegroundBrush(QBrush(Qt::blue,Qt::Dense2Pattern));       //Set fondo
+    QSet<QGraphicsItem *> items;
+
 
 
 
     jugador = new MiCaracter();            //crear objeto
+    items.insert(jugador);
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
     jugador->setRect(0,0,30,30);     //x, y, ancho y alto
@@ -42,15 +42,21 @@ MainWindow::MainWindow(QWidget *parent)
     vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
 
+    Enemigo * enemigo = new Enemigo();
+    escena->addItem(enemigo);
+    items.insert(enemigo);
+
+
+
     QTime time = QTime::currentTime();
     srand((uint)time.msec());
 
-    const int numRectangles = 5;
-    QSet<QGraphicsItem *> items;
+    const int numRectangles = 10;
+
 
     for (int i = 0; i < numRectangles; ++i) {
-        int ancho = 100 + rand() % 100;
-        int alto = 150 + rand() % 50;
+        int ancho = 200;
+        int alto = 60;
         QGraphicsRectItem *rect = nullptr;
         do {
             int x = rand() % 1050-ancho;
@@ -58,7 +64,22 @@ MainWindow::MainWindow(QWidget *parent)
 
             rect = new QGraphicsRectItem(x, y, ancho, alto);
         }while (collidesWithOthers(rect, items));
-        rect->setBrush(Qt::red);
+        rect->setBrush(QBrush("#214F92"));
+        escena->addItem(rect);
+        items.insert(rect);
+
+    }
+    for (int i = 0; i < numRectangles; ++i) {
+        int ancho = 60;
+        int alto = 200;
+        QGraphicsRectItem *rect = nullptr;
+        do {
+            int x = rand() % 1050-ancho;
+            int y = rand() % 650-alto;
+
+            rect = new QGraphicsRectItem(x, y, ancho, alto);
+        }while (collidesWithOthers(rect, items));
+        rect->setBrush(QBrush("#214F92"));
         escena->addItem(rect);
         items.insert(rect);
 

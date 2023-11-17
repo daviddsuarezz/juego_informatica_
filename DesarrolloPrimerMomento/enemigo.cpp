@@ -6,13 +6,11 @@
 Enemigo::Enemigo(): QObject(), QGraphicsRectItem()
 {
 
+    int x = rand() % 1011;
+    int y = rand() % 609;
+    setPos(x,y);
 
-    int randX = rand() % 1001;
-    setPos(randX,0);
-
-
-
-    setRect(0,0,50,50);         //crear la 'Enemigo'
+    setRect(0,0,40,40);         //crear la 'Enemigo'
 
     QBrush fondo("#2E86C1", Qt::SolidPattern);          //color a la figura     Código del color, estilo del color
     setBrush(fondo);
@@ -31,7 +29,7 @@ Enemigo::Enemigo(): QObject(), QGraphicsRectItem()
 void Enemigo::desplazamiento()
 {
     setPos(x(),y()+5);             //Mover bala hacia arriba
-    if (pos().y() + rect().height() > 600){
+    if (pos().y() + rect().height() > 609){
         scene()->removeItem(this);              //referencia a una escena
         delete this;
     }

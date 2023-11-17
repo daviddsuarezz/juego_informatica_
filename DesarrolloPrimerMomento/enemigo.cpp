@@ -31,29 +31,29 @@ void Enemigo::desplazamiento()
     case 0:
         if (y()>0)
             newPos.setX(x()), newPos.setY(y()-30);
-        else setPos(x(), y() + 30);
+        else newPos.setX(x()), newPos.setY(y()+30);
         break;
     case 1:
         if (pos().y() < scene()->height() - 30)
-            setPos(x(), y() + 30);
-        else setPos(x(), y() - 30);
+            newPos.setX(x()), newPos.setY(y()+30);
+        else newPos.setX(x()), newPos.setY(y()-30);
         break;
     case 2:
         if (x()>0)
-            setPos(x()- 30, y());
-        else setPos(x() + 30, y());
+            newPos.setX(x()- 30), newPos.setX(y());
+        else newPos.setX(x()+ 30), newPos.setX(y());
         break;
     case 3:
         if (pos().x() < scene()->width() - 30)
-            setPos(x()+ 30, y() );
-        else setPos(x()- 30, y() );
+            newPos.setX(x()+ 30), newPos.setX(y());
+        else newPos.setX(x()- 30), newPos.setX(y());
         break;
     default:
         break;
 
     }
 
-    QList<QGraphicsItem*> itemsEnColision = collidingItems(mapToScene());
+    QList<QGraphicsItem*> itemsEnColision = collidingItems(mapToScene(newPos));
 
     foreach (QGraphicsItem* item, itemsEnColision) {
         if (dynamic_cast<QGraphicsRectItem*>(item)) {
@@ -61,6 +61,7 @@ void Enemigo::desplazamiento()
             return;
         }
     }
+    setPos(newPos);
 
 }
 

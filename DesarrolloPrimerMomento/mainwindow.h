@@ -29,11 +29,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void aparecerEnemigos();
 
 public slots:
     void moverObjeto();             //evento por el timer
-    void aparecerEnemigos();
+
 
 private:
     Ui::MainWindow *ui;
@@ -41,7 +41,7 @@ private:
     QGraphicsScene *escena;
     MiCaracter *jugador;
     QGraphicsView *vista;
-    QTimer *tiempo;
+    QSet<QGraphicsItem *> items;
 
 
 };

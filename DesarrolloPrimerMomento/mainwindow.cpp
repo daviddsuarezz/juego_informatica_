@@ -38,78 +38,54 @@ MainWindow::MainWindow(QWidget *parent)
     vista = new QGraphicsView();        //decirle a quién mirar, en un punto puede mirar una escena y en otro punto puede mirar otra escena
     vista->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); vista->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vista->setScene(escena);        //Decir a quién mirar
-    vista->setFixedSize(1050,650);                  //tamaño de la vista (ventana)
-    escena->setSceneRect(0,0,1050,650);             //tamaño de la escena desde el origen de la vista, tamaño
+    vista->setFixedSize(1050,750);                  //tamaño de la vista (ventana)
+    escena->setSceneRect(0,0,1050,750);             //tamaño de la escena desde el origen de la vista, tamaño
 
     Enemigo * enemigo = new Enemigo();
     escena->addItem(enemigo);
     items.insert(enemigo);
+    Enemigo * enemigo1 = new Enemigo();
+    escena->addItem(enemigo1);
+    items.insert(enemigo1);
+    Enemigo * enemigo2 = new Enemigo();
+    escena->addItem(enemigo2);
+    items.insert(enemigo2);
+    Enemigo * enemigo3 = new Enemigo();
+    escena->addItem(enemigo3);
+    items.insert(enemigo3);
+    Enemigo * enemigo4 = new Enemigo();
+    escena->addItem(enemigo4);
+    items.insert(enemigo4);
 
 
 
     QTime time = QTime::currentTime();
     srand((uint)time.msec());
 
-    const int numRectangles = 10;
 
-    const int gridSize = 20; // Tamaño de la cuadrícula
-    const int cellSize = 30; // Tamaño de cada celda
+    const int tamañoCuadricula = 25; // Tamaño de la cuadrícula     Forma vertical, capacidad de 25 bloques
+    const int tamañoBloque = 30; // Tamaño de cada celda
 
-    // Genera el laberinto
-    for (int i = 0; i < gridSize; ++i) {
-        for (int j = 0; j < gridSize; ++j) {
+    /*
+    // Genera el obstáculos
+    for (int i = 0; i < tamañoCuadricula; ++i) {
+        for (int j = 0; j < (tamañoCuadricula + 10); ++j) {     //tamaño de forma horizontal (35 bloques)
             // Genera un obstáculo con cierta probabilidad
-            if (rand() % 5 == 0) {
-                QGraphicsRectItem *obstacle = new QGraphicsRectItem(j * cellSize, i * cellSize, cellSize, cellSize);
-                obstacle->setBrush(Qt::darkGray);
-                escena->addItem(obstacle);
+            if(rand() % 4 == 0 ){
+                QGraphicsRectItem *obstaculo = new QGraphicsRectItem(j * tamañoBloque, i * tamañoBloque, tamañoBloque, tamañoBloque);
+                obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
+                obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
+                escena->addItem(obstaculo);
             }
         }
     }
-
-
-
-
-/*
-    for (int i = 0; i < numRectangles; ++i) {
-        int ancho = 200;
-        int alto = 60;
-        QGraphicsRectItem *rect = nullptr;
-        do {
-            int x = rand() % 1050-ancho;
-            int y = rand() % 650-alto;
-
-            rect = new QGraphicsRectItem(x, y, ancho, alto);
-        }while (collidesWithOthers(rect, items));
-        rect->setBrush(QBrush("#214F92"));
-        escena->addItem(rect);
-        items.insert(rect);
-
-    }
-    for (int i = 0; i < numRectangles; ++i) {
-        int ancho = 60;
-        int alto = 200;
-        QGraphicsRectItem *rect = nullptr;
-        do {
-            int x = rand() % 1050-ancho;
-            int y = rand() % 650-alto;
-
-            rect = new QGraphicsRectItem(x, y, ancho, alto);
-        }while (collidesWithOthers(rect, items));
-        rect->setBrush(QBrush("#214F92"));
-        escena->addItem(rect);
-        items.insert(rect);
-
-    }
-
-
 */
 
-/*
-    QTimer * tiemp = new QTimer();
-    QObject::connect(tiemp,SIGNAL(timeout()), this, SLOT(aparecerEnemigos()));
-    tiemp->start(2000);
-*/
+
+
+
+
+
     vista->show();
 
 
@@ -119,6 +95,9 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    foreach (QGraphicsItem *other, items){
+        delete other;
+    }
 }
 
 void MainWindow::moverObjeto()
@@ -131,6 +110,7 @@ void MainWindow::moverObjeto()
 
 void MainWindow::aparecerEnemigos()
 {
-    Enemigo * enemigo = new Enemigo();
-    escena->addItem(enemigo);
+    Enemigo * enemigo1 = new Enemigo(),*enemigo2 = new Enemigo(),* enemigo3 = new Enemigo(), * enemigo4 = new Enemigo();
+    items.insert(enemigo1),items.insert(enemigo2),items.insert(enemigo3),items.insert(enemigo4);
+
 }

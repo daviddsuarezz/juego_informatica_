@@ -4,6 +4,13 @@
 
 
 
+bool collidesWithOthers(QGraphicsItem *item, const QSet<QGraphicsItem *> *items) {
+    foreach (QGraphicsItem *other, *items) {
+        if (item->collidesWithItem(other))
+            return true;
+    }
+    return false;
+}
 
 
 
@@ -58,22 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
     }
-
-    Enemigo * enemigo = new Enemigo(&items);
-    escena->addItem(enemigo);
-
-    Enemigo * enemigo1 = new Enemigo(&items);
-    escena->addItem(enemigo1);
-
-    Enemigo * enemigo2 = new Enemigo(&items);
-    escena->addItem(enemigo2);
-
-    Enemigo * enemigo3 = new Enemigo(&items);
-    escena->addItem(enemigo3);
-
-    Enemigo * enemigo4 = new Enemigo(&items);
-    escena->addItem(enemigo4);
-
+    crearEnemigos();
 
 
 
@@ -103,7 +95,24 @@ void MainWindow::moverObjeto()
 
 void MainWindow::crearEnemigos()
 {
-    Enemigo * enemigo1 = new Enemigo(&items),*enemigo2 = new Enemigo(&items),* enemigo3 = new Enemigo(&items), * enemigo4 = new Enemigo(&items);
+    Enemigo * enemigo1 = new Enemigo(), * enemigo2 = new Enemigo(),* enemigo3 = new Enemigo(),* enemigo4 = new Enemigo(),* enemigo5 = new Enemigo();           //Generar el disparo
+    enemigos.insert(enemigo1), enemigos.insert(enemigo2), enemigos.insert(enemigo3), enemigos.insert(enemigo4), enemigos.insert(enemigo5);
+
+    foreach(QGraphicsRectItem * enemigo, enemigos){
+        enemigo->setPos(x(),y());
+        escena->addItem(enemigo);
+        do{
+            int x = rand() % 35;
+            int y = rand() % 25;
+            enemigo->setPos(x * 30, y * 30);
+        }while(collidesWithOthers(enemigo, &items));
+        enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
+        enemigo->setPen(QPen(Qt::black));
+        escena->addItem(enemigo);
+    }
+
+
+
 
 
 }

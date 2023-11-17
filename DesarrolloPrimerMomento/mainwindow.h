@@ -43,6 +43,7 @@ private:
     MiCaracter *jugador;
     QGraphicsView *vista;
     QSet<QGraphicsItem *> items;
+    QSet<QGraphicsRectItem *> enemigos;
 
 
 };

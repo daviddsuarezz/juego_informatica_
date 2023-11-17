@@ -15,7 +15,7 @@ class Enemigo: public QObject, public QGraphicsRectItem
 {
     Q_OBJECT            //Macro     necesario para hacer uso de slots
 public:
-    Enemigo(const QSet<QGraphicsItem *> *items);
+    Enemigo();
 public slots:
     void desplazamiento();
 };

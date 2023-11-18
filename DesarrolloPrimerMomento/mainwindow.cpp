@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
 
-    QSet<QGraphicsItem *> items;
+
 
 
 
@@ -58,6 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
             // Genera un obstáculo con cierta probabilidad
             if(rand() % 4 == 0 ){
                 QGraphicsRectItem *obstaculo = new QGraphicsRectItem(j * tamañoBloque, i * tamañoBloque, tamañoBloque, tamañoBloque);
+                Obstaculo *obs = new Obstaculo(j * tamañoBloque, i * tamañoBloque, tamañoBloque);
                 obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
                 obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
                 escena->addItem(obstaculo);
@@ -65,7 +66,8 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
     }
-    crearEnemigos();
+
+    //crearEnemigos();
 
     vista->show();
 

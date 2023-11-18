@@ -53,18 +53,31 @@ void Enemigo::desplazamiento()
         break;
 
     }
+
+
+    QList<QGraphicsItem *> colisiones = collidingItems();
+    for(int i = 0, n = colisiones.size(); i < n; i++){
+        if(typeid(colisiones[i]) == typeid(Enemigo)){
+
+            return;
+        }
+    }
+
+
+
+    /*
     QPointF direccion(30, 0); // Dirección hacia la derecha (puedes ajustar según tu caso)
     qreal velocidad = 30; // Ajusta la velocidad según tus necesidades
     QPointF newPos = pos() + direccion * velocidad;
 
-    QList<QGraphicsItem*> itemsEnColision = collidingItems(mapToScene(newPos));
+    QList<QGraphicsItem*> itemsEnColision = collidingItems();
 
     foreach (QGraphicsItem* item, itemsEnColision) {
         if (dynamic_cast<Enemigo*>(item)) {
             // Hay un muro en la colisión, no te muevas
             return;
         }
-    }
+    }*/
     setPos(X,Y);
 
 }

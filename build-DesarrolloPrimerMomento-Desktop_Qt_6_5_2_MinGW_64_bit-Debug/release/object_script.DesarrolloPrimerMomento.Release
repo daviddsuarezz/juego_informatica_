@@ -3,7 +3,7 @@ release/bala.o
 release/enemigo.o
 release/main.o
 release/mainwindow.o
-release/obstaculos.o
+release/obstaculo.o
 release/qrc_Recursos.o
 release/moc_bala.o
 release/moc_enemigo.o

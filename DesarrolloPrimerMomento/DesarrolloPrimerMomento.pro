@@ -13,13 +13,15 @@ SOURCES += \
     bala.cpp \
     enemigo.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    obstaculo.cpp
 
 HEADERS += \
     MiCaracter.h \
     bala.h \
     enemigo.h \
-    mainwindow.h
+    mainwindow.h \
+    obstaculo.h
 
 FORMS += \
     mainwindow.ui

@@ -1,6 +1,8 @@
 #ifndef ENEMIGO_H
 #define ENEMIGO_H
 
+#include "obstaculo.h"
+
 #include <QGraphicsRectItem>
 #include <QTimer>
 #include <QObject>

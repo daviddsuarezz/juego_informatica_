@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
 
-    //crearEnemigos();
+    crearEnemigos();
 
     vista->show();
 

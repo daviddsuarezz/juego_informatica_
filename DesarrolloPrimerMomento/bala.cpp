@@ -17,13 +17,18 @@ Bala::Bala()
 
 void Bala::desplazamiento()
 {
-    QList<QGraphicsItem *> colisiones = collidingItems();        //lista de punteros a otros QGraphicsItems con los que se está colisionando
+    QList<QGraphicsItem *> colisiones = collidingItems(Qt::ContainsItemBoundingRect);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
         if(typeid(*(colisiones[i])) == typeid(Enemigo)){
             scene()->removeItem(colisiones[i]);
             scene()->removeItem(this);
             delete colisiones[i];
+            delete this;
+            return;
+        }
+        else if (typeid(*(colisiones[i])) == typeid(Obstaculo)){
+            scene()->removeItem(this);
             delete this;
             return;
         }

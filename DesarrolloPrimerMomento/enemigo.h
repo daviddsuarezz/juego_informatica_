@@ -9,11 +9,11 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include<ctime>
+#include <QRect>
 
 
 
-
-class Enemigo: public QObject, public QGraphicsRectItem
+class Enemigo: public QObject, public QRect, public QGraphicsRectItem
 {
     Q_OBJECT            //Macro     necesario para hacer uso de slots
 public:

@@ -32,7 +32,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void crearEnemigos();
-
+    void detectarColision();
 public slots:
 
 
@@ -43,8 +43,8 @@ private:
     QGraphicsScene *escena;
     MiCaracter *jugador;
     QGraphicsView *vista;
-    QSet<QGraphicsItem *> items;
-    QSet<QGraphicsRectItem *> enemigos;
+    QList<QGraphicsItem *> items;
+    QList<QGraphicsRectItem *> enemigos;
 
 
 };

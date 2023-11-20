@@ -5,6 +5,7 @@
 
 void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
+
     if (event->key() == Qt::Key_A){
         if (x()>0)
             setPos(x()-30,y());      //Cantidad de distancia que me moveré

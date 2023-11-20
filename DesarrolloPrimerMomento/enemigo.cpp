@@ -8,7 +8,7 @@
 
 Enemigo::Enemigo()
 {
-    setRect(0,0,30,30);
+    QGraphicsRectItem::setRect(0,0,30,30);
 
 
 
@@ -26,12 +26,53 @@ Enemigo::Enemigo()
 void Enemigo::desplazamiento()
 {
 
+    int i = rand() % 4, cambioX = 0, cambioY = 0;
+    switch(i){
+    case 0:
+        if (QRect::y()>0 )
+            cambioY = -30;
+            //setPos(x(), y() - 30);
+        else cambioY = 30;
+            //setPos(x(), y() + 30);
+        break;
+    case 1:
+        if (QRect::y() < scene()->height() - 30 )
+            cambioY = 30;
+        //setPos(x(), y() + 30);
+        else  cambioY = -30;//setPos(x(), y() - 30);
+        break;
+    case 2:
+        if (QRect::x()>0 )
+            cambioX = -30;
+        //setPos(x()- 30, y());
+        else  cambioX = 30;//setPos(x() + 30, y());
+        break;
+    case 3:
+        if (QRect::x() < scene()->width() - 30 )
+            cambioX = 30;//setPos(x()+ 30, y() );
+        else cambioX = -30;//setPos(x()- 30, y() );
+        break;
+    default:
+        break;
+    }
 
 
-    QList<QGraphicsItem *> colisiones = collidingItems(Qt::ContainsItemBoundingRect);
-    for(int i = 0, n = colisiones.size(); i < n; i++){
-        //if(typeid(*(colisiones[i])) == typeid(Obstaculo)){
-        if(!(this->collidesWithItem(colisiones[i]), Qt::ContainsItemBoundingRect)){
+    QList<QGraphicsItem *> colisiones = this->collidingItems();
+    foreach(QGraphicsItem *colisona, colisiones){
+            QRect enemigo ;
+            if (!enemigo.translated(cambioX, cambioY).intersects(colisona->boundingRect().toRect())) {
+
+        this->moveBy(cambioX, cambioY);
+    }
+    }
+
+
+
+    /*
+    QList<QGraphicsItem *> colisiones = this->collidingItems(Qt::ContainsItemBoundingRect);
+    foreach(QGraphicsItem *colisona, colisiones){
+        Obstaculo *obs = dynamic_cast<Obstaculo *>(colisona);
+        if(obs){
             int i = rand() % 4;
             switch(i){
             case 0:
@@ -56,11 +97,18 @@ void Enemigo::desplazamiento()
                 break;
             default:
                 break;
+        }
+        }}
+
+    for(int i = 0, n = colisiones.size(); i < n; i++){
+        //if(typeid(*(colisiones[i])) == typeid(Obstaculo)){
+        if(!(this->collidesWithItem(colisiones[i]), Qt::ContainsItemBoundingRect)){
+            ;
 
             }}
-        }
 
 
+*/
     //setPos(X,Y);
 
 }

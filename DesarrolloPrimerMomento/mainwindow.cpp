@@ -4,7 +4,7 @@
 
 
 
-bool colisiona(QGraphicsItem *item, const QSet<QGraphicsItem *> *items) {
+bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
         if (item->collidesWithItem(other))
             return true;
@@ -62,10 +62,12 @@ MainWindow::MainWindow(QWidget *parent)
                 obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
                 obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
                 escena->addItem(obstaculo);
-                items.insert(obstaculo);
+                items.push_back(obstaculo);
             }
         }
     }
+
+
 
     crearEnemigos();
 
@@ -88,7 +90,7 @@ MainWindow::~MainWindow()
 void MainWindow::crearEnemigos()
 {
     Enemigo * enemigo1 = new Enemigo(), * enemigo2 = new Enemigo(),* enemigo3 = new Enemigo(),* enemigo4 = new Enemigo(),* enemigo5 = new Enemigo();           //Generar el disparo
-    enemigos.insert(enemigo1), enemigos.insert(enemigo2), enemigos.insert(enemigo3), enemigos.insert(enemigo4), enemigos.insert(enemigo5);
+    enemigos.push_back(enemigo1), enemigos.push_back(enemigo2), enemigos.push_back(enemigo3), enemigos.push_back(enemigo4), enemigos.push_back(enemigo5);
 
     foreach(QGraphicsRectItem * enemigo, enemigos){
         enemigo->setPos(x(),y());
@@ -102,6 +104,11 @@ void MainWindow::crearEnemigos()
         enemigo->setPen(QPen(Qt::black));
         escena->addItem(enemigo);
     }
+}
+
+void MainWindow::detectarColision()
+{
+
 }
 
 

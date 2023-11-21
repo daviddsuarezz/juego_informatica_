@@ -34,6 +34,45 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
 
 void Enemigo::desplazamiento()
 {
+    int i = rand() % 4, cambioX = 0, cambioY = 0;
+    switch(i){
+    case 0:
+        if (y()>0 )
+            cambioY = -30;
+        //setPos(x(), y() - 30);
+        else cambioY = 30;
+        //setPos(x(), y() + 30);
+        break;
+    case 1:
+        if (y() < scene()->height() - 30 )
+            cambioY = 30;
+        //setPos(x(), y() + 30);
+        else  cambioY = -30;//setPos(x(), y() - 30);
+        break;
+    case 2:
+        if (x()>0 )
+            cambioX = -30;
+        //setPos(x()- 30, y());
+        else  cambioX = 30;//setPos(x() + 30, y());
+        break;
+    case 3:
+        if (x() < scene()->width() - 30 )
+            cambioX = 30;//setPos(x()+ 30, y() );
+        else cambioX = -30;//setPos(x()- 30, y() );
+        break;
+    default:
+        break;
+    }
+
+
+
+    QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
+    if(itemEnPosicion){
+        setPos(x()+cambioX,y()+ cambioY);
+    }
+
+    /*
+     * Analizar intersect
     enemigo.setRect(x(),y(),30,30);
 
     int i = rand() % 4, cambioX = 0, cambioY = 0;
@@ -74,6 +113,7 @@ void Enemigo::desplazamiento()
 
 
     /*
+     * analizar cada colisión
     QList<QGraphicsItem *> colisiones = collidingItems(Qt::ContainsItemBoundingRect);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
@@ -111,7 +151,7 @@ void Enemigo::desplazamiento()
 
 /*
 
-
+    Generar una posición en caso de colisionar
     int i = rand() % 4;
     switch(i){
     case 0:
@@ -152,6 +192,7 @@ void Enemigo::desplazamiento()
 
 
 /*
+ * Haciendo uso de QRect
     int i = rand() % 4, cambioX = 0, cambioY = 0;
     switch(i){
     case 0:
@@ -195,6 +236,7 @@ void Enemigo::desplazamiento()
 */
 
 /*
+ *
     QList<QGraphicsItem *> colisiones = this->collidingItems(Qt::ContainsItemBoundingRect);
     foreach(QGraphicsItem *colisona, colisiones){
         Obstaculo *obs = dynamic_cast<Obstaculo *>(colisona);

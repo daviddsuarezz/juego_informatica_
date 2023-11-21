@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 
 #include "ui_mainwindow.h"
+#include <QDebug>
 
 
 
@@ -63,6 +64,7 @@ MainWindow::MainWindow(QWidget *parent)
                 obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
                 escena->addItem(obstaculo);
                 items.push_back(obstaculo);
+
             }
         }
     }
@@ -89,7 +91,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::crearEnemigos()
 {
-    Enemigo * enemigo1 = new Enemigo(), * enemigo2 = new Enemigo(),* enemigo3 = new Enemigo(),* enemigo4 = new Enemigo(),* enemigo5 = new Enemigo();           //Generar el disparo
+    Enemigo * enemigo1 = new Enemigo(items), * enemigo2 = new Enemigo(items),* enemigo3 = new Enemigo(items),* enemigo4 = new Enemigo(items),* enemigo5 = new Enemigo(items);           //Generar el disparo
     enemigos.push_back(enemigo1), enemigos.push_back(enemigo2), enemigos.push_back(enemigo3), enemigos.push_back(enemigo4), enemigos.push_back(enemigo5);
 
     foreach(QGraphicsRectItem * enemigo, enemigos){

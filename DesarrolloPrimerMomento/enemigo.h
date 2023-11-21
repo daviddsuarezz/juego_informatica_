@@ -13,13 +13,16 @@
 
 
 
-class Enemigo: public QObject, public QRect, public QGraphicsRectItem
+class Enemigo: public QObject,  public QGraphicsRectItem
 {
     Q_OBJECT            //Macro     necesario para hacer uso de slots
 public:
-    Enemigo();
+    Enemigo(QList<QGraphicsItem *> items);
 public slots:
     void desplazamiento();
+private:
+    QRect enemigo;
+    QList<QGraphicsItem *> items;
 };
 
 #endif // ENEMIGO_H

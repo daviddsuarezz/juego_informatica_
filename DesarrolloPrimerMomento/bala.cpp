@@ -10,8 +10,6 @@ Bala::Bala()
 
     tiempo->start(50);          //cada 50ms se moverá la bala
 
-
-
 }
 
 
@@ -34,12 +32,23 @@ void Bala::desplazamiento()
         }
     }
 
-    setPos(x(),y()-10);             //Mover bala hacia arriba
-    if (pos().y() + rect().height() < 0){
+    setPos(x(),y());             //Mover bala hacia arriba
+    if (y() < 0){
         scene()->removeItem(this);              //referencia a una escena
         delete this;
     }
-}
+    else if(x()<0){
+        scene()->removeItem(this);              //referencia a una escena
+        delete this;
+    }
+    else if(x() > scene()->width() - 15){
+        scene()->removeItem(this);              //referencia a una escena
+        delete this;
+    }
+    else if(y() > scene()->height() - 15){
+        scene()->removeItem(this);              //referencia a una escena
+        delete this;
+    }
 
 
 

@@ -68,10 +68,8 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
     }
-
-
-
     crearEnemigos();
+    setMouseTracking(true);
 
     vista->show();
 
@@ -108,9 +106,15 @@ void MainWindow::crearEnemigos()
     }
 }
 
-void MainWindow::detectarColision()
+void MainWindow::setCursor()
 {
+    if(!cursor){
+        escena->removeItem(cursor);
+        delete cursor;
+    }
+
 
 }
+
 
 

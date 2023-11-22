@@ -32,7 +32,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void crearEnemigos();
-    void detectarColision();
+    void setCursor();
+    void mouseMoveEvent(QMouseEvent *event);
+    QGraphicsPixmapItem * cursor;
 public slots:
 
 

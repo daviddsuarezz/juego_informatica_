@@ -6,9 +6,17 @@
 void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
 
+
+    int cambioX = 0, cambioY = 0;
+
     if (event->key() == Qt::Key_A){
-        if (x()>0)
-            setPos(x()-30,y());      //Cantidad de distancia que me moveré
+        if (x()>0){
+            cambioX = -30;
+            QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
+            if(!itemEnPosicion){
+                setPos(x()+cambioX,y()+ cambioY);
+            }
+        }
     }
     else if (event->key() == Qt::Key_D){
         if (pos().x() < scene()->width() - 30)

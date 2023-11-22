@@ -18,7 +18,7 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
 {
     items = _items;
 
-    QGraphicsRectItem::setRect(0,0,30,30);
+    QGraphicsRectItem::setRect(0,0,29,29);
 
 
 
@@ -67,7 +67,7 @@ void Enemigo::desplazamiento()
 
 
     QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
-    if(itemEnPosicion){
+    if(!itemEnPosicion){
         setPos(x()+cambioX,y()+ cambioY);
     }
 

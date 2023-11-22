@@ -33,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
-    jugador->setRect(0,0,30,30);     //x, y, ancho y alto
+    jugador->setRect(0,0,29,29);     //x, y, ancho y alto
     jugador->setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
     escena->addItem(jugador);
 

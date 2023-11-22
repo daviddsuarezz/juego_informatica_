@@ -25,7 +25,7 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
     QTimer * tiempo = new QTimer(this);
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
 
-    tiempo->start(500);          //cada 500ms se moverá la bala
+    tiempo->start(400);          //cada 500ms se moverá la bala
 
 
 
@@ -38,7 +38,7 @@ void Enemigo::desplazamiento()
     switch(i){
     case 0:
         if (y()>0 )
-            cambioY = -30;
+            cambioY = - 30;
         //setPos(x(), y() - 30);
         else cambioY = 30;
         //setPos(x(), y() + 30);

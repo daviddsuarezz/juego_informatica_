@@ -5,8 +5,6 @@
 
 void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
-
-
     int cambioX = 0, cambioY = 0;
     QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
     if (event->key() == Qt::Key_A){
@@ -46,11 +44,12 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
             }
         }
     }
-    else if (event->key() == Qt::Key_Space){
+
+    /*else if (event->key() == Qt::Key_Space){
         Bala * bala = new Bala();           //Generar el disparo
         bala->setPos(x(),y());
         scene()->addItem(bala);
-    }
+    }*/
 }
 
 

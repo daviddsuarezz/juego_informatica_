@@ -33,7 +33,9 @@ public:
     ~MainWindow();
     void crearEnemigos();
     void setCursor();
-    void mouseMoveEvent(QMouseEvent *event);
+    //void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void createShotAnimation(const QPointF &shootPosition);
     QGraphicsPixmapItem * cursor;
 public slots:
 

@@ -17,7 +17,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
         }
     }
     else if (event->key() == Qt::Key_D){
-        if (pos().x() < scene()->width() - 29){
+        if (pos().x() < scene()->width() - 30){
             cambioX = 30;
             itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
             if(!itemEnPosicion){
@@ -26,7 +26,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
         }
     }
     else if (event->key() == Qt::Key_S){
-        if (pos().y() < scene()->height() - 29){
+        if (pos().y() < scene()->height() - 30){
             cambioY = 30;
             itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
             if(!itemEnPosicion){

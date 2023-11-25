@@ -21,11 +21,9 @@ public:
     ~Bala();
 public slots:
     void desplazamiento();
-signals:
-    void positionChanged(int x, int y);
 };
 
-
+/*
 class BulletWidget : public QWidget
 {
     Q_OBJECT
@@ -76,6 +74,6 @@ private slots:
 private:
     Bala *bullet;
 };
-
+*/
 
 #endif // BALA_H

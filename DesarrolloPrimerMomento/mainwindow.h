@@ -19,6 +19,8 @@
 #include <QTime>
 #include <QSet>
 
+#include <QGraphicsPixmapItem>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -35,8 +37,8 @@ public:
     void setCursor();
     //void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
-    void createShotAnimation(const QPointF &shootPosition);
-    QGraphicsPixmapItem * cursor;
+
+    QGraphicsRectItem * cursor;
 public slots:
 
 

@@ -69,14 +69,11 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
     crearEnemigos();
-    //setMouseTracking(true);
-    BulletWidget widget;
-    widget.setGeometry(100, 100, 400, 300);
-    widget.show();
+
+    setMouseTracking(true);
+
+
     vista->show();
-
-
-
 }
 
 MainWindow::~MainWindow()
@@ -114,22 +111,19 @@ void MainWindow::setCursor()
         escena->removeItem(cursor);
         delete cursor;
     }
+    cursor = new QGraphicsRectItem();
+
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event) {
     // Tomar la posición del clic
-    QPointF mousePos = ui->graphicsView->mapToScene(event->pos());
 
-    createShotAnimation(mousePos);
-}
 
-void MainWindow::createShotAnimation(const QPointF &shootPosition)
-{
-    QPointF jugadorPos = jugador->pos(); // Tomar la posición
-    Bala * bala = new Bala();           //Generar el disparo
-    bala->setPos(jugadorPos); // Se crea y se asigna la pos del jugador
-    bala->setBrush(QBrush(Qt::red));
+    Bala * bala = new Bala();
+    bala->setPos(event->pos());
     escena->addItem(bala);
+
+    QPointF mousePos = ui->graphicsView->mapToScene(event->pos());
 }
 
 

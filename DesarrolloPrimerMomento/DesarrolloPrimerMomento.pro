@@ -14,6 +14,7 @@ SOURCES += \
     enemigo.cpp \
     main.cpp \
     mainwindow.cpp \
+    marcador.cpp \
     obstaculo.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     bala.h \
     enemigo.h \
     mainwindow.h \
+    marcador.h \
     obstaculo.h
 
 FORMS += \

@@ -3,6 +3,7 @@
 #include "MiCaracter.h"
 #include "enemigo.h"
 #include "obstaculo.h"
+#include "marcador.h"
 
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -17,9 +18,7 @@
 #include <QImage>
 
 #include <QTime>
-#include <QSet>
 
-#include <QGraphicsPixmapItem>
 
 
 QT_BEGIN_NAMESPACE
@@ -31,9 +30,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(char *argv[], QWidget *parent = nullptr);
     ~MainWindow();
-    void crearEnemigos();
+    void crearEnemigos(int cantEnem);
     /*
     void setCursor();
     //void mouseMoveEvent(QMouseEvent *event);
@@ -51,7 +50,8 @@ private:
     MiCaracter *jugador;
     QGraphicsView *vista;
     QList<QGraphicsItem *> items;
-    QList<QGraphicsRectItem *> enemigos;
+
+    Marcador * score;
 
 
 };

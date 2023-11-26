@@ -5,6 +5,7 @@
 
 
 
+
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
         if (item->collidesWithItem(other))
@@ -15,7 +16,7 @@ bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
 
 
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(char *argv[], QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -37,13 +38,15 @@ MainWindow::MainWindow(QWidget *parent)
     jugador->setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
     escena->addItem(jugador);
 
+    /*score = new Marcador;
+    escena->addItem(score);*/
+
 
     vista = new QGraphicsView();        //decirle a quién mirar, en un punto puede mirar una escena y en otro punto puede mirar otra escena
     vista->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); vista->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vista->setScene(escena);        //Decir a quién mirar
     vista->setFixedSize(1050,750);                  //tamaño de la vista (ventana)
     escena->setSceneRect(0,0,1050,750);             //tamaño de la escena desde el origen de la vista, tamaño
-
 
 
 
@@ -70,10 +73,10 @@ MainWindow::MainWindow(QWidget *parent)
             }}
         }
     }
-    crearEnemigos();
+    crearEnemigos(std::stoi(argv[1]));
 
 
-    //setMouseTracking(true);
+
 
 
     vista->show();
@@ -89,10 +92,25 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::crearEnemigos()
+void MainWindow::crearEnemigos(int cantEnem)
 {
+    for (int i = 0; i < cantEnem; i++){
+        Enemigo * enemigo = new Enemigo(items);
+        enemigo->setPos(x(),y());
+        escena->addItem(enemigo);
+        do{
+            int x = rand() % 35;
+            int y = rand() % 25;
+            enemigo->setPos(x * 30, y * 30);
+        }while(colisiona(enemigo, &items));
+        enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
+        enemigo->setPen(QPen(Qt::black));
+        escena->addItem(enemigo);
+    }
+
+    /*
     Enemigo * enemigo1 = new Enemigo(items), * enemigo2 = new Enemigo(items),* enemigo3 = new Enemigo(items),* enemigo4 = new Enemigo(items),* enemigo5 = new Enemigo(items);           //Generar el disparo
-    enemigos.push_back(enemigo1), enemigos.push_back(enemigo2), enemigos.push_back(enemigo3), enemigos.push_back(enemigo4), enemigos.push_back(enemigo5);
+
 
     foreach(QGraphicsRectItem * enemigo, enemigos){
         enemigo->setPos(x(),y());
@@ -105,7 +123,7 @@ void MainWindow::crearEnemigos()
         enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
         enemigo->setPen(QPen(Qt::black));
         escena->addItem(enemigo);
-    }
+    }*/
 }
 
 

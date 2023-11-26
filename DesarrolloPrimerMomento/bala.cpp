@@ -4,7 +4,10 @@
 Bala::Bala()
 {
     setRect(0,0,15,15);         //crear la 'bala'
+    cambioX = 0;
+    cambioY = 0;
     tiempo = new QTimer();
+
 
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
 
@@ -12,11 +15,19 @@ Bala::Bala()
 
 }
 
+void Bala::setCambioX(int cambio){
+    cambioX = cambio;
+}
+void Bala::setCambioY(int cambio){
+    cambioY = cambio;
+}
+
+
 
 void Bala::desplazamiento()
 {
 
-    QList<QGraphicsItem *> colisiones = collidingItems(Qt::ContainsItemBoundingRect);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
+    QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
         if(typeid(*(colisiones[i])) == typeid(Enemigo)){
@@ -31,15 +42,7 @@ void Bala::desplazamiento()
             delete this;
             return;
         }
-    }
-
-    setPos(x(),y());             //Mover bala hacia arriba
-
-
-
-
-
-
+    }setPos(x()+cambioX, y()+cambioY);
 
 
     if (y() < 0){

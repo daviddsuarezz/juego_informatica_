@@ -39,14 +39,14 @@ public:
     //void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
 */
-    QGraphicsRectItem * cursor;
+
 public slots:
 
 
 
 private:
     Ui::MainWindow *ui;
-
+    QGraphicsRectItem * cursor;
     QGraphicsScene *escena;
     MiCaracter *jugador;
     QGraphicsView *vista;

@@ -72,6 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     crearEnemigos();
 
+
     //setMouseTracking(true);
 
 

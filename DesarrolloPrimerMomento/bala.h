@@ -18,7 +18,14 @@ protected:
     QTimer *tiempo;
 public:
     Bala();
+    void setCambioX(int cambio);
+    void setCambioY(int cambio);
+
     ~Bala();
+private:
+    int cambioX;
+    int cambioY;
+
 public slots:
     void desplazamiento();
 };

@@ -34,10 +34,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void crearEnemigos();
+    /*
     void setCursor();
     //void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
-
+*/
     QGraphicsRectItem * cursor;
 public slots:
 

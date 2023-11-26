@@ -14,7 +14,7 @@
 class Bala: public QObject, public QGraphicsRectItem
 {
     Q_OBJECT            //Macro     necesario para hacer uso de slots
-private:
+protected:
     QTimer *tiempo;
 public:
     Bala();

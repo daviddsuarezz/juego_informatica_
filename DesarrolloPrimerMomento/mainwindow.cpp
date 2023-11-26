@@ -54,23 +54,25 @@ MainWindow::MainWindow(QWidget *parent)
     const int tamañoBloque = 30; // Tamaño de cada celda
 
     // Genera el obstáculos
-    for (int i = 0; i < tamañoCuadricula; ++i) {
-        for (int j = 0; j < (tamañoCuadricula + 10); ++j) {     //tamaño de forma horizontal (35 bloques)
+    for (int vertical = 0; vertical < tamañoCuadricula; ++vertical) {
+        for (int horizontal = 0; horizontal < (tamañoCuadricula + 10); ++horizontal) {     //tamaño de forma horizontal (35 bloques)
             // Genera un obstáculo con cierta probabilidad
+
+            if((!((vertical == horizontal)&& ((vertical == 0)||(vertical == 1))))&&!(vertical == 0 && horizontal == 1)&&!(vertical == 1 && horizontal == 0)&&!(horizontal == 2 && (vertical == 0 || vertical == 1))){
             if(rand() % 4 == 0 ){
                 Obstaculo *obstaculo = new Obstaculo();
-                obstaculo->setPos(j * tamañoBloque, i * tamañoBloque);
+                obstaculo->setPos(horizontal * tamañoBloque,vertical * tamañoBloque );
                 obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
                 obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
                 escena->addItem(obstaculo);
                 items.push_back(obstaculo);
 
-            }
+            }}
         }
     }
     crearEnemigos();
 
-    setMouseTracking(true);
+    //setMouseTracking(true);
 
 
     vista->show();
@@ -105,6 +107,8 @@ void MainWindow::crearEnemigos()
     }
 }
 
+
+/*
 void MainWindow::setCursor()
 {
     if(!cursor){
@@ -126,7 +130,6 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
     QPointF mousePos = ui->graphicsView->mapToScene(event->pos());
 }
 
-
-
+*/
 
 

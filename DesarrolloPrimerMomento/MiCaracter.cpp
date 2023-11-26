@@ -50,7 +50,24 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
         bala->setCambioX(10);
         scene()->addItem(bala);
     }
-
+    else if (event->key() == Qt::Key_Left){
+        Bala * bala = new Bala();           //Generar el disparo
+        bala->setPos(x(),y());
+        bala->setCambioX(-10);
+        scene()->addItem(bala);
+    }
+    else if (event->key() == Qt::Key_Up){
+        Bala * bala = new Bala();           //Generar el disparo
+        bala->setPos(x(),y());
+        bala->setCambioY(-10);
+        scene()->addItem(bala);
+    }
+    else if (event->key() == Qt::Key_Down){
+        Bala * bala = new Bala();           //Generar el disparo
+        bala->setPos(x(),y());
+        bala->setCambioY(10);
+        scene()->addItem(bala);
+    }
     /*else if (event->key() == Qt::Key_Space){
         Bala * bala = new Bala();           //Generar el disparo
         bala->setPos(x(),y());

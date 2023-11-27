@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     MiCaracter.cpp \
     bala.cpp \
+    balaesp.cpp \
     enemigo.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     MiCaracter.h \
     bala.h \
+    balaesp.h \
     enemigo.h \
     mainwindow.h \
     marcador.h \

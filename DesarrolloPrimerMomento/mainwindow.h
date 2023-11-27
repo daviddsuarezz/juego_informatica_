@@ -39,7 +39,7 @@ public:
     void mousePressEvent(QMouseEvent *event);
 */
 
-public slots:
+
 
 
 

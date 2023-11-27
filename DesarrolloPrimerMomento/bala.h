@@ -16,18 +16,17 @@ class Bala: public QObject, public QGraphicsRectItem
     Q_OBJECT            //Macro     necesario para hacer uso de slots
 protected:
     QTimer *tiempo;
+    int cambioX;
+    int cambioY;
 public:
     Bala();
     void setCambioX(int cambio);
     void setCambioY(int cambio);
 
     ~Bala();
-private:
-    int cambioX;
-    int cambioY;
 
 public slots:
-    void desplazamiento();
+    virtual void desplazamiento();
 };
 
 /*

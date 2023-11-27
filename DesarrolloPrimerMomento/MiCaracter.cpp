@@ -3,6 +3,14 @@
 
 
 
+MiCaracter::MiCaracter()
+{
+    setRect(0,0,29,29);     //x, y, ancho y alto
+    setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
+}
+
+
+
 void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
     int cambioX = 0, cambioY = 0;
@@ -68,11 +76,12 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
         bala->setCambioY(10);
         scene()->addItem(bala);
     }
-    /*else if (event->key() == Qt::Key_Space){
-        Bala * bala = new Bala();           //Generar el disparo
+    else if (event->key() == Qt::Key_Space){
+        BalaEsp * bala = new BalaEsp();           //Generar el disparo
         bala->setPos(x(),y());
+        bala->setCambioY(-10);
         scene()->addItem(bala);
-    }*/
+    }
 }
 
 

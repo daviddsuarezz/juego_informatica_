@@ -34,8 +34,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
 
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
-    jugador->setRect(0,0,29,29);     //x, y, ancho y alto
-    jugador->setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
+
     escena->addItem(jugador);
 
     /*score = new Marcador;
@@ -62,15 +61,15 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
             // Genera un obstáculo con cierta probabilidad
 
             if((!((vertical == horizontal)&& ((vertical == 0)||(vertical == 1))))&&!(vertical == 0 && horizontal == 1)&&!(vertical == 1 && horizontal == 0)&&!(horizontal == 2 && (vertical == 0 || vertical == 1))){
-            if(rand() % 4 == 0 ){
-                Obstaculo *obstaculo = new Obstaculo();
-                obstaculo->setPos(horizontal * tamañoBloque,vertical * tamañoBloque );
-                obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
-                obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
-                escena->addItem(obstaculo);
-                items.push_back(obstaculo);
-
-            }}
+                if(rand() % 4 == 0 ){
+                    Obstaculo *obstaculo = new Obstaculo();
+                    obstaculo->setPos(horizontal * tamañoBloque,vertical * tamañoBloque );
+                    obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
+                    obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
+                    escena->addItem(obstaculo);
+                    items.push_back(obstaculo);
+                }
+            }
         }
     }
     crearEnemigos(std::stoi(argv[1]));
@@ -107,23 +106,6 @@ void MainWindow::crearEnemigos(int cantEnem)
         enemigo->setPen(QPen(Qt::black));
         escena->addItem(enemigo);
     }
-
-    /*
-    Enemigo * enemigo1 = new Enemigo(items), * enemigo2 = new Enemigo(items),* enemigo3 = new Enemigo(items),* enemigo4 = new Enemigo(items),* enemigo5 = new Enemigo(items);           //Generar el disparo
-
-
-    foreach(QGraphicsRectItem * enemigo, enemigos){
-        enemigo->setPos(x(),y());
-        escena->addItem(enemigo);
-        do{
-            int x = rand() % 35;
-            int y = rand() % 25;
-            enemigo->setPos(x * 30, y * 30);
-        }while(colisiona(enemigo, &items));
-        enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
-        enemigo->setPen(QPen(Qt::black));
-        escena->addItem(enemigo);
-    }*/
 }
 
 

@@ -3,10 +3,11 @@
 
 
 
-MiCaracter::MiCaracter()
+MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_)
 {
     setRect(0,0,29,29);     //x, y, ancho y alto
     setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
+    items = items_;
 }
 
 

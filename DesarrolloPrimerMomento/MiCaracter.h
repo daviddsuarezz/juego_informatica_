@@ -10,11 +10,11 @@
 class MiCaracter: public QGraphicsRectItem, public QObject
 {
 public:
-    MiCaracter();
+    MiCaracter(QList<QGraphicsItem *> *items);
 
     void keyPressEvent(QKeyEvent * event) override;      //evento de presionar tecla
 private:
-    QList<QGraphicsItem *> items;
+    QList<QGraphicsItem *> *items;
 };
 
 #endif // MICARACTER_H

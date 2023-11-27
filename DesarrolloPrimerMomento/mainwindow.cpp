@@ -3,7 +3,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 
-
+#include <string>
 
 
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
@@ -30,15 +30,15 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
 
 
 
-    jugador = new MiCaracter();            //crear objeto
+    jugador = new MiCaracter(&items);            //crear objeto
 
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
 
     escena->addItem(jugador);
 
-    /*score = new Marcador;
-    escena->addItem(score);*/
+    //score = new Marcador;
+    //escena->addItem(score);
 
 
     vista = new QGraphicsView();        //decirle a quién mirar, en un punto puede mirar una escena y en otro punto puede mirar otra escena
@@ -72,7 +72,10 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
             }
         }
     }
-    crearEnemigos(std::stoi(argv[1]));
+    if (isdigit(*argv[1]))
+        crearEnemigos(std::stoi(argv[1]));
+    else
+        crearEnemigos(8);
 
 
 

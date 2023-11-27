@@ -1,5 +1,5 @@
 #include "balaesp.h"
-
+#include <QDebug>
 
 
 void BalaEsp::desplazamiento()
@@ -7,6 +7,7 @@ void BalaEsp::desplazamiento()
     QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
+
         if(typeid(*(colisiones[i])) == typeid(Enemigo)){
             scene()->removeItem(this);
             delete this;
@@ -14,7 +15,7 @@ void BalaEsp::desplazamiento()
         }       ///Revisar
         else if (typeid(*(colisiones[i])) == typeid(Obstaculo)){
             scene()->removeItem(this);
-            scene()->removeItem(colisiones[i]);
+            //scene()->removeItem(colisiones[i]);
             delete colisiones[i];
             delete this;
             return;

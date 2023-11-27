@@ -12,7 +12,7 @@ Bala::Bala()
 
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
 
-    tiempo->start(50);          //cada 50ms se moverá la bala
+    tiempo->start(25);          //cada 50ms se moverá la bala
 
 }
 

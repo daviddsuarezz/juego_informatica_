@@ -20,7 +20,7 @@ void BalaEsp::desplazamiento()
             scene()->removeItem(this);
             delete this;
             return;
-        }       ///Revisar
+        }
         else if (typeid(*(colisiones[i])) == typeid(Obstaculo)){
             delete colisiones[i];
             delete this;

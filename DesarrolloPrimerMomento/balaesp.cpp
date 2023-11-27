@@ -2,8 +2,16 @@
 #include <QDebug>
 
 
+
+
+BalaEsp::BalaEsp(): Bala()
+{
+    setBrush(QBrush(QColor(57, 238, 9)));
+}
+
 void BalaEsp::desplazamiento()
 {
+
     QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
@@ -14,8 +22,6 @@ void BalaEsp::desplazamiento()
             return;
         }       ///Revisar
         else if (typeid(*(colisiones[i])) == typeid(Obstaculo)){
-            scene()->removeItem(this);
-            //scene()->removeItem(colisiones[i]);
             delete colisiones[i];
             delete this;
             return;

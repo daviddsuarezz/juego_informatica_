@@ -7,7 +7,7 @@ class BalaEsp: public Bala
 {
     Q_OBJECT
 public:
-    using Bala::Bala;  // Heredar el constructor de ClaseBase
+    BalaEsp();  // Heredar el constructor de ClaseBase
 public slots:
     void desplazamiento() override;
 };

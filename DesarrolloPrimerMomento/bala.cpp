@@ -4,6 +4,7 @@
 Bala::Bala()
 {
     setRect(0,0,15,15);         //crear la 'bala'
+    setBrush(QBrush(QColor(238, 103, 9)));
     cambioX = 0;
     cambioY = 0;
     tiempo = new QTimer();

@@ -1,4 +1,5 @@
 #include "enemigo.h"
+#include "MiCaracter.h"
 #include "qgraphicsscene.h"
 
 #include <QDebug>
@@ -19,7 +20,6 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
     items = _items;
 
     QGraphicsRectItem::setRect(0,0,29,29);
-
 
 
     QTimer * tiempo = new QTimer(this);
@@ -61,11 +61,30 @@ void Enemigo::desplazamiento()
     }
 
 
+    QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);
+    for(int i = 0, n = colisiones.size(); i < n; i++){
+        if(typeid(*(colisiones[i])) == typeid(MiCaracter)){
+            delete colisiones[i];
+            return;
+        }
+        /*
+        else if(typeid(*(colisiones[i])) == typeid(Obstaculo)){
 
+        }*/
+
+    }
     QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
     if(!itemEnPosicion){
         setPos(x()+cambioX,y()+ cambioY);
-    }   
+    }
+    //setPos(x()+cambioX, y()+cambioY);
+
+
+/*
+    QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
+    if(!itemEnPosicion){
+        setPos(x()+cambioX,y()+ cambioY);
+    }   */
 
 }
 

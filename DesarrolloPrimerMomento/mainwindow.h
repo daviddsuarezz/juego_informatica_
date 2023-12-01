@@ -49,14 +49,6 @@ private:
     QLabel *labelEnemigos;
     int enemigosRestantes;
 
-    QWidget *infoWidget;
-    QLabel *remainingEnemiesLabel;
-    int remainingEnemies;
-
-    void updateRemainingEnemiesLabel()
-    {
-        remainingEnemiesLabel->setText(QString::number(remainingEnemies));
-    }
 
     //Marcador * score;
 

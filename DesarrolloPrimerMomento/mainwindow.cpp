@@ -87,10 +87,11 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
         enemigosRestantes = 8;
     }
 
-    Marcador *marcador = new Marcador();
+
+
+    /*    Marcador *marcador = new Marcador();
     marcador->setPos(100,100);
     escena->addItem(marcador);
-    /*
     QGraphicsTextItem *textItem = new QGraphicsTextItem();
 
     textItem->setPlainText(QString("Enemigos\nRestantes:\n") + QString::number(enemigosRestantes));

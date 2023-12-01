@@ -21,6 +21,8 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);      //Configurar la escena
+    enemigosRestantes = 8;
+    layout = new QVBoxLayout(this);
 
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
@@ -30,7 +32,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
 
 
 
-    jugador = new MiCaracter(&items);            //crear objeto
+    jugador = new MiCaracter(&items);            //cr|ear objeto
 
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
@@ -72,15 +74,29 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
             }
         }
     }
-    if (isdigit(*argv[1]))
+
+    if (isdigit(*argv[1])){
         crearEnemigos(std::stoi(argv[1]));
-    else
+        enemigosRestantes = std::stoi(argv[1]);
+    }
+
+    else{
         crearEnemigos(8);
+        enemigosRestantes = 8;
+    }
+
+
+    labelEnemigos = new QLabel("Enemigos restantes: " + QString::number(enemigosRestantes), this);
+    layout->addWidget(labelEnemigos);
+    QPushButton *destruirEnemigoButton = new QPushButton("Destruir Enemigo", this);
+    connect(destruirEnemigoButton, SIGNAL(clicked()), this, SLOT(destruirEnemigo()));
+    layout->addWidget(destruirEnemigoButton);
 
 
 
-
-
+    QWidget *widget = new QWidget;
+    widget->setLayout(layout);
+    widget->show();
     vista->show();
 }
 

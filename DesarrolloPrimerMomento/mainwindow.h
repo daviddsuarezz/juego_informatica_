@@ -18,7 +18,9 @@
 #include <QImage>
 
 #include <QTime>
-
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QPushButton>
 
 
 QT_BEGIN_NAMESPACE
@@ -33,13 +35,16 @@ public:
     MainWindow(char *argv[], QWidget *parent = nullptr);
     ~MainWindow();
     void crearEnemigos(int cantEnem);
+
+
+public slots:
     /*
-    void setCursor();
-    //void mouseMoveEvent(QMouseEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-*/
-
-
+    void destruirEnemigo() {
+        if (enemigosRestantes > 0) {
+            enemigosRestantes--;
+            labelEnemigos->setText("Enemigos restantes: " + QString::number(enemigosRestantes));
+        }
+    }*/
 
 
 
@@ -50,6 +55,11 @@ private:
     MiCaracter *jugador;
     QGraphicsView *vista;
     QList<QGraphicsItem *> items;
+    QVBoxLayout *layout;
+    QLabel *labelEnemigos;
+    int enemigosRestantes;
+
+
 
     Marcador * score;
 

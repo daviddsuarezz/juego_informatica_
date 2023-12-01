@@ -5,7 +5,7 @@
 Marcador::Marcador(QGraphicsItem *parent):QGraphicsTextItem(parent)
 {
     marcador = 0;
-    setPlainText(QString("Marcador: ") + QString::number(marcador));
+    setPlainText(QString("Enemigos\nRestantes:\n") + QString::number(marcador));
     setDefaultTextColor(Qt::white);
     setFont(QFont("times", 16));
 }

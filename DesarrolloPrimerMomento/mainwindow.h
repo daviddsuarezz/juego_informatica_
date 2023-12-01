@@ -20,7 +20,7 @@
 #include <QTime>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QPushButton>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -37,16 +37,6 @@ public:
     void crearEnemigos(int cantEnem);
 
 
-public slots:
-    /*
-    void destruirEnemigo() {
-        if (enemigosRestantes > 0) {
-            enemigosRestantes--;
-            labelEnemigos->setText("Enemigos restantes: " + QString::number(enemigosRestantes));
-        }
-    }*/
-
-
 
 private:
     Ui::MainWindow *ui;
@@ -59,9 +49,16 @@ private:
     QLabel *labelEnemigos;
     int enemigosRestantes;
 
+    QWidget *infoWidget;
+    QLabel *remainingEnemiesLabel;
+    int remainingEnemies;
 
+    void updateRemainingEnemiesLabel()
+    {
+        remainingEnemiesLabel->setText(QString::number(remainingEnemies));
+    }
 
-    Marcador * score;
+    //Marcador * score;
 
 
 };

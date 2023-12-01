@@ -6,6 +6,10 @@
 #include <string>
 
 
+
+#include <QGraphicsWidget>
+#include <QGraphicsTextItem>
+
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
         if (item->collidesWithItem(other))
@@ -21,8 +25,6 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);      //Configurar la escena
-    enemigosRestantes = 8;
-    layout = new QVBoxLayout(this);
 
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
@@ -85,18 +87,21 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
         enemigosRestantes = 8;
     }
 
+    Marcador *marcador = new Marcador();
+    marcador->setPos(100,100);
+    escena->addItem(marcador);
+    /*
+    QGraphicsTextItem *textItem = new QGraphicsTextItem();
 
-    labelEnemigos = new QLabel("Enemigos restantes: " + QString::number(enemigosRestantes), this);
-    layout->addWidget(labelEnemigos);
-    QPushButton *destruirEnemigoButton = new QPushButton("Destruir Enemigo", this);
-    connect(destruirEnemigoButton, SIGNAL(clicked()), this, SLOT(destruirEnemigo()));
-    layout->addWidget(destruirEnemigoButton);
+    textItem->setPlainText(QString("Enemigos\nRestantes:\n") + QString::number(enemigosRestantes));
+    textItem->setDefaultTextColor(Qt::white);
+    textItem->setFont(QFont("times", 16));
 
+    textItem->setPos(100, 100); // Establece la posición del texto en la escena
 
-
-    QWidget *widget = new QWidget;
-    widget->setLayout(layout);
-    widget->show();
+    // Agrega el widget de texto a la escena
+    escena->addItem(textItem);
+*/
     vista->show();
 }
 
@@ -128,28 +133,5 @@ void MainWindow::crearEnemigos(int cantEnem)
 }
 
 
-/*
-void MainWindow::setCursor()
-{
-    if(!cursor){
-        escena->removeItem(cursor);
-        delete cursor;
-    }
-    cursor = new QGraphicsRectItem();
-
-}
-
-void MainWindow::mousePressEvent(QMouseEvent *event) {
-    // Tomar la posición del clic
-
-
-    Bala * bala = new Bala();
-    bala->setPos(event->pos());
-    escena->addItem(bala);
-
-    QPointF mousePos = ui->graphicsView->mapToScene(event->pos());
-}
-
-*/
 
 

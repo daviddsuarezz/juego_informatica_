@@ -5,13 +5,6 @@
 #include <QDebug>
 
 
-bool colisiona1(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
-    foreach (QGraphicsItem *other, *items) {
-        if (item->collidesWithItem(other))
-            return true;
-    }
-    return false;
-}
 
 
 
@@ -68,44 +61,6 @@ void Enemigo::desplazamiento()
 
 
 
-
-
-/*
-    QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);
-    for(int i = 0, n = colisiones.size(); i < n; i++){
-        if(typeid(*(colisiones[i])) == typeid(MiCaracter)){
-            setPos(x()+cambioX,y()+ cambioY);
-            delete colisiones[i];
-            return;
-        }
-
-        else if(typeid(*(colisiones[i])) == typeid(Obstaculo)){
-            setPos(x(),y());
-        }
-        else{
-            setPos(x()+cambioX,y()+ cambioY);
-        }
-    }
-    QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
-    if(!itemEnPosicion){
-        setPos(x()+cambioX,y()+ cambioY);
-    }*/
-    //setPos(x()+cambioX, y()+cambioY);
-
-
-/*
-    QList<QGraphicsItem* > items = scene()->items();
-    for (QGraphicsItem* item : items) {
-        // Verificar si el elemento es un QGraphicsRectItem y si está en la posición deseada
-        if (dynamic_cast<Obstaculo*>(item) != nullptr) {
-
-            QRectF rect = item->boundingRect();  // Obtener el rectángulo del elemento
-            if (rect.contains(x()+cambioX, y()+cambioY)) {
-                setPos(x()+cambioX,y()+ cambioY); // Hay un QGraphicsRectItem en esa posición
-            }
-        }
-    }
-    }*/
 
 }
 

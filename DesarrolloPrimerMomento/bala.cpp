@@ -1,13 +1,14 @@
 #include "bala.h"
 #include "qgraphicsscene.h"
 
-Bala::Bala()
+Bala::Bala(int *enemigos)
 {
     setRect(0,0,15,15);         //crear la 'bala'
     setBrush(QBrush(QColor(238, 103, 9)));
     cambioX = 0;
     cambioY = 0;
     tiempo = new QTimer();
+    enemigosRestantes = enemigos;
 
 
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
@@ -31,10 +32,11 @@ void Bala::desplazamiento()
     QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
-        if(typeid(*(colisiones[i])) == typeid(Enemigo)){
-            scene()->removeItem(colisiones[i]);
-            scene()->removeItem(this);
-            delete colisiones[i];
+        if(typeid(*(colisiones[i])) == typeid(Enemigo)){            
+            delete colisiones[i];            
+            qDebug() << *enemigosRestantes;
+            *enemigosRestantes--;
+            qDebug() << *enemigosRestantes;
             delete this;
             return;
         }

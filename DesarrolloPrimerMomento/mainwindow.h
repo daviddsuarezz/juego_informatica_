@@ -3,7 +3,7 @@
 #include "MiCaracter.h"
 #include "enemigo.h"
 #include "obstaculo.h"
-#include "marcador.h"
+
 
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -18,8 +18,7 @@
 #include <QImage>
 
 #include <QTime>
-#include <QLabel>
-#include <QVBoxLayout>
+
 
 
 
@@ -36,20 +35,20 @@ public:
     ~MainWindow();
     void crearEnemigos(int cantEnem);
 
-
+public slots:
+    void checkGameOver(); // Función para verificar el fin del juego.
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsRectItem * cursor;
+
     QGraphicsScene *escena;
     MiCaracter *jugador;
     QGraphicsView *vista;
     QList<QGraphicsItem *> items;
-    QVBoxLayout *layout;
-    QLabel *labelEnemigos;
     int enemigosRestantes;
 
-
+    QGraphicsRectItem *emptyRect; // Rectángulo vacío
+    QList<QGraphicsRectItem*> enemies;
     //Marcador * score;
 
 

@@ -4,7 +4,6 @@ debug/balaesp.o
 debug/enemigo.o
 debug/main.o
 debug/mainwindow.o
-debug/marcador.o
 debug/obstaculo.o
 debug/qrc_Recursos.o
 debug/moc_bala.o

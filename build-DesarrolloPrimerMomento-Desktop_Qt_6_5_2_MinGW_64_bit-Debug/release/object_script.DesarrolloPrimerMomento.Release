@@ -4,7 +4,6 @@ release/balaesp.o
 release/enemigo.o
 release/main.o
 release/mainwindow.o
-release/marcador.o
 release/obstaculo.o
 release/qrc_Recursos.o
 release/moc_bala.o

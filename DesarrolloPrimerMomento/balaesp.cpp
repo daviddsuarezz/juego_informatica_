@@ -4,7 +4,7 @@
 
 
 
-BalaEsp::BalaEsp(): Bala()
+BalaEsp::BalaEsp(): Bala(enemigosRestantes)
 {
     setBrush(QBrush(QColor(57, 238, 9)));
 }

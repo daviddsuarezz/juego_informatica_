@@ -5,11 +5,6 @@
 
 #include <string>
 
-
-
-#include <QGraphicsWidget>
-#include <QGraphicsTextItem>
-
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
         if (item->collidesWithItem(other))
@@ -25,7 +20,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);      //Configurar la escena
-
+    enemigosRestantes = 0;
     escena  =  new QGraphicsScene();    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
 
@@ -34,15 +29,14 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
 
 
 
-    jugador = new MiCaracter(&items);            //cr|ear objeto
+    jugador = new MiCaracter(&items, &enemigosRestantes);            //cr|ear objeto
 
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
 
     escena->addItem(jugador);
 
-    //score = new Marcador;
-    //escena->addItem(score);
+
 
 
     vista = new QGraphicsView();        //decirle a quién mirar, en un punto puede mirar una escena y en otro punto puede mirar otra escena
@@ -88,21 +82,10 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     }
 
 
+    QTimer *gameOverTimer = new QTimer(this);
+    connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
+    gameOverTimer->start(50);
 
-    /*    Marcador *marcador = new Marcador();
-    marcador->setPos(100,100);
-    escena->addItem(marcador);
-    QGraphicsTextItem *textItem = new QGraphicsTextItem();
-
-    textItem->setPlainText(QString("Enemigos\nRestantes:\n") + QString::number(enemigosRestantes));
-    textItem->setDefaultTextColor(Qt::white);
-    textItem->setFont(QFont("times", 16));
-
-    textItem->setPos(100, 100); // Establece la posición del texto en la escena
-
-    // Agrega el widget de texto a la escena
-    escena->addItem(textItem);
-*/
     vista->show();
 }
 
@@ -130,9 +113,24 @@ void MainWindow::crearEnemigos(int cantEnem)
         enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
         enemigo->setPen(QPen(Qt::black));
         escena->addItem(enemigo);
+        enemies.append(enemigo);
     }
 }
 
+void MainWindow::checkGameOver()
+{
 
+    //qDebug() << enemigosRestantes;
+    // Verificar si no hay más enemigos en la lista.
+    if (enemies.empty())
+    {
+        // Si la lista está vacía, crear un rectángulo vacío.
+        emptyRect = new QGraphicsRectItem(0, 0, 100, 100); // Ajusta el tamaño según tus necesidades.
+        escena->addItem(emptyRect);
+
+        // Posicionar el rectángulo vacío en (0, 0).
+        emptyRect->setPos(0, 0);
+    }
+}
 
 

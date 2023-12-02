@@ -20,6 +20,7 @@ public:
     Enemigo(QList<QGraphicsItem *> items);
 public slots:
     void desplazamiento();
+    void disparar(){}
 private:
     QRect enemigo;
     QList<QGraphicsItem *> items;

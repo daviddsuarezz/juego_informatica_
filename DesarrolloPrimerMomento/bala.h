@@ -20,10 +20,9 @@ protected:
     int cambioX;
     int cambioY;
 public:
-    Bala(int *enemigos);
+    Bala();
     void setCambioX(int cambio);
     void setCambioY(int cambio);
-    int *enemigosRestantes;
     ~Bala();
 
 public slots:

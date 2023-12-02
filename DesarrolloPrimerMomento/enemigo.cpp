@@ -19,7 +19,7 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
 {
     items = _items;
 
-    QGraphicsRectItem::setRect(0,0,29,29);
+    QGraphicsEllipseItem ::setRect(0,0,29,29);
 
 
     QTimer * tiempo = new QTimer(this);

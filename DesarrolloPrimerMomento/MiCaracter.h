@@ -10,10 +10,9 @@
 class MiCaracter: public QGraphicsRectItem, public QObject
 {
 public:
-    MiCaracter(QList<QGraphicsItem *> *items, int *enemigos);
+    MiCaracter(QList<QGraphicsItem *> *items);
     void keyPressEvent(QKeyEvent * event) override;      //evento de presionar tecla
 private:
-    int *enemigosRestantes;
     int balaOpc;
     QList<QGraphicsItem *> *items;
 };

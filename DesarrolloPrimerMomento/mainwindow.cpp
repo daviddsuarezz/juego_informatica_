@@ -29,7 +29,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
 
 
 
-    jugador = new MiCaracter(&items, &enemigosRestantes);            //cr|ear objeto
+    jugador = new MiCaracter(&items);            //cr|ear objeto
 
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
     jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
@@ -86,6 +86,9 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
     gameOverTimer->start(50);
 
+
+
+
     vista->show();
 }
 
@@ -119,10 +122,20 @@ void MainWindow::crearEnemigos(int cantEnem)
 
 void MainWindow::checkGameOver()
 {
+    int cantidadDeEnemigos = 0;
 
-    //qDebug() << enemigosRestantes;
+    // Iterar sobre todos los elementos de la escena.
+    foreach (QGraphicsItem* item, escena->items()) {
+        // Utilizar qgraphicsitem_cast para verificar si es un Enemigo.
+        if (Enemigo* enemigo = qgraphicsitem_cast<Enemigo*>(item)) {
+            // Incrementar el contador de Enemigos.
+            cantidadDeEnemigos++;
+        }
+    }
+    enemigosRestantes = cantidadDeEnemigos;
+    qDebug() << enemigosRestantes;
     // Verificar si no hay más enemigos en la lista.
-    if (enemies.empty())
+    if (enemigosRestantes == 0)
     {
         // Si la lista está vacía, crear un rectángulo vacío.
         emptyRect = new QGraphicsRectItem(0, 0, 100, 100); // Ajusta el tamaño según tus necesidades.

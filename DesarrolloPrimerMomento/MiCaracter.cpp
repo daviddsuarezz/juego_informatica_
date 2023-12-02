@@ -3,12 +3,11 @@
 
 
 
-MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_, int *enemigos)
+MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_)
 {
     setRect(0,0,29,29);     //x, y, ancho y alto
     setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
     items = items_;
-    enemigosRestantes = enemigos;
     balaOpc = 0;
 }
 
@@ -57,7 +56,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key()== Qt::Key_Right){
         if(balaOpc == 0){
-            Bala * bala = new Bala(enemigosRestantes);           //Generar el disparo
+            Bala * bala = new Bala();           //Generar el disparo
             bala->setPos(x(),y());
             bala->setCambioX(10);
             scene()->addItem(bala);
@@ -71,7 +70,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Left){
         if(balaOpc == 0){
-            Bala * bala = new Bala(enemigosRestantes);           //Generar el disparo
+            Bala * bala = new Bala();           //Generar el disparo
             bala->setPos(x(),y());
             bala->setCambioX(-10);
             scene()->addItem(bala);
@@ -85,7 +84,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Up){
         if(balaOpc == 0){
-            Bala * bala = new Bala(enemigosRestantes);           //Generar el disparo
+            Bala * bala = new Bala();           //Generar el disparo
             bala->setPos(x(),y());
             bala->setCambioY(-10);
             scene()->addItem(bala);
@@ -100,7 +99,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Down){
         if(balaOpc == 0){
-            Bala * bala = new Bala(enemigosRestantes);           //Generar el disparo
+            Bala * bala = new Bala();           //Generar el disparo
             bala->setPos(x(),y());
             bala->setCambioY(10);
             scene()->addItem(bala);

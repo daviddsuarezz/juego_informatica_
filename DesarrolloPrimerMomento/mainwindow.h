@@ -48,7 +48,7 @@ private:
     int enemigosRestantes;
 
     QGraphicsRectItem *emptyRect; // Rectángulo vacío
-    QList<QGraphicsRectItem*> enemies;
+    QList<QGraphicsEllipseItem *> enemies;
     //Marcador * score;
 
 

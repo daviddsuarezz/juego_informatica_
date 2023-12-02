@@ -3,17 +3,17 @@
 
 #include "obstaculo.h"
 
-#include <QGraphicsRectItem>
+#include <QGraphicsEllipseItem>
 #include <QTimer>
 #include <QObject>
 #include <stdlib.h>
 #include <cstdlib>
 #include<ctime>
-#include <QRect>
 
 
 
-class Enemigo: public QObject,  public QGraphicsRectItem
+
+class Enemigo: public QObject,  public QGraphicsEllipseItem
 {
     Q_OBJECT            //Macro     necesario para hacer uso de slots
 public:
@@ -22,7 +22,7 @@ public slots:
     void desplazamiento();
     void disparar(){}
 private:
-    QRect enemigo;
+    //QRect enemigo;
     QList<QGraphicsItem *> items;
 };
 

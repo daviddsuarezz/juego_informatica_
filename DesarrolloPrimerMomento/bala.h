@@ -1,12 +1,15 @@
 #ifndef BALA_H
 #define BALA_H
 
+
+
 #include <QGraphicsRectItem>
 #include <QTimer>
 #include <QObject>
 #include <QList>
+#include "enemigo.h"
 
-
+#include <QMouseEvent>
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
@@ -29,6 +32,7 @@ public slots:
 
 
 };
+
 
 
 

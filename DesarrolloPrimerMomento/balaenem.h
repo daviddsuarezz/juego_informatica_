@@ -1,38 +1,20 @@
 #ifndef BALAENEM_H
 #define BALAENEM_H
 
+#include "bala.h"
 #include <QGraphicsScene>
-#include <QGraphicsRectItem>
-#include <QTimer>
-#include <QObject>
-#include <QList>
-
-#include <QWidget>
-#include <QPainter>
-#include <QTimer>
-
-#include "obstaculo.h"
 #include "MiCaracter.h"
 
-class BalaEnem: public QObject, public QGraphicsRectItem
+
+class BalaEnem: public Bala
 {
-    Q_OBJECT            //Macro     necesario para hacer uso de slots
-protected:
-    QTimer *tiempo;
-    int cambioX;
-    int cambioY;
+    Q_OBJECT
 public:
-    BalaEnem();
-    void setCambioX(int cambio);
-    void setCambioY(int cambio);
-    ~BalaEnem();
-
+    BalaEnem(int *vida);
 public slots:
-    virtual void desplazamiento();
-signals:
-    void colisionConPersonaje();
-
+    void desplazamiento() override;
+private:
+    int *vidas;
 };
-
 
 #endif // BALAENEM_H

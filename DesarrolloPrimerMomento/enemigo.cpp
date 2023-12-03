@@ -1,6 +1,7 @@
 #include "enemigo.h"
 
 
+#include "balaenem.h"
 
 
 
@@ -63,10 +64,9 @@ void Enemigo::desplazamiento()
 
 void Enemigo::disparar()
 {
-    (*vidas)--;
-    qDebug()<<vidas;
+
     int direccionX = rand() % 2;
-    BalaEnem * bala1 = new BalaEnem(),* bala2 = new BalaEnem();
+    BalaEnem * bala1 = new BalaEnem(vidas),* bala2 = new BalaEnem(vidas);
     bala1->setPos(x(),y());
     bala2->setPos(x(),y());
     if(direccionX == 0){

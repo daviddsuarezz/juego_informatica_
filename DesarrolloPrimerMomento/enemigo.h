@@ -1,6 +1,7 @@
 #ifndef ENEMIGO_H
 #define ENEMIGO_H
 
+#include "obstaculo.h"
 
 #include <QGraphicsEllipseItem>
 #include <QTimer>
@@ -9,11 +10,6 @@
 #include <cstdlib>
 #include<ctime>
 
-#include "balaenem.h"
-
-#include "qgraphicsscene.h"
-
-#include <QDebug>
 
 
 class Enemigo: public QObject,  public QGraphicsEllipseItem

@@ -27,6 +27,7 @@ private:
     QTimer * tiempo;
     QTimer * tiempoDisparo;
     qreal distancia;
+    qreal disparo;
     QList<QGraphicsItem *> items;
     void tryMove(qreal dx, qreal dy);
 };

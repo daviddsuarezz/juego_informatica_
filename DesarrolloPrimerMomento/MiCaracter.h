@@ -13,7 +13,12 @@ class MiCaracter: public QGraphicsRectItem, public QObject
 public:
     MiCaracter(QList<QGraphicsItem *> *items);
     void keyPressEvent(QKeyEvent * event) override;      //evento de presionar tecla
+public slots:
+    void permitirNormal();
+    void permitirEspecial();
 private:
+    bool disparoNormal;
+    bool disparoEsp;
     qreal distancia;
     int balaOpc;
     QList<QGraphicsItem *> *items;

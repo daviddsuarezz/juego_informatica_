@@ -10,6 +10,8 @@ MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_)
     items = items_;
     balaOpc = 0;
     distancia = 30;
+    disparoEsp = true;
+    disparoNormal = true;
 }
 
 
@@ -41,21 +43,26 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
         }
     }
 
-
-
     else if (event->key()== Qt::Key_Right){
+
         if(balaOpc == 0){
-            Bala * bala = new Bala();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioX(10);
-            scene()->addItem(bala);
+            if (disparoNormal){
+                Bala * bala = new Bala();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioX(10);
+                scene()->addItem(bala);
+                disparoNormal = false;
+                QTimer::singleShot(20, this, SLOT(permitirNormal()));
+            }
         }
         else{
             BalaEsp * bala = new BalaEsp();           //Generar el disparo
             bala->setPos(x(),y());
             bala->setCambioX(10);
             scene()->addItem(bala);
+            disparoEsp = false;
         }
+
     }
     else if (event->key() == Qt::Key_Left){
         if(balaOpc == 0){
@@ -105,6 +112,7 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
 }
 
+
 void MiCaracter::tryMove(qreal dx, qreal dy)
 {
         // Obtener la posición actual del personaje
@@ -131,6 +139,14 @@ void MiCaracter::tryMove(qreal dx, qreal dy)
 }
 
 
+void MiCaracter::permitirNormal()
+{
+        disparoNormal=true;
+}
+void MiCaracter::permitirEspecial()
+{
+        disparoEsp=true;
+}
 
 
 

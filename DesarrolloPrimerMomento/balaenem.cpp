@@ -3,6 +3,7 @@
 BalaEnem::BalaEnem(): Bala()
 {
     setBrush(QBrush(QColor(250, 8, 8)));
+    tiempo->start(50);
 }
 
 void BalaEnem::desplazamiento()

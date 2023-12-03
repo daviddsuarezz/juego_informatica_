@@ -13,16 +13,17 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
 {
     items = _items;
     distancia = 30;
+    disparo = 10;
     QGraphicsEllipseItem ::setRect(0,0,29,29);
 
 
     tiempo = new QTimer(this);
     connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento()));         //cada timeout tiempo, se va a a llamar mover
-    tiempo->start((1 + rand() % 6)*100);
+    tiempo->start((3 + rand() % 3)*100);
 
     tiempoDisparo = new QTimer(this);
-    connect(tiempo, SIGNAL(timeout()),this, SLOT(disparar()));
-    tiempoDisparo->start(1000);
+    connect(tiempoDisparo, SIGNAL(timeout()),this, SLOT(disparar()));
+    tiempoDisparo->start(700);
 
 }
 
@@ -69,11 +70,11 @@ void Enemigo::disparar()
     bala1->setPos(x(),y());
     bala2->setPos(x(),y());
     if(direccionX == 0){
-        bala1->setCambioY(distancia);bala2->setCambioY(-distancia);
+        bala1->setCambioY(disparo);bala2->setCambioY(-disparo);
         scene()->addItem(bala1);scene()->addItem(bala2);
     }
     else{
-        bala1->setCambioX(distancia);bala2->setCambioX(-distancia);
+        bala1->setCambioX(disparo);bala2->setCambioX(-disparo);
         scene()->addItem(bala1);scene()->addItem(bala2);
     }
 }

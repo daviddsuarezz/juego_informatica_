@@ -3,6 +3,7 @@
 
 #include "bala.h"
 #include <QGraphicsScene>
+
 class BalaEsp: public Bala
 {
     Q_OBJECT

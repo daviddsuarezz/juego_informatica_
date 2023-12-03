@@ -105,6 +105,31 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
     }
 }
 
+void MiCaracter::tryMove(qreal dx, qreal dy)
+{
+        // Obtener la posición actual del personaje
+        QPointF posicionActual = pos();
+
+        // Calcular la posición futura
+        QPointF posicionFutura = posicionActual + QPointF(dx, dy);
+
+        // Verificar colisiones con obstáculos
+        QList<QGraphicsItem*> colisiones = scene()->items(posicionFutura.x(), posicionFutura.y(), 1, 1, Qt::IntersectsItemBoundingRect, Qt::SortOrder(Qt::AscendingOrder));
+
+        foreach (QGraphicsItem *item, colisiones) {
+            if (typeid(*item) == typeid(Obstaculo)) {
+                // Hay un obstáculo en la posición futura, no mover al personaje
+                return;
+            }
+            else if(typeid(*item) == typeid(Enemigo)){
+                return;
+            }
+        }
+
+        // No hay obstáculos en la posición futura, mover al personaje
+        setPos(posicionFutura);
+}
+
 
 
 

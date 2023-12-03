@@ -1,5 +1,6 @@
 release/MiCaracter.o
 release/bala.o
+release/balaenem.o
 release/balaesp.o
 release/enemigo.o
 release/main.o
@@ -7,6 +8,7 @@ release/mainwindow.o
 release/obstaculo.o
 release/qrc_Recursos.o
 release/moc_bala.o
+release/moc_balaenem.o
 release/moc_balaesp.o
 release/moc_enemigo.o
 release/moc_mainwindow.o

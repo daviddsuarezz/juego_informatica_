@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 #include "MiCaracter.h"
 #include "enemigo.h"
 #include "obstaculo.h"

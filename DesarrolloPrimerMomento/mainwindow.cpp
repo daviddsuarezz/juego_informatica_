@@ -84,7 +84,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
 
     QTimer *gameOverTimer = new QTimer(this);
     connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
-    gameOverTimer->start(50);
+    gameOverTimer->start(100);
 
 
 
@@ -133,8 +133,7 @@ void MainWindow::checkGameOver()
         }
     }
     enemigosRestantes = cantidadDeEnemigos;
-    qDebug() << enemigosRestantes;
-    // Verificar si no hay más enemigos en la lista.
+    // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
         // Si la lista está vacía, crear un rectángulo vacío.

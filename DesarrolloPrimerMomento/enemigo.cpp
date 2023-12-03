@@ -1,5 +1,6 @@
 #include "enemigo.h"
 #include "MiCaracter.h"
+#include "balaenem.h"
 #include "qgraphicsscene.h"
 
 #include <QDebug>
@@ -20,7 +21,8 @@ Enemigo::Enemigo(QList<QGraphicsItem *> _items)
     tiempo->start((1 + rand() % 6)*100);
 
     tiempoDisparo = new QTimer(this);
-
+    connect(tiempo, SIGNAL(timeout()),this, SLOT(disparar()));
+    tiempoDisparo->start(1000);
 
 }
 
@@ -62,10 +64,18 @@ void Enemigo::desplazamiento()
 
 void Enemigo::disparar()
 {
-    int direccion = rand() % 2;
-    Bala * bala1 = new Bala(),* bala2 = new Bala();
+    int direccionX = rand() % 2;
+    BalaEnem * bala1 = new BalaEnem(),* bala2 = new BalaEnem();
     bala1->setPos(x(),y());
     bala2->setPos(x(),y());
+    if(direccionX == 0){
+        bala1->setCambioY(distancia);bala2->setCambioY(-distancia);
+        scene()->addItem(bala1);scene()->addItem(bala2);
+    }
+    else{
+        bala1->setCambioX(distancia);bala2->setCambioX(-distancia);
+        scene()->addItem(bala1);scene()->addItem(bala2);
+    }
 }
 
 void Enemigo::tryMove(qreal dx, qreal dy)

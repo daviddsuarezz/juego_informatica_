@@ -10,11 +10,7 @@ void BalaEnem::desplazamiento()
     QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
-        if(typeid(*(colisiones[i])) == typeid(Enemigo)){
-            delete this;
-            return;
-        }
-        else if(typeid(*(colisiones[i])) == typeid(Obstaculo)){
+        if(typeid(*(colisiones[i])) == typeid(Obstaculo)){
             delete this;
             return;
         }

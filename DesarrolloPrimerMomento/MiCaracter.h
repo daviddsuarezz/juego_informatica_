@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include <QKeyEvent> // Captura de teclas
-#include "bala.h"
+
 #include "balaesp.h"
 #include <QObject>
 

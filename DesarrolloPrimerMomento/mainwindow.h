@@ -36,12 +36,15 @@ public:
     MainWindow(char *argv[], QWidget *parent = nullptr);
     ~MainWindow();
     void crearEnemigos(int cantEnem);
-    void reducirVidas();
+
 public slots:
     void checkGameOver(); // Función para verificar el fin del juego.
     void cambiarTexto();
-
+void reducirVidas();
     void actualizarTexto();
+private slots:
+
+    void verificarColision();
 private:
     Ui::MainWindow *ui;
 

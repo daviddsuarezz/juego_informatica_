@@ -5,9 +5,8 @@
 #include <QTimer>
 #include <QObject>
 #include <QList>
-#include "enemigo.h"
 
-#include <QMouseEvent>
+
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>

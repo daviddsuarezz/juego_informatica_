@@ -1,6 +1,6 @@
 #include "bala.h"
 #include "qgraphicsscene.h"
-
+#include "enemigo.h"
 Bala::Bala()
 {
     setRect(0,0,15,15);         //crear la 'bala'

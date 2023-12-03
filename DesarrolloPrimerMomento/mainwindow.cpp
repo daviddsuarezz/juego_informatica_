@@ -117,9 +117,8 @@ MainWindow::~MainWindow()
 void MainWindow::crearEnemigos(int cantEnem)
 {
     for (int i = 0; i < cantEnem; i++){
-        Enemigo * enemigo = new Enemigo(items);
+        Enemigo * enemigo = new Enemigo(items, &vidas);
         enemigo->setPos(x(),y());
-        escena->addItem(enemigo);
         do{
             int x = rand() % 35;
             int y = rand() % 25;
@@ -128,6 +127,9 @@ void MainWindow::crearEnemigos(int cantEnem)
         enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
         enemigo->setPen(QPen(Qt::black));
         escena->addItem(enemigo);
+        //escena->addItem(enemigo->getBala());
+
+        //connect(enemigo->getBala(), SIGNAL(colisionConPersonaje()), this, SLOT(verificarColision()));
     }
 }
 
@@ -144,7 +146,7 @@ void MainWindow::checkGameOver()
     foreach (QGraphicsItem* item, escena->items()) {
         // Utilizar qgraphicsitem_cast para verificar si es un Enemigo.
         if (Enemigo* enemigo = qgraphicsitem_cast<Enemigo*>(item)) {
-            // Incrementar el contador de Enemigos.
+                // Incrementar el contador de Enemigos.
             cantidadDeEnemigos++;
         }
     }
@@ -177,6 +179,11 @@ void MainWindow::actualizarTexto()
 {
     // Actualizar el texto continuamente después del cambio
     texto->setPlainText("Vidas restantes: " + QString::number(vidas)+ "\tEnemigos Restantes: " + QString::number(enemigosRestantes));
+}
+
+void MainWindow::verificarColision()
+{
+    reducirVidas();
 }
 
 

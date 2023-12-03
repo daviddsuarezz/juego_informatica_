@@ -1,10 +1,30 @@
 #include "balaenem.h"
 
-BalaEnem::BalaEnem(): Bala()
+
+
+BalaEnem::BalaEnem()
 {
+    setRect(0,0,15,15);         //crear la 'bala'
+    cambioX = 0;
+    cambioY = 0;
     setBrush(QBrush(QColor(250, 8, 8)));
+    tiempo = new QTimer();
+    connect(tiempo, SIGNAL(timeout()),this, SLOT(desplazamiento())); //cada timeout tiempo, se va a a llamar mover
     tiempo->start(50);
+
 }
+void BalaEnem::setCambioX(int cambio){
+    cambioX = cambio;
+}
+void BalaEnem::setCambioY(int cambio){
+    cambioY = cambio;
+}
+
+BalaEnem::~BalaEnem()
+{
+    delete tiempo;
+}
+
 
 void BalaEnem::desplazamiento()
 {
@@ -16,6 +36,7 @@ void BalaEnem::desplazamiento()
             return;
         }
         else if(typeid(*(colisiones[i])) == typeid(MiCaracter)){
+            emit colisionConPersonaje();
             delete colisiones[i];
             delete this;
             return;

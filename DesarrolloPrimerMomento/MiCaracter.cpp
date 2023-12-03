@@ -1,7 +1,7 @@
 #include "MiCaracter.h"
 #include "qgraphicsscene.h"
-
-
+#include "obstaculo.h"
+#include "enemigo.h"
 
 MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_)
 {

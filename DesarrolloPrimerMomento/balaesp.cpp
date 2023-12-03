@@ -1,6 +1,7 @@
 #include "balaesp.h"
 #include <QDebug>
-
+#include "enemigo.h"
+#include "obstaculo.h"
 
 
 

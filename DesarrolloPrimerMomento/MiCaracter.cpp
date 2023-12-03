@@ -55,63 +55,90 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
 
                 disparoNormal = false;
                 QTimer::singleShot(200, this, SLOT(permitirNormal()));
-                //
             }
         }
         else{
-            BalaEsp * bala = new BalaEsp();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioX(10);
-            scene()->addItem(bala);
-            disparoEsp = false;
+            if(disparoEsp){
+                BalaEsp * bala = new BalaEsp();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioX(10);
+                scene()->addItem(bala);
+
+                disparoEsp = false;
+                QTimer::singleShot(2000, this, SLOT(permitirEspecial()));
+            }
         }
-
-        //QTimer *tiemp = new QTimer();
-        //connect(tiemp,SIGNAL(timeout()),this,SLOT(permitirNormal()));
-        //tiemp->start(50);
-
     }
     else if (event->key() == Qt::Key_Left){
         if(balaOpc == 0){
-            Bala * bala = new Bala();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioX(-10);
-            scene()->addItem(bala);
+            if(disparoNormal){
+                Bala * bala = new Bala();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioX(-10);
+                scene()->addItem(bala);
+
+                disparoNormal = false;
+                QTimer::singleShot(200, this, SLOT(permitirNormal()));
+            }
         }
         else{
-            BalaEsp * bala = new BalaEsp();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioX(-10);
-            scene()->addItem(bala);
+            if(disparoEsp){
+                BalaEsp * bala = new BalaEsp();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioX(-10);
+                scene()->addItem(bala);
+
+                disparoEsp = false;
+                QTimer::singleShot(2000, this, SLOT(permitirEspecial()));
+            }
         }
     }
     else if (event->key() == Qt::Key_Up){
         if(balaOpc == 0){
-            Bala * bala = new Bala();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioY(-10);
-            scene()->addItem(bala);
+            if(disparoNormal){
+                Bala * bala = new Bala();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioY(-10);
+                scene()->addItem(bala);
+
+                disparoNormal = false;
+                QTimer::singleShot(200, this, SLOT(permitirNormal()));
+            }
         }
         else{
-            BalaEsp * bala = new BalaEsp();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioY(-10);
-            scene()->addItem(bala);
-        }
+            if(disparoEsp){
+                BalaEsp * bala = new BalaEsp();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioY(-10);
+                scene()->addItem(bala);
 
+                disparoEsp = false;
+                QTimer::singleShot(2000, this, SLOT(permitirEspecial()));
+            }
+        }
     }
     else if (event->key() == Qt::Key_Down){
         if(balaOpc == 0){
-            Bala * bala = new Bala();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioY(10);
-            scene()->addItem(bala);
+            if(disparoNormal){
+                Bala * bala = new Bala();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioY(10);
+                scene()->addItem(bala);
+
+                disparoNormal = false;
+                QTimer::singleShot(200, this, SLOT(permitirNormal()));
+            }
         }
         else{
-            BalaEsp * bala = new BalaEsp();           //Generar el disparo
-            bala->setPos(x(),y());
-            bala->setCambioY(10);
-            scene()->addItem(bala);
+            if(disparoEsp){
+                BalaEsp * bala = new BalaEsp();           //Generar el disparo
+                bala->setPos(x(),y());
+                bala->setCambioY(10);
+                scene()->addItem(bala);
+
+                disparoEsp = false;
+                QTimer::singleShot(2000, this, SLOT(permitirEspecial()));
+            }
         }
     }
     else if (event->key() == Qt::Key_R){

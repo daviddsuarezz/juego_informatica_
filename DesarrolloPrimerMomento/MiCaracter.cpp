@@ -51,8 +51,11 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
                 bala->setPos(x(),y());
                 bala->setCambioX(10);
                 scene()->addItem(bala);
+
+
                 disparoNormal = false;
-                QTimer::singleShot(20, this, SLOT(permitirNormal()));
+                QTimer::singleShot(200, this, SLOT(permitirNormal()));
+                //
             }
         }
         else{
@@ -62,6 +65,10 @@ void MiCaracter::keyPressEvent(QKeyEvent *event)
             scene()->addItem(bala);
             disparoEsp = false;
         }
+
+        //QTimer *tiemp = new QTimer();
+        //connect(tiemp,SIGNAL(timeout()),this,SLOT(permitirNormal()));
+        //tiemp->start(50);
 
     }
     else if (event->key() == Qt::Key_Left){

@@ -7,9 +7,11 @@
 #include <QKeyEvent> // Captura de teclas
 #include "bala.h"
 #include "balaesp.h"
+#include <QObject>
 
-class MiCaracter: public QGraphicsRectItem, public QObject
-{
+class MiCaracter: public QObject, public QGraphicsRectItem
+{Q_OBJECT
+
 public:
     MiCaracter(QList<QGraphicsItem *> *items);
     void keyPressEvent(QKeyEvent * event) override;      //evento de presionar tecla

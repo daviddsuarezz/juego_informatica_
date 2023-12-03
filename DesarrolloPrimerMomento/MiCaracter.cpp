@@ -9,51 +9,40 @@ MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_)
     setBrush(QBrush(QImage(":/Imagenes/MortyIzq.png")));
     items = items_;
     balaOpc = 0;
+    distancia = 30;
 }
 
 
 
 void MiCaracter::keyPressEvent(QKeyEvent *event)
 {
-    int cambioX = 0, cambioY = 0;
-    QGraphicsItem *itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
+
+
+
     if (event->key() == Qt::Key_A){
         if (x()>0){
-            cambioX = -30;
-            itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
-            if(!itemEnPosicion){
-                setPos(x()+cambioX,y()+ cambioY);
-            }
+        tryMove(-distancia, 0);
         }
     }
     else if (event->key() == Qt::Key_D){
         if (pos().x() < scene()->width() - 30){
-            cambioX = 30;
-            itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
-            if(!itemEnPosicion){
-                setPos(x()+cambioX,y()+ cambioY);
-            }
+            tryMove(distancia, 0);
         }
     }
     else if (event->key() == Qt::Key_S){
         if (pos().y() < scene()->height() - 30){
-            cambioY = 30;
-            itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
-            if(!itemEnPosicion){
-                setPos(x()+cambioX,y()+ cambioY);
-            }
+            tryMove(0, distancia);
         }
     }
     else if (event->key() == Qt::Key_W){
         if (y()>0)
         {
-            cambioY = -30;
-            itemEnPosicion = scene()->itemAt(x()+cambioX,y()+ cambioY, QTransform());
-            if(!itemEnPosicion){
-                setPos(x()+cambioX,y()+ cambioY);
-            }
+            tryMove(0, -distancia);
         }
     }
+
+
+
     else if (event->key()== Qt::Key_Right){
         if(balaOpc == 0){
             Bala * bala = new Bala();           //Generar el disparo

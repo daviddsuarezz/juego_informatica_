@@ -8,7 +8,7 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
-#include <QWidget>
+
 #include <QGraphicsView>
 #include <QTimer>           //reloj para dar movimiento automático
 
@@ -20,8 +20,9 @@
 
 #include <QTime>
 
+#include <QWidget>
 
-
+#include <QGraphicsTextItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -35,10 +36,12 @@ public:
     MainWindow(char *argv[], QWidget *parent = nullptr);
     ~MainWindow();
     void crearEnemigos(int cantEnem);
-
+    void reducirVidas();
 public slots:
     void checkGameOver(); // Función para verificar el fin del juego.
+    void cambiarTexto();
 
+    void actualizarTexto();
 private:
     Ui::MainWindow *ui;
 
@@ -47,10 +50,10 @@ private:
     QGraphicsView *vista;
     QList<QGraphicsItem *> items;
     int enemigosRestantes;
+    int vidas;
 
     QGraphicsRectItem *emptyRect; // Rectángulo vacío
-    QList<QGraphicsEllipseItem *> enemies;
-    //Marcador * score;
+    QGraphicsTextItem *texto;
 
 
 };

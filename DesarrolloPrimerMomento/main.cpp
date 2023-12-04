@@ -1,19 +1,24 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <iostream>
 
-//#include "GlobalVariable.h"
 
-using namespace std;
+#include "GlobalVariable.h"
+
+#include <QDebug>
 
 
 
 int main(int argc, char *argv[])
 {
+    //int globalVariable = 0;
     QApplication a(argc, argv);
-    //while(bandera == 0){
+    qDebug()<< globalVariable;
+    //if(globalVariable == 0){
+
         MainWindow w(argv);
+
+
     //}
-    cout << endl << "Salí";
+    //cout << endl << "globalVariable";
     return a.exec();
 }

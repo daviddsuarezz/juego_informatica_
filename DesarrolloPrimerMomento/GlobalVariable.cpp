@@ -1,3 +1,5 @@
 #include "GlobalVariable.h"
 
-int globalVariabled = 0;
+int globalVariable = 0;
+
+

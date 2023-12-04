@@ -30,7 +30,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     vista = new QGraphicsView(escena);
     texto = new QGraphicsTextItem();
     vidas = 1;
-
+    //globalVariable = 0;
 
     escena->addItem(jugador);
 
@@ -153,13 +153,26 @@ void MainWindow::checkGameOver()
     if (enemigosRestantes == 0)
     {
         close();
-        qDebug() << "Se debe cerrar 2";
+        qDebug() << "Se debe cerrar 1";
 
     }
     else if (vidas <0){
+        //delete escena;
+        //delete vista;
         //bandera = 1;
-        close();
-        qDebug() << "Se debe cerrar 2";
+        //globalVariable = 1;
+    /*    QTimer timer;
+        timer.setSingleShot(true);  // The timer will only time out once
+        QObject::connect(&timer, &QTimer::timeout, this() {    this->close();  // Close the widget when the timer times out
+        });*/
+        //this->close();
+        Button* quitButton = new Button(QString("Quit"));
+        int qxPos = this->width()/2 - quitButton->boundingRect().width()/2;
+        int qyPos = 350;
+        quitButton->setPos(qxPos,qyPos);
+        connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
+        scene->addItem(quitButton);
+        qDebug() << globalVariable;
     }
 }
 

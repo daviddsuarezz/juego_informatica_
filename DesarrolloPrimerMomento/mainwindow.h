@@ -26,7 +26,7 @@
 
 #include <QGraphicsTextItem>
 
-//int bandera = 0;
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

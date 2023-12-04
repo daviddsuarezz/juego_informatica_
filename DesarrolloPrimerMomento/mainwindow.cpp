@@ -94,7 +94,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     }
 
 
-    QTimer *gameOverTimer = new QTimer(this);
+    QTimer *gameOverTimer = new QTimer(this);   
     connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
     gameOverTimer->start(100);
 
@@ -152,15 +152,13 @@ void MainWindow::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
-        // Si la lista está vacía, crear un rectángulo vacío.
-        emptyRect = new QGraphicsRectItem(0, 0, 100, 100); // Ajusta el tamaño según tus necesidades.
-        escena->addItem(emptyRect);
+        qDebug() << "Se debe cerrar 1";
+        close();
+        qDebug() << "Se debe cerrar 2";
 
-        // Posicionar el rectángulo vacío en (0, 0).
-        emptyRect->setPos(0, 0);
     }
     else if (vidas <0){
-        ;
+        close();
     }
 }
 

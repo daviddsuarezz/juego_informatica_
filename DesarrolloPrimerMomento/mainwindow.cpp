@@ -26,12 +26,11 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     escena  =  new QGraphicsScene(this);    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
     jugador = new MiCaracter(&items);            //cr|ear objeto
+    Caracter = 1;
     vista = new QGraphicsView(escena);
     texto = new QGraphicsTextItem();
     vidas = 1;
 
-    jugador->setFlag(QGraphicsItem::ItemIsFocusable);        //Habilito la posibilidad de enfocar el objeto para generar KeyPressEvent
-    jugador->setFocus();         //enfoco el KeyPressEvent en el objeto
 
     escena->addItem(jugador);
 
@@ -99,7 +98,9 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
     gameOverTimer->start(100);
 
-
+    QTimer *timerAparecerJugador = new QTimer(this);
+    connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
+    timerAparecerJugador->start(100);
 
     vista->show();
 }
@@ -126,10 +127,7 @@ void MainWindow::crearEnemigos(int cantEnem)
         }while(colisiona(enemigo, &items));
         enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
         enemigo->setPen(QPen(Qt::black));
-        escena->addItem(enemigo);
-        //escena->addItem(enemigo->getBala());
-
-        //connect(enemigo->getBala(), SIGNAL(colisionConPersonaje()), this, SLOT(verificarColision()));
+        escena->addItem(enemigo);        
     }
 }
 
@@ -186,5 +184,10 @@ void MainWindow::verificarColision()
     reducirVidas();
 }
 
-
+void MainWindow::aparecerJugador(){
+    if(vidas == 0){
+        jugador = new MiCaracter(&items);
+        escena->addItem(jugador);
+    }
+}
 

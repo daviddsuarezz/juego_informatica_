@@ -12,6 +12,8 @@ MiCaracter::MiCaracter(QList<QGraphicsItem *> *items_)
     distancia = 30;
     disparoEsp = true;
     disparoNormal = true;
+    setFlag(QGraphicsItem::ItemIsFocusable);
+    setFocus();
 }
 
 

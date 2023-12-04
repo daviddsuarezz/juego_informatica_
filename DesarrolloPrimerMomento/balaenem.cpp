@@ -22,6 +22,7 @@ void BalaEnem::desplazamiento()
         }
         else if(typeid(*(colisiones[i])) == typeid(MiCaracter)){
             (*vidas)--;
+            scene()->removeItem(colisiones[i]);
             delete colisiones[i];
             delete this;
             return;

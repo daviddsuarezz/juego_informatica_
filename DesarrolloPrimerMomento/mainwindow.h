@@ -39,8 +39,9 @@ public:
 
 public slots:
     void checkGameOver(); // Función para verificar el fin del juego.
+    void aparecerJugador();
     void cambiarTexto();
-void reducirVidas();
+    void reducirVidas();
     void actualizarTexto();
 private slots:
 
@@ -54,6 +55,7 @@ private:
     QList<QGraphicsItem *> items;
     int enemigosRestantes;
     int vidas;
+    int Caracter;
 
     QGraphicsRectItem *emptyRect; // Rectángulo vacío
     QGraphicsTextItem *texto;

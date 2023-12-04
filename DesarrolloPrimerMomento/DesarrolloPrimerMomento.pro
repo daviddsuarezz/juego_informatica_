@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui    \
+            multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,7 +18,10 @@ SOURCES += \
     enemigo.cpp \
     main.cpp \
     mainwindow.cpp \
-    obstaculo.cpp
+    obstaculo.cpp \
+    Button.cpp \
+
+
 
 HEADERS += \
     GlobalVariable.h \
@@ -27,7 +31,8 @@ HEADERS += \
     balaesp.h \
     enemigo.h \
     mainwindow.h \
-    obstaculo.h
+    obstaculo.h \
+    Button.h    \
 
 FORMS += \
     mainwindow.ui
@@ -38,4 +43,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Recursos.qrc
+    Recursos.qrc \
+    rs.qrc

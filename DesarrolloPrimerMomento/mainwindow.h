@@ -3,6 +3,10 @@
 
 #include "GlobalVariable.h"
 
+#include "Button.h"
+
+
+
 #include "MiCaracter.h"
 #include "enemigo.h"
 #include "obstaculo.h"
@@ -37,7 +41,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(char *argv[], QWidget *parent = nullptr);
+    MainWindow(char *argv[], QWidget *parent = 0);
     ~MainWindow();
     void crearEnemigos(int cantEnem);
 
@@ -47,6 +51,7 @@ public slots:
     void cambiarTexto();
     void reducirVidas();
     void actualizarTexto();
+
 private slots:
 
     void verificarColision();
@@ -64,6 +69,6 @@ private:
     QGraphicsRectItem *emptyRect; // Rectángulo vacío
     QGraphicsTextItem *texto;
 
-
+    QTimer *gameOverTimer;
 };
 #endif // MAINWINDOW_H

@@ -7,10 +7,13 @@ release/enemigo.o
 release/main.o
 release/mainwindow.o
 release/obstaculo.o
+release/Button.o
 release/qrc_Recursos.o
+release/qrc_rs.o
 release/moc_MiCaracter.o
 release/moc_bala.o
 release/moc_balaenem.o
 release/moc_balaesp.o
 release/moc_enemigo.o
 release/moc_mainwindow.o
+release/moc_Button.o

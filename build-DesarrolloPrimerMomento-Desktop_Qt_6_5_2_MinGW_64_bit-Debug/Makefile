@@ -368,12 +368,15 @@ Makefile: ../DesarrolloPrimerMomento/DesarrolloPrimerMomento.pro C:/Qt/6.5.2/min
 		C:/Qt/6.5.2/mingw_64/mkspecs/features/yacc.prf \
 		C:/Qt/6.5.2/mingw_64/mkspecs/features/lex.prf \
 		../DesarrolloPrimerMomento/DesarrolloPrimerMomento.pro \
+		C:/Qt/6.5.2/mingw_64/lib/Qt6Multimedia.prl \
 		C:/Qt/6.5.2/mingw_64/lib/Qt6Widgets.prl \
 		C:/Qt/6.5.2/mingw_64/lib/Qt6Gui.prl \
+		C:/Qt/6.5.2/mingw_64/lib/Qt6Network.prl \
 		C:/Qt/6.5.2/mingw_64/lib/Qt6Core.prl \
 		C:/Qt/6.5.2/mingw_64/lib/Qt6EntryPoint.prl \
 		C:/Qt/6.5.2/mingw_64/mkspecs/features/build_pass.prf \
-		../DesarrolloPrimerMomento/Recursos.qrc
+		../DesarrolloPrimerMomento/Recursos.qrc \
+		../DesarrolloPrimerMomento/rs.qrc
 	$(QMAKE) -o Makefile ..\DesarrolloPrimerMomento\DesarrolloPrimerMomento.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/6.5.2/mingw_64/mkspecs/features/spec_pre.prf:
 C:/Qt/6.5.2/mingw_64/mkspecs/features/device_config.prf:
@@ -673,12 +676,15 @@ C:/Qt/6.5.2/mingw_64/mkspecs/features/exceptions.prf:
 C:/Qt/6.5.2/mingw_64/mkspecs/features/yacc.prf:
 C:/Qt/6.5.2/mingw_64/mkspecs/features/lex.prf:
 ../DesarrolloPrimerMomento/DesarrolloPrimerMomento.pro:
+C:/Qt/6.5.2/mingw_64/lib/Qt6Multimedia.prl:
 C:/Qt/6.5.2/mingw_64/lib/Qt6Widgets.prl:
 C:/Qt/6.5.2/mingw_64/lib/Qt6Gui.prl:
+C:/Qt/6.5.2/mingw_64/lib/Qt6Network.prl:
 C:/Qt/6.5.2/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.5.2/mingw_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.5.2/mingw_64/mkspecs/features/build_pass.prf:
 ../DesarrolloPrimerMomento/Recursos.qrc:
+../DesarrolloPrimerMomento/rs.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\DesarrolloPrimerMomento\DesarrolloPrimerMomento.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

@@ -7,10 +7,13 @@ debug/enemigo.o
 debug/main.o
 debug/mainwindow.o
 debug/obstaculo.o
+debug/Button.o
 debug/qrc_Recursos.o
+debug/qrc_rs.o
 debug/moc_MiCaracter.o
 debug/moc_bala.o
 debug/moc_balaenem.o
 debug/moc_balaesp.o
 debug/moc_enemigo.o
 debug/moc_mainwindow.o
+debug/moc_Button.o

@@ -21,16 +21,16 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    qDebug()<< 15;
     ui->setupUi(this);      //Configurar la escena
     enemigosRestantes = 0;
     escena  =  new QGraphicsScene(this);    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
     jugador = new MiCaracter(&items);            //cr|ear objeto
     Caracter = 1;
-    vista = new QGraphicsView(escena);
-    texto = new QGraphicsTextItem();
-    vidas = 1;
-    //globalVariable = 0;
+    vista = new QGraphicsView(escena);    
+    texto = new QGraphicsTextItem();    
+    vidas = 1;    
 
     escena->addItem(jugador);
 
@@ -82,7 +82,6 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
             }
         }
     }
-
     if (isdigit(*argv[1])){
         crearEnemigos(std::stoi(argv[1]));
         enemigosRestantes = std::stoi(argv[1]);
@@ -94,7 +93,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     }
 
 
-    QTimer *gameOverTimer = new QTimer(this);   
+    gameOverTimer = new QTimer(this);
     connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
     gameOverTimer->start(100);
 
@@ -102,7 +101,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
     timerAparecerJugador->start(100);
 
-    vista->show();
+    vista->show();qDebug()<< 25;
 }
 
 MainWindow::~MainWindow()
@@ -166,13 +165,20 @@ void MainWindow::checkGameOver()
         QObject::connect(&timer, &QTimer::timeout, this() {    this->close();  // Close the widget when the timer times out
         });*/
         //this->close();
+        /*
         Button* quitButton = new Button(QString("Quit"));
         int qxPos = this->width()/2 - quitButton->boundingRect().width()/2;
         int qyPos = 350;
         quitButton->setPos(qxPos,qyPos);
         connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
-        scene->addItem(quitButton);
-        qDebug() << globalVariable;
+        escena->addItem(quitButton);
+        gameOverTimer->stop();
+        close();
+        qDebug() << globalVariable;*/
+        delete escena;
+        delete vista;
+        throw 1;
+
     }
 }
 

@@ -32,8 +32,8 @@ void Bala::desplazamiento()
     QList<QGraphicsItem *> colisiones = collidingItems(Qt::IntersectsItemShape);        //lista de punteros a otros QGraphicsItems con los que se está colisionando
 
     for(int i = 0, n = colisiones.size(); i < n; i++){
-        if(typeid(*(colisiones[i])) == typeid(Enemigo)){            
-            delete colisiones[i];            
+        if(typeid(*(colisiones[i])) == typeid(Enemigo)){
+            delete colisiones[i];
             delete this;
             return;
         }

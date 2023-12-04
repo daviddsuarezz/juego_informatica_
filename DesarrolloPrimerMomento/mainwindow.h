@@ -70,5 +70,7 @@ private:
     QGraphicsTextItem *texto;
 
     QTimer *gameOverTimer;
+
+    int uno, dos;
 };
 #endif // MAINWINDOW_H

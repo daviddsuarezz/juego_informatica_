@@ -6,6 +6,9 @@
 #include <string>
 
 #include <QPen>
+#include "Game.h"
+
+Game * game;
 
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
@@ -14,7 +17,6 @@ bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     }
     return false;
 }
-
 
 
 MainWindow::MainWindow(char *argv[], QWidget *parent)
@@ -30,8 +32,9 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     Caracter = 1;
     vista = new QGraphicsView(escena);    
     texto = new QGraphicsTextItem();    
-    vidas = 1;    
-
+    vidas = 1;
+    uno = std::stoi(argv[2]);
+    dos = std::stoi(argv[3]);
     escena->addItem(jugador);
 
 
@@ -96,6 +99,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     gameOverTimer = new QTimer(this);
     connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
     gameOverTimer->start(100);
+
 
     QTimer *timerAparecerJugador = new QTimer(this);
     connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
@@ -175,9 +179,11 @@ void MainWindow::checkGameOver()
         gameOverTimer->stop();
         close();
         qDebug() << globalVariable;*/
-        delete escena;
+        gameOverTimer->stop();
         delete vista;
-        throw 1;
+        game = new Game(uno,dos);
+        game->show();
+        game->displayMainMenu();
 
     }
 }

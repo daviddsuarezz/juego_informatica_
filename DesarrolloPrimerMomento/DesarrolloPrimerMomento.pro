@@ -10,29 +10,52 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    BulletT.cpp \
+    Enemy.cpp \
+    Game.cpp \
     GlobalVariable.cpp \
+    Health.cpp \
     MiCaracter.cpp \
+    Player.cpp \
+    Score.cpp \
+    Tower.cpp \
     bala.cpp \
     balaenem.cpp \
     balaesp.cpp \
+    bullet.cpp \
+    canonbullet.cpp \
     enemigo.cpp \
     main.cpp \
     mainwindow.cpp \
     obstaculo.cpp \
     Button.cpp \
+    portal.cpp \
+    power.cpp
 
 
 
 HEADERS += \
+    BulletT.h \
+    Enemy.h \
+    Game.h \
+    GamerOverDialog.h \
     GlobalVariable.h \
+    Health.h \
     MiCaracter.h \
+    Player.h \
+    Score.h \
+    Tower.h \
     bala.h \
     balaenem.h \
     balaesp.h \
+    bullet.h \
+    canonbullet.h \
     enemigo.h \
     mainwindow.h \
     obstaculo.h \
     Button.h    \
+    portal.h \
+    power.h
 
 FORMS += \
     mainwindow.ui

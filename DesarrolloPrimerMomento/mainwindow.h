@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "GlobalVariable.h"
+
 #include "MiCaracter.h"
 #include "enemigo.h"
 #include "obstaculo.h"
@@ -23,6 +25,8 @@
 #include <QWidget>
 
 #include <QGraphicsTextItem>
+
+//int bandera = 0;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

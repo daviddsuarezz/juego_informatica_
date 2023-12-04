@@ -152,13 +152,14 @@ void MainWindow::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
-        qDebug() << "Se debe cerrar 1";
         close();
         qDebug() << "Se debe cerrar 2";
 
     }
     else if (vidas <0){
+        //bandera = 1;
         close();
+        qDebug() << "Se debe cerrar 2";
     }
 }
 

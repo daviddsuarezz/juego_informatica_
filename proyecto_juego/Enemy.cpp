@@ -9,13 +9,13 @@ extern Game * game;
 
 Enemy::Enemy(QGraphicsItem *parent): QObject(){
     //poner una posicion random
-    int random_number = rand() % 700;
+    int random_number = rand() % 601 + 100;
     setPos(random_number, 0);
 
 
      // definicion del enemigo
     QPixmap pixmap(":/images/enemy.png");
-    pixmap = pixmap.scaled(100, 120);
+    pixmap = pixmap.scaled(80, 80);
     setPixmap(pixmap);
 
     //conexion
@@ -24,13 +24,14 @@ Enemy::Enemy(QGraphicsItem *parent): QObject(){
     connect(timer,SIGNAL(timeout()), this, SLOT(move())); // concedtamos el temporizador con el objeto bala y el slot de movimiento
 
     timer->start(50); // cada 50 milisengundos se emitirá la funcion para crear la bala, cada objeto bala tiene su propio timer
-
+    game->timers.append(timer);
 }
 
 void Enemy::move()
 {
+
     //movimiento de los enemigos
-    setPos(x(),y()+5);
+    setPos(x(),y()+10);
     //eliminar la bala cuado sale de la pantalla
     if(pos().y()< 0 ){
         scene()->removeItem(this);
@@ -38,8 +39,11 @@ void Enemy::move()
     }
     else if(pos().y() > 600){
         //bajar vida si el enemigo sale de la pantalla
+        if(game->health->getHealth() > 0 && game->bandera == true ){
         game->health->decrease();
+        }
         scene()->removeItem(this);
         delete this;
+
     }
 }

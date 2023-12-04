@@ -19,8 +19,11 @@ SOURCES += \
     Player.cpp \
     Score.cpp \
     Tower.cpp \
+    canonbullet.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    portal.cpp \
+    power.cpp
 
 HEADERS += \
     Bullet.h \
@@ -28,11 +31,15 @@ HEADERS += \
     Button.h \
     Enemy.h \
     Game.h \
+    GamerOverDialog.h \
     Health.h \
     Player.h \
     Score.h \
     Tower.h \
-    mainwindow.h
+    canonbullet.h \
+    mainwindow.h \
+    portal.h \
+    power.h
 
 FORMS += \
     mainwindow.ui

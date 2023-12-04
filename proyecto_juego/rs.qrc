@@ -9,5 +9,10 @@
         <file>enemy.png</file>
         <file>player.png</file>
         <file>tower.png</file>
+        <file>portal.png</file>
+        <file>canonbullet.png</file>
+        <file>pendulum.png</file>
+        <file>metal.png</file>
+        <file>bullet_2.png</file>
     </qresource>
 </RCC>

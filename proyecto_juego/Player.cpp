@@ -4,18 +4,24 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include "Enemy.h"
+#include <QTimer>
+#include <QtWidgets>
+#include <QtGui>
+#include <QtCore>
+#include "Game.h"
+extern Game * game;
 
-Player::Player(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
+Player::Player(QGraphicsItem *parent) : QGraphicsPixmapItem(parent), immune(false)
 {
-    /*
-    bulletsound = new QMediaPlayer();
-    bulletsound->setSource(QUrl("qrc:/sounds/bullet.mp3"));
-*/
+
+
     //visualizacion del enemigo
     QPixmap pixmap(":/images/player.png");
     pixmap = pixmap.scaled(200, 100);
     setPixmap(pixmap);
-
+    immunityTimer = new QTimer(this);
+    connect(immunityTimer, SIGNAL(timeout()), this, SLOT(endImmunity()));
+     game->timers.append(immunityTimer);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -35,29 +41,44 @@ void Player::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Space){
          //creamos la bola
 
+        if (canShoot) {
+        //creamos la bola
         Bullet *bullet = new Bullet();//para que aparezca la bala cuando le de a la tecla espaciadora
-         bullet->setPos(x()+83, y());
+        bullet->setPos(x()+83, y());
         scene()->addItem(bullet); // bola agregada a la escena
+;
 
-    /*     //revisar lo de musica
-         if (bulletsound->playbackState() == QMediaPlayer::PlayingState){
-        bulletsound->setPosition(0);
-         }
-         else if (bulletsound->playbackState() == QMediaPlayer::StoppedState){
-        bulletsound->play();
-         }
-*/
+
+        // No permitir disparar de nuevo hasta después de un retraso
+        canShoot = false;
+        QTimer::singleShot(200, this, SLOT(allowShooting()));  // Permitir disparar de nuevo después de 1 segundo
+        }
+
+
     }
 
 
 }
 
+void Player::activateImmunity(int milliseconds) {
+    setImmunity(true);
+    connect(immunityTimer, &QTimer::timeout, this, &Player::endImmunity);
+    immunityTimer->start(milliseconds);
+}
+
 void Player::spawn()
 {
- //Creaacion  del enemigo
+    //Creaacion  del enemigo
     Enemy * enemy = new Enemy;
     scene()->addItem(enemy);
 
+
+}
+
+void Player::allowShooting()
+{
+
+    canShoot = true;
 
 }
 

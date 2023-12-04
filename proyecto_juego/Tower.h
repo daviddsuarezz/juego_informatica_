@@ -16,15 +16,17 @@ public:
     Tower(Player * player);
     double distanceTo(QGraphicsItem * item);
     void fire();
+
     int health;
     QGraphicsRectItem * healthBar;
 public slots:
-
+    void fire2();
     void aquire_target();
 private:
     QGraphicsPolygonItem * attack_area;
     QPointF attack_dest;
     Player * player;
+    QTimer *fireTimer;
 
 };
 

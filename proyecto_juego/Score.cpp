@@ -10,7 +10,7 @@ Score::Score(QGraphicsItem *parent) : QGraphicsTextItem(parent)
 
     score = 0;
     // dibujar el texto
-    setPlainText("Scores: " + QString::number(score));
+    setPlainText("Your life: ");
     setDefaultTextColor(Qt::blue); //color incil
     setFont(QFont("times", 16)); // fuente y tamaño
 }

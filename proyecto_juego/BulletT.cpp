@@ -17,12 +17,28 @@ BulletT::BulletT(QGraphicsItem * parent) : QObject(),QGraphicsPixmapItem(parent)
 
     QTimer * move_timer = new QTimer(this);
     connect(move_timer, SIGNAL(timeout()), this, SLOT(move()));
-    move_timer->start(50);
+    move_timer->start(100);
+    game->timers.append(move_timer);
 
 }
 
+
+BulletT::BulletT(int n, QGraphicsItem * parent) : QObject(),QGraphicsPixmapItem(parent)
+{
+    QPixmap pixmap(":/images/bullet_2.png");
+    pixmap = pixmap.scaled(30, 30);
+    setPixmap(pixmap);
+
+    QTimer * move_timer = new QTimer(this);
+    connect(move_timer, SIGNAL(timeout()), this, SLOT(move()));
+    move_timer->start(100);
+    game->timers.append(move_timer);
+
+}
+
+
 void  BulletT::move(){
-    int STEP_SIZE = 30;
+    int STEP_SIZE = 5;
     int theta = rotation(); // angulo
 
     double dy = STEP_SIZE * qSin(qDegreesToRadians(theta));
@@ -38,15 +54,23 @@ void  BulletT::move(){
             // La bala ha colisionado con el jugador
 
             // Disminuye la vida del jugador
+            if(game->health->getHealth() > 0 && game->bandera == true ){
             game->health->decrease();
-
+            }
             // Elimina la bala de la escena
             game->scene->removeItem(this);
             delete this;
 
+
             return;
+
         }
     }
+    if(pos().y() > 600 ){
+        scene()->removeItem(this);
+        delete this;
+    }
+
 
 
 }

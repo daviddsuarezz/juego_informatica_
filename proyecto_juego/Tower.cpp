@@ -26,11 +26,16 @@ Tower::Tower(Player * player):QObject(), QGraphicsPixmapItem(), player(player)
     //conectar el timer con el ataque
     QTimer * timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(aquire_target()));
-    timer->start(5000);
+    timer->start(3000);
+     game->timers.append(timer);
     attack_dest = QPointF(200,0);
 
+    fireTimer = new QTimer(this);
+    connect(fireTimer, SIGNAL(timeout()), this, SLOT(fire2()));
+    fireTimer->start(8000);
 
-    health = 5;  // Inicializar la vida de la torre
+
+    health = 10;  // Inicializar la vida de la torre
 
     // Inicializar la barra de vida
     healthBar = new QGraphicsRectItem(this);
@@ -61,6 +66,45 @@ void Tower::fire()
     bullet->setRotation(angle);
     game->scene->addItem(bullet);
 }
+void Tower::fire2()
+{
+    int n = 1;
+    // Crea tres balas
+    BulletT * bullet1 = new BulletT( n);
+    BulletT * bullet2 = new BulletT( n);
+    BulletT * bullet3 = new BulletT(n);
+
+    int towerCenterX = x() + 200 / 2;
+    int towerCenterY = y() + 100 / 2;
+
+    // Ajusta la posición inicial de las balas para que sea el centro de la torre
+    bullet1->setPos(towerCenterX - 50 / 2, towerCenterY - 50 / 2);
+    bullet2->setPos(towerCenterX - 50 / 2, towerCenterY - 50 / 2);
+    bullet3->setPos(towerCenterX - 50 / 2, towerCenterY - 50 / 2);
+
+    // Configura los destinos de ataque para cada bala
+    QPointF attack_dest1 = QPointF(game->scene->width() / 2, game->scene->height());
+    QPointF attack_dest2 = QPointF(0, game->scene->height());
+    QPointF attack_dest3 = QPointF(game->scene->width(), game->scene->height());
+
+    // Configura el ángulo de cada bala para que se dirija a su destino de ataque
+    QLineF ln1(QPointF(x()+40,y()+40), attack_dest1);
+    QLineF ln2(QPointF(x()+40,y()+40), attack_dest2);
+    QLineF ln3(QPointF(x()+40,y()+40), attack_dest3);
+    int angle1 = -1 * ln1.angle();
+    int angle2 = -1 * ln2.angle();
+    int angle3 = -1 * ln3.angle();
+    bullet1->setRotation(angle1);
+    bullet2->setRotation(angle2);
+    bullet3->setRotation(angle3);
+
+    // Añade las balas a la escena
+    game->scene->addItem(bullet1);
+    game->scene->addItem(bullet2);
+    game->scene->addItem(bullet3);
+}
+
+
 
 
 void Tower::aquire_target(){

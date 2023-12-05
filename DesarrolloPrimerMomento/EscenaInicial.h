@@ -18,6 +18,7 @@ public:
     EscenaInicial(char *argv[], QWidget * parent=0);
     void displayMainMenu();
     QGraphicsScene *scene;
+    QGraphicsView *vist;
     int uno,dos,tres;
 public slots:
     void start();

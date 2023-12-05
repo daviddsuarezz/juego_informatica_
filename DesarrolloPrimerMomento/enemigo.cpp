@@ -104,11 +104,5 @@ void Enemigo::tryMove(qreal dx, qreal dy)
     setPos(posicionFutura);
 }
 
-/*
-BalaEnem* Enemigo::getBala() {
-    return bala;
-}
-
-*/
 
 

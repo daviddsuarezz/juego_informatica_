@@ -5,8 +5,10 @@ EscenaInicial::EscenaInicial(char *argv[], QWidget *parent)
 {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(800,600);
+
     scene = new QGraphicsScene();
+    vist = new QGraphicsView(scene);
+    setFixedSize(800,600);
     scene ->setSceneRect(0,0,800,600);
     setScene(scene);
     if(isdigit(*argv[1]))
@@ -21,7 +23,9 @@ EscenaInicial::EscenaInicial(char *argv[], QWidget *parent)
         tres = std::stoi(argv[3]);
     else
         tres = 90;
-
+    vist->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); vist->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    vist->show();
+    displayMainMenu();
 }
 
 void EscenaInicial::displayMainMenu()
@@ -55,6 +59,6 @@ void EscenaInicial::displayMainMenu()
 
 void EscenaInicial::start()
 {
-    MainWindow w(uno,dos,tres);
+    MainWindow w(uno,dos,tres, vist, scene);
 }
 

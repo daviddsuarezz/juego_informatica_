@@ -30,20 +30,15 @@
 
 #include <QGraphicsTextItem>
 
-
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(int uno, int dos, int tres, QWidget *parent = 0);
+    MainWindow(int uno, int dos, int tres,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent = 0);
     ~MainWindow();
     void crearEnemigos(int cantEnem);
+    void crearObstaculos();
 
 public slots:
     void checkGameOver(); // Función para verificar el fin del juego.
@@ -56,9 +51,9 @@ private slots:
 
     void verificarColision();
 private:
-    Ui::MainWindow *ui;
 
-    QGraphicsScene *escena;
+
+    QGraphicsScene * escena;
     MiCaracter *jugador;
     QGraphicsView *vista;
     QList<QGraphicsItem *> items;

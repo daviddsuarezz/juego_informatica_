@@ -8,7 +8,7 @@
 #include <QPainter>
 #include <QKeyEvent>
 #include <QGraphicsScene>
-#include "bullet.h"
+#include "Bullet2.h"
 
 class Character: public QObject, public QGraphicsItem
 {

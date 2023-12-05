@@ -1,5 +1,5 @@
-#ifndef ENEMY_H
-#define ENEMY_H
+#ifndef ENEMY2_H
+#define ENEMY2_H
 
 #include <QObject>
 #include <QGraphicsItem>
@@ -7,7 +7,7 @@
 #include <QPainter>
 #include <QTimer>
 #include <QGraphicsScene>
-#include "bullet.h"
+#include "Bullet2.h"
 
 class Enemy2: public QObject, public QGraphicsItem
 {
@@ -69,4 +69,4 @@ public slots:
 
 };
 
-#endif // ENEMY_H
+#endif // ENEMY2_H

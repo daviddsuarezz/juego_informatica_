@@ -11,7 +11,7 @@ extern Game2 * game;
 Character::Character(bool boss,QObject *parent):QObject(parent)
 {
 
-       pixmap = new QPixmap(":/images/player.png");
+       pixmap = new QPixmap(":/images/player2.png");
         col=0;
         w = 100;
         h = 80;
@@ -179,7 +179,7 @@ void Character::Move()
 
 void Character::Shoot()
 {
-    Bullet *bullet = new Bullet();
+    Bullet2 *bullet = new Bullet2();
     bullet->setPos(x(),y());
     scene()->addItem(bullet);
 }

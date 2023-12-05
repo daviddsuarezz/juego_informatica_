@@ -1,7 +1,7 @@
 #include "enemyshoots.h"
 #include "Game2.h"
 
-extern Game * game;
+extern Game2 * game;
 
 EnemyShoots::EnemyShoots(int posx): Enemy2(posx)
 {
@@ -66,7 +66,7 @@ void EnemyShoots::Dead()
     QList<QGraphicsItem *> collisions = collidingItems();
     for(QGraphicsItem *i : collisions){
         if(i->collidesWithItem(this)){
-            if(typeid(*(i))==typeid (Bullet)){
+            if(typeid(*(i))==typeid (Bullet2)){
                  game->scene->removeItem(this);
                 delete i;
                 health --;

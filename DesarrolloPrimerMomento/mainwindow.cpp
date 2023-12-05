@@ -6,9 +6,11 @@
 #include <string>
 
 #include <QPen>
-#include "Game.h"
 
-Game * game;
+#include "Game2.h"
+
+
+Game2 * game;
 
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
@@ -23,7 +25,6 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    qDebug()<< 15;
     ui->setupUi(this);      //Configurar la escena
     enemigosRestantes = 0;
     escena  =  new QGraphicsScene(this);    //Definir Escena para montar la "obra"
@@ -155,16 +156,23 @@ void MainWindow::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
-        gameOverTimer->stop();
-        delete vista;
-        game = new Game(uno,dos);
-        game->show();
-        game->start();
 
-    }
-    else if (vidas <0){
         qApp->quit();
         QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
+
+        /*
+        gameOverTimer->stop();
+
+        game2 = new Game(uno,dos);
+        game2->show();
+        game2->start();
+*/
+    }
+    else if (vidas <0){
+        delete vista;
+        game = new Game2;
+        game->show();
+
     }
 }
 

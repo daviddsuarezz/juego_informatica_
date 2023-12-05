@@ -58,7 +58,7 @@ void Enemy2::Move()
     QList<QGraphicsItem *> collisions = collidingItems();
     for(QGraphicsItem *i : collisions){
         if(i->collidesWithItem(this)){
-            if(typeid(*(i))==typeid (Bullet)){
+            if(typeid(*(i))==typeid (Bullet2)){
                  game->scene->removeItem(this);
                 delete i;
                 health --;

@@ -1,8 +1,7 @@
 #include "Game2.h"
 #include <QGraphicsScene>
-#include "Tower.h"
-#include "Bullet.h"
-#include "Enemy.h"
+#include "Bullet2.h"
+#include "Enemy2.h"
 #include <QTimer>
 
 Game2::Game2()

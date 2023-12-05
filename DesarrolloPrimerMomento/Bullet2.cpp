@@ -10,7 +10,7 @@ extern Game2 * game;
 
 Bullet2::Bullet2()
 {
-    setPixmap(QPixmap(":/images/bullet.png").scaled(10,20));
+    setPixmap(QPixmap(":/images/bullet2.png").scaled(10,20));
 
     timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));

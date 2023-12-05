@@ -285,16 +285,17 @@ release/qrc_res.cpp: ../DesarrolloPrimerMomento/res.qrc \
 		../DesarrolloPrimerMomento/tower.png \
 		../DesarrolloPrimerMomento/charco.png \
 		../DesarrolloPrimerMomento/bala.png \
+		../DesarrolloPrimerMomento/bullet2.png \
 		../DesarrolloPrimerMomento/tank2.png \
 		../DesarrolloPrimerMomento/tank3.png \
 		../DesarrolloPrimerMomento/spider.png \
 		../DesarrolloPrimerMomento/piedra.png \
 		../DesarrolloPrimerMomento/level1.4.png \
 		../DesarrolloPrimerMomento/level1.2.png \
+		../DesarrolloPrimerMomento/player2.png \
 		../DesarrolloPrimerMomento/level1.1.jpg \
 		../DesarrolloPrimerMomento/character\ 1.2.png \
 		../DesarrolloPrimerMomento/enemy.png \
-		../DesarrolloPrimerMomento/player.png \
 		../DesarrolloPrimerMomento/trunk.png \
 		../DesarrolloPrimerMomento/bullet.png \
 		../DesarrolloPrimerMomento/level1.3.png \
@@ -3608,9 +3609,9 @@ release/moc_Game2.cpp: ../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
 		../DesarrolloPrimerMomento/obstacle2.h \
 		../DesarrolloPrimerMomento/enemyshoots.h \
-		../DesarrolloPrimerMomento/enemy.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
+		../DesarrolloPrimerMomento/Enemy2.h \
 		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h \
 		release/moc_predefs.h \
 		C:/Qt/6.5.2/mingw_64/bin/moc.exe
 	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Sebastian/Desktop/juego_informatica_/build-DesarrolloPrimerMomento-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/Sebastian/Desktop/juego_informatica_/DesarrolloPrimerMomento -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtMultimedia -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtNetwork -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\DesarrolloPrimerMomento\Game2.h -o release\moc_Game2.cpp
@@ -3874,7 +3875,7 @@ release/moc_enemybullet.cpp: ../DesarrolloPrimerMomento/enemybullet.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbindingstorage.h \
-		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -3915,17 +3916,24 @@ release/moc_enemybullet.cpp: ../DesarrolloPrimerMomento/enemybullet.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
 		release/moc_predefs.h \
 		C:/Qt/6.5.2/mingw_64/bin/moc.exe
 	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Sebastian/Desktop/juego_informatica_/build-DesarrolloPrimerMomento-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/Sebastian/Desktop/juego_informatica_/DesarrolloPrimerMomento -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtMultimedia -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtNetwork -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\DesarrolloPrimerMomento\enemybullet.h -o release\moc_enemybullet.cpp
 
 release/moc_enemyshoots.cpp: ../DesarrolloPrimerMomento/enemyshoots.h \
-		../DesarrolloPrimerMomento/enemy.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qglobal.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtversionchecks.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qconfig.h \
@@ -3968,13 +3976,6 @@ release/moc_enemyshoots.cpp: ../DesarrolloPrimerMomento/enemyshoots.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtresource.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qttranslation.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qversiontagging.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qstring.h \
@@ -4020,6 +4021,14 @@ release/moc_enemyshoots.cpp: ../DesarrolloPrimerMomento/enemyshoots.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qvariant.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qdebug.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtextstream.h \
@@ -4052,11 +4061,24 @@ release/moc_enemyshoots.cpp: ../DesarrolloPrimerMomento/enemyshoots.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		../DesarrolloPrimerMomento/bullet.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
 		../DesarrolloPrimerMomento/enemybullet.h \
-		../DesarrolloPrimerMomento/bullet.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		../DesarrolloPrimerMomento/Bullet2.h \
 		release/moc_predefs.h \
 		C:/Qt/6.5.2/mingw_64/bin/moc.exe
 	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Sebastian/Desktop/juego_informatica_/build-DesarrolloPrimerMomento-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/Sebastian/Desktop/juego_informatica_/DesarrolloPrimerMomento -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtMultimedia -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtNetwork -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\DesarrolloPrimerMomento\enemyshoots.h -o release\moc_enemyshoots.cpp
@@ -8455,28 +8477,17 @@ release/mainwindow.o: ../DesarrolloPrimerMomento/mainwindow.cpp ../DesarrolloPri
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPen \
-		../DesarrolloPrimerMomento/Game.h \
-		../DesarrolloPrimerMomento/Player.h \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		../DesarrolloPrimerMomento/Score.h \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
+		../DesarrolloPrimerMomento/character.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h
+		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/obstacle.h \
+		../DesarrolloPrimerMomento/obstacle2.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\DesarrolloPrimerMomento\mainwindow.cpp
 
 release/obstaculo.o: ../DesarrolloPrimerMomento/obstaculo.cpp ../DesarrolloPrimerMomento/obstaculo.h \
@@ -9159,11 +9170,11 @@ release/power.o: ../DesarrolloPrimerMomento/power.cpp ../DesarrolloPrimerMomento
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\power.o ..\DesarrolloPrimerMomento\power.cpp
 
-release/Bullet2.o: ../DesarrolloPrimerMomento/Bullet2.cpp ../DesarrolloPrimerMomento/Bullet.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+release/Bullet2.o: ../DesarrolloPrimerMomento/Bullet2.cpp ../DesarrolloPrimerMomento/Bullet2.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qglobal.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtversionchecks.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qconfig.h \
@@ -9206,13 +9217,6 @@ release/Bullet2.o: ../DesarrolloPrimerMomento/Bullet2.cpp ../DesarrolloPrimerMom
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtresource.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qttranslation.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qversiontagging.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qstring.h \
@@ -9258,6 +9262,14 @@ release/Bullet2.o: ../DesarrolloPrimerMomento/Bullet2.cpp ../DesarrolloPrimerMom
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qvariant.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qdebug.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtextstream.h \
@@ -9290,21 +9302,21 @@ release/Bullet2.o: ../DesarrolloPrimerMomento/Bullet2.cpp ../DesarrolloPrimerMom
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
-		../DesarrolloPrimerMomento/Game.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontinfo.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontmetrics.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -9333,43 +9345,25 @@ release/Bullet2.o: ../DesarrolloPrimerMomento/Bullet2.cpp ../DesarrolloPrimerMom
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
-		../DesarrolloPrimerMomento/Player.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/character.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/obstacle.h \
+		../DesarrolloPrimerMomento/obstacle2.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Bullet2.o ..\DesarrolloPrimerMomento\Bullet2.cpp
 
-release/Enemy2.o: ../DesarrolloPrimerMomento/Enemy2.cpp ../DesarrolloPrimerMomento/enemy.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+release/Enemy2.o: ../DesarrolloPrimerMomento/Enemy2.cpp ../DesarrolloPrimerMomento/Enemy2.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qglobal.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtversionchecks.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qconfig.h \
@@ -9412,13 +9406,6 @@ release/Enemy2.o: ../DesarrolloPrimerMomento/Enemy2.cpp ../DesarrolloPrimerMomen
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtresource.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qttranslation.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qversiontagging.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qstring.h \
@@ -9464,6 +9451,14 @@ release/Enemy2.o: ../DesarrolloPrimerMomento/Enemy2.cpp ../DesarrolloPrimerMomen
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qvariant.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qdebug.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtextstream.h \
@@ -9496,19 +9491,26 @@ release/Enemy2.o: ../DesarrolloPrimerMomento/Enemy2.cpp ../DesarrolloPrimerMomen
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		../DesarrolloPrimerMomento/bullet.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QDebug \
-		../DesarrolloPrimerMomento/Game.h \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontinfo.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontmetrics.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qframe.h \
@@ -9536,42 +9538,17 @@ release/Enemy2.o: ../DesarrolloPrimerMomento/Enemy2.cpp ../DesarrolloPrimerMomen
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
-		../DesarrolloPrimerMomento/Player.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/character.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		../DesarrolloPrimerMomento/obstacle.h \
+		../DesarrolloPrimerMomento/obstacle2.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Enemy2.o ..\DesarrolloPrimerMomento\Enemy2.cpp
 
-release/Game2.o: ../DesarrolloPrimerMomento/Game2.cpp ../DesarrolloPrimerMomento/Game.h \
+release/Game2.o: ../DesarrolloPrimerMomento/Game2.cpp ../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -9737,13 +9714,31 @@ release/Game2.o: ../DesarrolloPrimerMomento/Game2.cpp ../DesarrolloPrimerMomento
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
-		../DesarrolloPrimerMomento/Player.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainterpath.h \
+		../DesarrolloPrimerMomento/character.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/obstacle.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		../DesarrolloPrimerMomento/obstacle2.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h \
+		../DesarrolloPrimerMomento/Tower.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPolygonItem \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QPointF \
+		../DesarrolloPrimerMomento/Player.h \
 		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
 		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
 		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
@@ -9752,13 +9747,11 @@ release/Game2.o: ../DesarrolloPrimerMomento/Game2.cpp ../DesarrolloPrimerMomento
 		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
 		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		../DesarrolloPrimerMomento/Game.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
 		../DesarrolloPrimerMomento/Score.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
 		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
@@ -9767,15 +9760,10 @@ release/Game2.o: ../DesarrolloPrimerMomento/Game2.cpp ../DesarrolloPrimerMomento
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
 		../DesarrolloPrimerMomento/portal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
 		../DesarrolloPrimerMomento/canonbullet.h \
 		../DesarrolloPrimerMomento/power.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h \
-		../DesarrolloPrimerMomento/Tower.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPolygonItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QPointF \
 		../DesarrolloPrimerMomento/Bullet.h \
 		../DesarrolloPrimerMomento/Enemy.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Game2.o ..\DesarrolloPrimerMomento\Game2.cpp
@@ -9949,7 +9937,7 @@ release/character.o: ../DesarrolloPrimerMomento/character.cpp ../DesarrolloPrime
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QDebug \
 		../DesarrolloPrimerMomento/obstacle.h \
 		../DesarrolloPrimerMomento/obstacle2.h \
-		../DesarrolloPrimerMomento/Game.h \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qscrollarea.h \
@@ -9962,32 +9950,11 @@ release/character.o: ../DesarrolloPrimerMomento/character.cpp ../DesarrolloPrime
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qsizepolicy.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qcursor.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qbitmap.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		../DesarrolloPrimerMomento/Player.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\character.o ..\DesarrolloPrimerMomento\character.cpp
 
 release/enemybullet.o: ../DesarrolloPrimerMomento/enemybullet.cpp ../DesarrolloPrimerMomento/enemybullet.h \
@@ -10082,7 +10049,7 @@ release/enemybullet.o: ../DesarrolloPrimerMomento/enemybullet.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbindingstorage.h \
-		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -10123,16 +10090,20 @@ release/enemybullet.o: ../DesarrolloPrimerMomento/enemybullet.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		../DesarrolloPrimerMomento/Game.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qbrush.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontinfo.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontmetrics.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -10161,48 +10132,26 @@ release/enemybullet.o: ../DesarrolloPrimerMomento/enemybullet.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
-		../DesarrolloPrimerMomento/Player.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/character.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/obstacle.h \
+		../DesarrolloPrimerMomento/obstacle2.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\enemybullet.o ..\DesarrolloPrimerMomento\enemybullet.cpp
 
 release/enemyshoots.o: ../DesarrolloPrimerMomento/enemyshoots.cpp ../DesarrolloPrimerMomento/enemyshoots.h \
-		../DesarrolloPrimerMomento/enemy.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qglobal.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtversionchecks.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qconfig.h \
@@ -10245,13 +10194,6 @@ release/enemyshoots.o: ../DesarrolloPrimerMomento/enemyshoots.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtresource.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qttranslation.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qversiontagging.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qstring.h \
@@ -10297,6 +10239,14 @@ release/enemyshoots.o: ../DesarrolloPrimerMomento/enemyshoots.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qvariant.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qdebug.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qtextstream.h \
@@ -10329,14 +10279,8 @@ release/enemyshoots.o: ../DesarrolloPrimerMomento/enemyshoots.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qrgba64.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QObject \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
-		../DesarrolloPrimerMomento/enemybullet.h \
-		../DesarrolloPrimerMomento/bullet.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		../DesarrolloPrimerMomento/Game.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
@@ -10344,6 +10288,18 @@ release/enemyshoots.o: ../DesarrolloPrimerMomento/enemyshoots.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontinfo.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfont.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		../DesarrolloPrimerMomento/bullet.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h \
+		../DesarrolloPrimerMomento/Game2.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qframe.h \
@@ -10371,38 +10327,11 @@ release/enemyshoots.o: ../DesarrolloPrimerMomento/enemyshoots.cpp ../DesarrolloP
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsScene \
-		../DesarrolloPrimerMomento/Player.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qbasictimer.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/character.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		../DesarrolloPrimerMomento/obstacle.h \
+		../DesarrolloPrimerMomento/obstacle2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\enemyshoots.o ..\DesarrolloPrimerMomento\enemyshoots.cpp
 
 release/obstacle.o: ../DesarrolloPrimerMomento/obstacle.cpp ../DesarrolloPrimerMomento/obstacle.h \
@@ -10547,7 +10476,7 @@ release/obstacle.o: ../DesarrolloPrimerMomento/obstacle.cpp ../DesarrolloPrimerM
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QList \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QDebug \
-		../DesarrolloPrimerMomento/Game.h \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
@@ -10580,35 +10509,18 @@ release/obstacle.o: ../DesarrolloPrimerMomento/obstacle.cpp ../DesarrolloPrimerM
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		../DesarrolloPrimerMomento/Player.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/character.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/obstacle2.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h \
 		../DesarrolloPrimerMomento/Bullet.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\obstacle.o ..\DesarrolloPrimerMomento\obstacle.cpp
 
@@ -10755,7 +10667,7 @@ release/obstacle2.o: ../DesarrolloPrimerMomento/obstacle2.cpp ../DesarrolloPrime
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QList \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QDebug \
-		../DesarrolloPrimerMomento/Game.h \
+		../DesarrolloPrimerMomento/Game2.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/qpainter.h \
@@ -10788,35 +10700,17 @@ release/obstacle2.o: ../DesarrolloPrimerMomento/obstacle2.cpp ../DesarrolloPrime
 		C:/Qt/6.5.2/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.5.2/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
-		../DesarrolloPrimerMomento/Player.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QMouseEvent \
+		../DesarrolloPrimerMomento/character.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.5.2/mingw_64/include/QtMultimedia/qaudio.h \
-		../DesarrolloPrimerMomento/Score.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		../DesarrolloPrimerMomento/Health.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.5.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qdialog.h \
-		../DesarrolloPrimerMomento/portal.h \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPixmap \
 		C:/Qt/6.5.2/mingw_64/include/QtGui/QPainter \
-		../DesarrolloPrimerMomento/canonbullet.h \
-		../DesarrolloPrimerMomento/power.h \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstackedwidget.h
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QKeyEvent \
+		../DesarrolloPrimerMomento/bullet.h \
+		../DesarrolloPrimerMomento/enemyshoots.h \
+		../DesarrolloPrimerMomento/Enemy2.h \
+		../DesarrolloPrimerMomento/enemybullet.h \
+		../DesarrolloPrimerMomento/Bullet2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\obstacle2.o ..\DesarrolloPrimerMomento\obstacle2.cpp
 
 release/qrc_Recursos.o: release/qrc_Recursos.cpp 

@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+//#include "mainwindow.h"
 #include <QApplication>
 
 
@@ -6,36 +6,25 @@
 
 #include <QDebug>
 
+#include <QGraphicsScene>
+
+#include "EscenaInicial.h"
 
 
-
-
+EscenaInicial * escena;
 
 int main(int argc, char *argv[])
 {
-    //int globalVariable = 0;
     QApplication a(argc, argv);
 
-    //game = new Game(argv);
-    //game->show();
-    //game->displayMainMenu();
+    escena = new EscenaInicial();
+    escena->show();
+    escena->displayMainMenu();
 
 
+    //MainWindow w(argv);
 
-    qDebug()<< globalVariable;
-    //if(globalVariable == 0){
-    MainWindow w(argv);
-    qDebug()<< 26;
-    /*try{
-        MainWindow w(argv);
-    }catch(int num){
-        if (num == 1){
-            qDebug() << "Salí por tangente";
-        }
-        else qDebug() << "Salí por x";
-    }
-*/
-    //}
+
 
     return a.exec();
 }

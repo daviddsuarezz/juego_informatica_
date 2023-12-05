@@ -183,7 +183,7 @@ void MainWindow::checkGameOver()
         delete vista;
         game = new Game(uno,dos);
         game->show();
-        game->displayMainMenu();
+
 
     }
 }

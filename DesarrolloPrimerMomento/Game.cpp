@@ -17,7 +17,11 @@
 #include "portal.h"
 #include "power.h"
 #include "GamerOverDialog.h"
+#include "EscenaInicial.h"
 
+#include "mainwindow.h"
+
+extern EscenaInicial * escena;
 
 Game::Game(int uno, int dos, QWidget *parent){
 
@@ -60,7 +64,7 @@ void Game::displayMainMenu()
     int txPos = this->width()/2 - titleText->boundingRect().width()/2;
     int tyPos = 150;
     titleText->setPos(txPos,tyPos);
-    scene->addItem(titleText);
+    escena->scene->addItem(titleText);
 
     // create the play button
     Button* playButton = new Button(QString("Play"));
@@ -68,7 +72,7 @@ void Game::displayMainMenu()
     int byPos = 275;
     playButton->setPos(bxPos,byPos);
     connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
-    scene->addItem(playButton);
+    escena->scene->addItem(playButton);
 
     // create the quit button
     Button* quitButton = new Button(QString("Quit"));
@@ -76,7 +80,7 @@ void Game::displayMainMenu()
     int qyPos = 350;
     quitButton->setPos(qxPos,qyPos);
     connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
-    scene->addItem(quitButton);
+    escena->scene->addItem(quitButton);
 }
 
 void Game::start()

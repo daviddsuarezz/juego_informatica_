@@ -1,5 +1,6 @@
 release/BulletT.o
 release/Enemy.o
+release/EscenaInicial.o
 release/Game.o
 release/GlobalVariable.o
 release/Health.o

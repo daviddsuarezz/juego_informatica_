@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     BulletT.cpp \
     Enemy.cpp \
+    EscenaInicial.cpp \
     Game.cpp \
     GlobalVariable.cpp \
     Health.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
 HEADERS += \
     BulletT.h \
     Enemy.h \
+    EscenaInicial.h \
     Game.h \
     GamerOverDialog.h \
     GlobalVariable.h \

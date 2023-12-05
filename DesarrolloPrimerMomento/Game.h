@@ -24,8 +24,7 @@ public:
     Portal * portal;
     Score * score;
     Health * health;
-    Power *power;
-    void displayMainMenu();
+    Power *power;    
     QGraphicsTextItem * timerText;  // Temporizador
     QTimer * clockTimer;  // Temporizador para agregar la torre
     QTime * time;  // Tiempo transcurrido
@@ -39,7 +38,7 @@ public:
 
 public slots:
     void start();
-    void updateTimer();
+    void updateTimer();    
 
 private:
     QStackedWidget* stackedWidget;

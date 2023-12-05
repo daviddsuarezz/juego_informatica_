@@ -1,5 +1,6 @@
 debug/BulletT.o
 debug/Enemy.o
+debug/EscenaInicial.o
 debug/Game.o
 debug/GlobalVariable.o
 debug/Health.o

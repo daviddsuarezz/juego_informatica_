@@ -155,17 +155,16 @@ void MainWindow::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
-
-
-    }
-    else if (vidas <0){
-
         gameOverTimer->stop();
         delete vista;
         game = new Game(uno,dos);
         game->show();
         game->start();
 
+    }
+    else if (vidas <0){
+        qApp->quit();
+        QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
     }
 }
 

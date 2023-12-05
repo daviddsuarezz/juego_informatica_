@@ -12,5 +12,7 @@
         <file>pendulum.png</file>
         <file>metal.png</file>
         <file>bullet_2.png</file>
+        <file>canonbullet.png</file>
+        <file>portal.png</file>
     </qresource>
 </RCC>

@@ -28,6 +28,8 @@
 #include <QWidget>
 
 #include <QGraphicsTextItem>
+#include <QApplication>
+#include <QProcess>
 
 
 

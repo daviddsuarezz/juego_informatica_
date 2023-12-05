@@ -9,12 +9,18 @@
 #include <QString>
 
 
+#include "mainwindow.h"
+
 class EscenaInicial: public QGraphicsView
 {
+    Q_OBJECT
 public:
-    EscenaInicial(QWidget * parent=0);
+    EscenaInicial(char *argv[], QWidget * parent=0);
     void displayMainMenu();
     QGraphicsScene *scene;
+    int uno,dos,tres;
+public slots:
+    void start();
 };
 
 

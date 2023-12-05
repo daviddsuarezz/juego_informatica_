@@ -14,7 +14,6 @@ SOURCES += \
     Enemy.cpp \
     EscenaInicial.cpp \
     Game.cpp \
-    GlobalVariable.cpp \
     Health.cpp \
     MiCaracter.cpp \
     Player.cpp \
@@ -41,7 +40,6 @@ HEADERS += \
     EscenaInicial.h \
     Game.h \
     GamerOverDialog.h \
-    GlobalVariable.h \
     Health.h \
     MiCaracter.h \
     Player.h \

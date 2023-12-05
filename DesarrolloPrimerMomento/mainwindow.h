@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "GlobalVariable.h"
+
 
 #include "Button.h"
 
@@ -41,7 +41,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(char *argv[], QWidget *parent = 0);
+    MainWindow(int uno, int dos, int tres, QWidget *parent = 0);
     ~MainWindow();
     void crearEnemigos(int cantEnem);
 

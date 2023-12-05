@@ -1,12 +1,27 @@
 #include "EscenaInicial.h"
 
-EscenaInicial::EscenaInicial(QWidget *parent){
+
+EscenaInicial::EscenaInicial(char *argv[], QWidget *parent)
+{
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
     scene = new QGraphicsScene();
     scene ->setSceneRect(0,0,800,600);
     setScene(scene);
+    if(isdigit(*argv[1]))
+        uno = std::stoi(argv[1]);
+    else
+        uno = 8;
+    if(isdigit(*argv[2]))
+        dos = std::stoi(argv[2]);
+    else
+        dos = 200;
+    if(isdigit(*argv[3]))
+        tres = std::stoi(argv[3]);
+    else
+        tres = 90;
+
 }
 
 void EscenaInicial::displayMainMenu()
@@ -36,5 +51,10 @@ void EscenaInicial::displayMainMenu()
     scene->addItem(quitButton);
 
 
+}
+
+void EscenaInicial::start()
+{
+    MainWindow w(uno,dos,tres);
 }
 

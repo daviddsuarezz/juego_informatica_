@@ -2,7 +2,6 @@
 #include <QApplication>
 
 
-#include "GlobalVariable.h"
 
 #include <QDebug>
 
@@ -17,7 +16,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    escena = new EscenaInicial();
+    escena = new EscenaInicial(argv);
     escena->show();
     escena->displayMainMenu();
 

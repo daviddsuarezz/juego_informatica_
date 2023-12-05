@@ -19,9 +19,7 @@ bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
 }
 
 
-MainWindow::MainWindow(char *argv[], QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(int uno_, int dos_, int tres_, QWidget *parent)
 {
     qDebug()<< 15;
     ui->setupUi(this);      //Configurar la escena
@@ -33,8 +31,8 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     vista = new QGraphicsView(escena);    
     texto = new QGraphicsTextItem();    
     vidas = 1;
-    uno = std::stoi(argv[2]);
-    dos = std::stoi(argv[3]);
+    uno = dos_;
+    dos = tres_;
     escena->addItem(jugador);
 
 
@@ -85,15 +83,11 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
             }
         }
     }
-    if (isdigit(*argv[1])){
-        crearEnemigos(std::stoi(argv[1]));
-        enemigosRestantes = std::stoi(argv[1]);
-    }
 
-    else{
-        crearEnemigos(8);
-        enemigosRestantes = 8;
-    }
+    crearEnemigos(uno);
+    enemigosRestantes = uno;
+
+
 
 
     gameOverTimer = new QTimer(this);

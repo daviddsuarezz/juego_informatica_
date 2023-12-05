@@ -12,10 +12,8 @@ CONFIG += c++17
 SOURCES += \
     BulletT.cpp \
     Enemy.cpp \
-    EscenaInicial.cpp \
     Game.cpp \
     Health.cpp \
-    Juego.cpp \
     MiCaracter.cpp \
     Player.cpp \
     Score.cpp \
@@ -38,11 +36,9 @@ SOURCES += \
 HEADERS += \
     BulletT.h \
     Enemy.h \
-    EscenaInicial.h \
     Game.h \
     GamerOverDialog.h \
     Health.h \
-    Juego.h \
     MiCaracter.h \
     Player.h \
     Score.h \

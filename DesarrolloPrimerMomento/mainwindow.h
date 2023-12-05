@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 
-
 #include "Button.h"
 
 
@@ -30,21 +29,24 @@
 
 #include <QGraphicsTextItem>
 
-#include <QObject>
 
-class juego : public QGraphicsView
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    juego(int uno, int dos, int tres,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent = 0);
-    ~juego();
+    MainWindow(char *argv[], QWidget *parent = 0);
+    ~MainWindow();
     void crearEnemigos(int cantEnem);
-    void crearObstaculos();
 
 public slots:
     void checkGameOver(); // Función para verificar el fin del juego.
-    void aparecerJugado();
+    void aparecerJugador();
     void cambiarTexto();
     void reducirVidas();
     void actualizarTexto();
@@ -53,9 +55,9 @@ private slots:
 
     void verificarColision();
 private:
+    Ui::MainWindow *ui;
 
-
-    QGraphicsScene * escena;
+    QGraphicsScene *escena;
     MiCaracter *jugador;
     QGraphicsView *vista;
     QList<QGraphicsItem *> items;

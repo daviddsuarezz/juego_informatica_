@@ -36,46 +36,46 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSjuegoENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSjuegoENDCLASS = QtMocHelpers::stringData(
-    "juego",
+struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
+    "MainWindow",
     "checkGameOver",
     "",
-    "aparecerJugado",
+    "aparecerJugador",
     "cambiarTexto",
     "reducirVidas",
     "actualizarTexto",
     "verificarColision"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSjuegoENDCLASS_t {
+struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     uint offsetsAndSizes[16];
-    char stringdata0[6];
+    char stringdata0[11];
     char stringdata1[14];
     char stringdata2[1];
-    char stringdata3[15];
+    char stringdata3[16];
     char stringdata4[13];
     char stringdata5[13];
     char stringdata6[16];
     char stringdata7[18];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSjuegoENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSjuegoENDCLASS_t qt_meta_stringdata_CLASSjuegoENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_stringdata_CLASSMainWindowENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 5),  // "juego"
-        QT_MOC_LITERAL(6, 13),  // "checkGameOver"
-        QT_MOC_LITERAL(20, 0),  // ""
-        QT_MOC_LITERAL(21, 14),  // "aparecerJugado"
-        QT_MOC_LITERAL(36, 12),  // "cambiarTexto"
-        QT_MOC_LITERAL(49, 12),  // "reducirVidas"
-        QT_MOC_LITERAL(62, 15),  // "actualizarTexto"
-        QT_MOC_LITERAL(78, 17)   // "verificarColision"
+        QT_MOC_LITERAL(0, 10),  // "MainWindow"
+        QT_MOC_LITERAL(11, 13),  // "checkGameOver"
+        QT_MOC_LITERAL(25, 0),  // ""
+        QT_MOC_LITERAL(26, 15),  // "aparecerJugador"
+        QT_MOC_LITERAL(42, 12),  // "cambiarTexto"
+        QT_MOC_LITERAL(55, 12),  // "reducirVidas"
+        QT_MOC_LITERAL(68, 15),  // "actualizarTexto"
+        QT_MOC_LITERAL(84, 17)   // "verificarColision"
     },
-    "juego",
+    "MainWindow",
     "checkGameOver",
     "",
-    "aparecerJugado",
+    "aparecerJugador",
     "cambiarTexto",
     "reducirVidas",
     "actualizarTexto",
@@ -85,7 +85,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSjuegoENDCLASS_t qt_meta_stringd
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSjuegoENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
 
  // content:
       11,       // revision
@@ -117,18 +117,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSjuegoENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject juego::staticMetaObject = { {
-    QMetaObject::SuperData::link<QGraphicsView::staticMetaObject>(),
-    qt_meta_stringdata_CLASSjuegoENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSjuegoENDCLASS,
+Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
+    qt_meta_stringdata_CLASSMainWindowENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSMainWindowENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSjuegoENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<juego, std::true_type>,
+        QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
         // method 'checkGameOver'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'aparecerJugado'
+        // method 'aparecerJugador'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'cambiarTexto'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -142,14 +142,14 @@ Q_CONSTINIT const QMetaObject juego::staticMetaObject = { {
     nullptr
 } };
 
-void juego::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<juego *>(_o);
+        auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
         case 0: _t->checkGameOver(); break;
-        case 1: _t->aparecerJugado(); break;
+        case 1: _t->aparecerJugador(); break;
         case 2: _t->cambiarTexto(); break;
         case 3: _t->reducirVidas(); break;
         case 4: _t->actualizarTexto(); break;
@@ -160,22 +160,22 @@ void juego::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
     (void)_a;
 }
 
-const QMetaObject *juego::metaObject() const
+const QMetaObject *MainWindow::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *juego::qt_metacast(const char *_clname)
+void *MainWindow::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSjuegoENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSMainWindowENDCLASS.stringdata0))
         return static_cast<void*>(this);
-    return QGraphicsView::qt_metacast(_clname);
+    return QMainWindow::qt_metacast(_clname);
 }
 
-int juego::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QGraphicsView::qt_metacall(_c, _id, _a);
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

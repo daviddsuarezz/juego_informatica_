@@ -1,30 +1,22 @@
-//#include "mainwindow.h"
+#include "mainwindow.h"
 #include <QApplication>
+
 
 
 
 #include <QDebug>
 
-#include <QGraphicsScene>
 
-#include "EscenaInicial.h"
 
 
 
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
-
-    EscenaInicial escena(argv);
-    //escena = new EscenaInicial(argv);
-    //escena->show();
-    //escena->displayMainMenu();
-
-
-    //MainWindow w(argv);
-
-
+    MainWindow w(argv);
+    qDebug()<< 26;
 
     return a.exec();
 }

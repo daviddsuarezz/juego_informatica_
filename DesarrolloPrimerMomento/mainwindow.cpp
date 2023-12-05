@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-
+#include "ui_mainwindow.h"
 #include <QDebug>
 
 #include <string>
@@ -19,42 +19,22 @@ bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
 }
 
 
-juego::juego(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent)
-
+MainWindow::MainWindow(char *argv[], QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
     qDebug()<< 15;
-
-    enemigosRestantes = uno_;
-    escena  =  scen;
-    escena->clear();
-
-    vista = vist;
-    vista->setScene(escena);
-    vista->setFixedSize(1050,810);
-    escena->setSceneRect(0,-15,1050,780);
-
-
-    /*    escena = new QGraphicsScene(this);
-    vista = new QGraphicsView(escena);
-    vista->setFixedSize(1050,810);                  //tamaño de la vista (ventana)
-    escena->setSceneRect(0,-15,1050,780);
-*/
-    //vista->fitInView(escena->sceneRect(), Qt::KeepAspectRatio);
-
-    jugador = new MiCaracter(&items);            //crear objeto
-
-    Caracter = 1;
-
-
-
-
-
+    ui->setupUi(this);      //Configurar la escena
+    enemigosRestantes = 0;
+    escena  =  new QGraphicsScene(this);    //Definir Escena para montar la "obra"
     escena->setBackgroundBrush(QBrush("#DEC561"));       //Set fondo
-
+    jugador = new MiCaracter(&items);            //cr|ear objeto
+    Caracter = 1;
+    vista = new QGraphicsView(escena);
     texto = new QGraphicsTextItem();
     vidas = 1;
-    uno = dos_;
-    dos = tres_;
+    uno = std::stoi(argv[2]);
+    dos = std::stoi(argv[3]);
     escena->addItem(jugador);
 
 
@@ -62,10 +42,10 @@ juego::juego(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphicsScene *s
 
 
 
+    vista->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); vista->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-
-    //vista->setFixedSize(1050,810);                  //tamaño de la vista (ventana)
-                 //tamaño de la escena desde el origen de la vista, tamaño
+    vista->setFixedSize(1050,810);                  //tamaño de la vista (ventana)
+    escena->setSceneRect(0,-15,1050,780);             //tamaño de la escena desde el origen de la vista, tamaño
     QGraphicsRectItem* rectang = new QGraphicsRectItem(0,-30,1050,29);
     rectang->setBrush(QBrush(Qt::black));
     escena->addItem(rectang);
@@ -78,37 +58,11 @@ juego::juego(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphicsScene *s
 
     QTimer *cambioTimer = new QTimer(this);
     connect(cambioTimer, SIGNAL(timeout()), this, SLOT(cambiarTexto()));
-    cambioTimer->start(1000); // Cambiar el texto después de 10000 milisegundos (10 segundos)
+    cambioTimer->start(10000); // Cambiar el texto después de 10000 milisegundos (10 segundos)
 
 
 
 
-    crearObstaculos();
-    crearEnemigos(uno_);
-
-
-
-    gameOverTimer = new QTimer(this);
-    connect(gameOverTimer, &QTimer::timeout, this, &juego::checkGameOver);
-    gameOverTimer->start(100);
-
-
-    QTimer *timerAparecerJugado = new QTimer(this);
-    connect(timerAparecerJugado, &QTimer::timeout, this, &juego::aparecerJugado);
-    timerAparecerJugado->start(100);
-
-    vista->show();qDebug()<< 25;
-}
-
-
-juego::~juego()
-{
-    foreach (QGraphicsItem *other, items){
-        delete other;
-    }
-}
-
-void juego::crearObstaculos(){
     QTime time = QTime::currentTime();
     srand((uint)time.msec());
     const int tamañoCuadricula = 26; // Tamaño de la cuadrícula     Forma vertical, capacidad de 25 bloques
@@ -118,6 +72,7 @@ void juego::crearObstaculos(){
     for (int vertical = 0; vertical < tamañoCuadricula; ++vertical) {
         for (int horizontal = 0; horizontal < (tamañoCuadricula + 9); ++horizontal) {     //tamaño de forma horizontal (35 bloques)
             // Genera un obstáculo con cierta probabilidad
+
             if((!((vertical == horizontal)&& ((vertical == 0)||(vertical == 1))))&&!(vertical == 0 && horizontal == 1)&&!(vertical == 1 && horizontal == 0)&&!(horizontal == 2 && (vertical == 0 || vertical == 1))){
                 if(rand() % 4 == 0 ){
                     Obstaculo *obstaculo = new Obstaculo();
@@ -125,13 +80,45 @@ void juego::crearObstaculos(){
                     obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
                     obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
                     escena->addItem(obstaculo);
+                    items.push_back(obstaculo);
                 }
             }
         }
     }
+    if (isdigit(*argv[1])){
+        crearEnemigos(std::stoi(argv[1]));
+        enemigosRestantes = std::stoi(argv[1]);
+    }
+
+    else{
+        crearEnemigos(8);
+        enemigosRestantes = 8;
+    }
+
+
+    gameOverTimer = new QTimer(this);
+    connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
+    gameOverTimer->start(100);
+
+
+    QTimer *timerAparecerJugador = new QTimer(this);
+    connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
+    timerAparecerJugador->start(100);
+
+    vista->show();qDebug()<< 25;
 }
 
-void juego::crearEnemigos(int cantEnem)
+MainWindow::~MainWindow()
+{
+    delete ui;
+    foreach (QGraphicsItem *other, items){
+        delete other;
+    }
+}
+
+
+
+void MainWindow::crearEnemigos(int cantEnem)
 {
     for (int i = 0; i < cantEnem; i++){
         Enemigo * enemigo = new Enemigo(items, &vidas);
@@ -143,16 +130,16 @@ void juego::crearEnemigos(int cantEnem)
         }while(colisiona(enemigo, &items));
         enemigo->setBrush(QBrush(Qt::red));        //color a la figura     Código del color, estilo del color
         enemigo->setPen(QPen(Qt::black));
-        escena->addItem(enemigo);        
+        escena->addItem(enemigo);
     }
 }
 
-void juego::reducirVidas()
+void MainWindow::reducirVidas()
 {
     vidas--;
 }
 
-void juego::checkGameOver()
+void MainWindow::checkGameOver()
 {
     int cantidadDeEnemigos = 0;
 
@@ -168,41 +155,43 @@ void juego::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
+
+
     }
     else if (vidas <0){
+
         gameOverTimer->stop();
         delete vista;
         game = new Game(uno,dos);
         game->show();
-        close();
-        qDebug() << "Se debe cerrar 1";
+        game->start();
 
     }
 }
 
-void juego::cambiarTexto()
+void MainWindow::cambiarTexto()
 {
-    actualizarTexto();
-
+    // Cambiar el texto después de cierto tiempo
+    QTimer *actualizacionTimer = new QTimer(this);
+    // Iniciar el temporizador para actualizar el texto continuamente
+    connect(actualizacionTimer, SIGNAL(timeout()), this, SLOT(actualizarTexto()));
+    actualizacionTimer->start(50); // Actualizar el texto cada 50 milisegundos
 }
 
-void juego::actualizarTexto()
+void MainWindow::actualizarTexto()
 {
     // Actualizar el texto continuamente después del cambio
     texto->setPlainText("Vidas restantes: " + QString::number(vidas)+ "\tEnemigos Restantes: " + QString::number(enemigosRestantes));
 }
 
-void juego::verificarColision()
+void MainWindow::verificarColision()
 {
     reducirVidas();
 }
 
-void juego::aparecerJugado(){
-    qDebug() << "hols";
+void MainWindow::aparecerJugador(){
     if(vidas == 0){
-
         jugador = new MiCaracter(&items);
         escena->addItem(jugador);
     }
 }
-

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-#include "ui_mainwindow.h"
+
 #include <QDebug>
 
 #include <string>
@@ -19,7 +19,7 @@ bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
 }
 
 
-MainWindow::MainWindow(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent)
+juego::juego(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent)
 
 {
     qDebug()<< 15;
@@ -27,10 +27,18 @@ MainWindow::MainWindow(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphi
     enemigosRestantes = uno_;
     escena  =  scen;
     escena->clear();
-    escena->setSceneRect(0,-15,1050,780);
+
     vista = vist;
+    vista->setScene(escena);
     vista->setFixedSize(1050,810);
-    //vista->setScene(escena);
+    escena->setSceneRect(0,-15,1050,780);
+
+
+    /*    escena = new QGraphicsScene(this);
+    vista = new QGraphicsView(escena);
+    vista->setFixedSize(1050,810);                  //tamaño de la vista (ventana)
+    escena->setSceneRect(0,-15,1050,780);
+*/
     //vista->fitInView(escena->sceneRect(), Qt::KeepAspectRatio);
 
     jugador = new MiCaracter(&items);            //crear objeto
@@ -81,26 +89,26 @@ MainWindow::MainWindow(int uno_, int dos_, int tres_,QGraphicsView *vist,QGraphi
 
 
     gameOverTimer = new QTimer(this);
-    connect(gameOverTimer, &QTimer::timeout, this, &MainWindow::checkGameOver);
+    connect(gameOverTimer, &QTimer::timeout, this, &juego::checkGameOver);
     gameOverTimer->start(100);
 
 
-    QTimer *timerAparecerJugador = new QTimer(this);
-    connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
-    timerAparecerJugador->start(100);
+    QTimer *timerAparecerJugado = new QTimer(this);
+    connect(timerAparecerJugado, &QTimer::timeout, this, &juego::aparecerJugado);
+    timerAparecerJugado->start(100);
 
     vista->show();qDebug()<< 25;
 }
 
 
-MainWindow::~MainWindow()
+juego::~juego()
 {
     foreach (QGraphicsItem *other, items){
         delete other;
     }
 }
 
-void MainWindow::crearObstaculos(){
+void juego::crearObstaculos(){
     QTime time = QTime::currentTime();
     srand((uint)time.msec());
     const int tamañoCuadricula = 26; // Tamaño de la cuadrícula     Forma vertical, capacidad de 25 bloques
@@ -110,24 +118,20 @@ void MainWindow::crearObstaculos(){
     for (int vertical = 0; vertical < tamañoCuadricula; ++vertical) {
         for (int horizontal = 0; horizontal < (tamañoCuadricula + 9); ++horizontal) {     //tamaño de forma horizontal (35 bloques)
             // Genera un obstáculo con cierta probabilidad
-            qDebug() <<"30";
             if((!((vertical == horizontal)&& ((vertical == 0)||(vertical == 1))))&&!(vertical == 0 && horizontal == 1)&&!(vertical == 1 && horizontal == 0)&&!(horizontal == 2 && (vertical == 0 || vertical == 1))){
                 if(rand() % 4 == 0 ){
-                    qDebug() <<"31";
                     Obstaculo *obstaculo = new Obstaculo();
                     obstaculo->setPos(horizontal * tamañoBloque,vertical * tamañoBloque );
                     obstaculo->setBrush(QBrush("#214F92"));     //set fondo de obstaculo
                     obstaculo->setPen(QPen(Qt::lightGray));     //set contorno de obstaculo
                     escena->addItem(obstaculo);
-                    qDebug() <<"32";
-                    //items.push_back(obstaculo);
                 }
             }
         }
     }
 }
 
-void MainWindow::crearEnemigos(int cantEnem)
+void juego::crearEnemigos(int cantEnem)
 {
     for (int i = 0; i < cantEnem; i++){
         Enemigo * enemigo = new Enemigo(items, &vidas);
@@ -143,12 +147,12 @@ void MainWindow::crearEnemigos(int cantEnem)
     }
 }
 
-void MainWindow::reducirVidas()
+void juego::reducirVidas()
 {
     vidas--;
 }
 
-void MainWindow::checkGameOver()
+void juego::checkGameOver()
 {
     int cantidadDeEnemigos = 0;
 
@@ -164,39 +168,39 @@ void MainWindow::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
-        close();
-        qDebug() << "Se debe cerrar 1";
-
     }
-    else if (vidas <0){        
+    else if (vidas <0){
         gameOverTimer->stop();
         delete vista;
         game = new Game(uno,dos);
         game->show();
-
+        close();
+        qDebug() << "Se debe cerrar 1";
 
     }
 }
 
-void MainWindow::cambiarTexto()
+void juego::cambiarTexto()
 {
     actualizarTexto();
 
 }
 
-void MainWindow::actualizarTexto()
+void juego::actualizarTexto()
 {
     // Actualizar el texto continuamente después del cambio
     texto->setPlainText("Vidas restantes: " + QString::number(vidas)+ "\tEnemigos Restantes: " + QString::number(enemigosRestantes));
 }
 
-void MainWindow::verificarColision()
+void juego::verificarColision()
 {
     reducirVidas();
 }
 
-void MainWindow::aparecerJugador(){
+void juego::aparecerJugado(){
+    qDebug() << "hols";
     if(vidas == 0){
+
         jugador = new MiCaracter(&items);
         escena->addItem(jugador);
     }

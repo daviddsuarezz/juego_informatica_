@@ -3,6 +3,7 @@ debug/Enemy.o
 debug/EscenaInicial.o
 debug/Game.o
 debug/Health.o
+debug/Juego.o
 debug/MiCaracter.o
 debug/Player.o
 debug/Score.o
@@ -26,6 +27,7 @@ debug/moc_Enemy.o
 debug/moc_EscenaInicial.o
 debug/moc_Game.o
 debug/moc_GamerOverDialog.o
+debug/moc_Juego.o
 debug/moc_MiCaracter.o
 debug/moc_Player.o
 debug/moc_Tower.o

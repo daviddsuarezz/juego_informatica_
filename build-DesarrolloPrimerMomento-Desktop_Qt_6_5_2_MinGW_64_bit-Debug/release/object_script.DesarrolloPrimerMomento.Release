@@ -3,6 +3,7 @@ release/Enemy.o
 release/EscenaInicial.o
 release/Game.o
 release/Health.o
+release/Juego.o
 release/MiCaracter.o
 release/Player.o
 release/Score.o
@@ -26,6 +27,7 @@ release/moc_Enemy.o
 release/moc_EscenaInicial.o
 release/moc_Game.o
 release/moc_GamerOverDialog.o
+release/moc_Juego.o
 release/moc_MiCaracter.o
 release/moc_Player.o
 release/moc_Tower.o

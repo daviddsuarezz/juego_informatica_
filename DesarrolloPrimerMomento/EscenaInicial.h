@@ -9,7 +9,7 @@
 #include <QString>
 
 
-#include "mainwindow.h"
+#include "Juego.h"
 
 class EscenaInicial: public QGraphicsView
 {

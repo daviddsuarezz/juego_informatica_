@@ -15,6 +15,7 @@ SOURCES += \
     EscenaInicial.cpp \
     Game.cpp \
     Health.cpp \
+    Juego.cpp \
     MiCaracter.cpp \
     Player.cpp \
     Score.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     Game.h \
     GamerOverDialog.h \
     Health.h \
+    Juego.h \
     MiCaracter.h \
     Player.h \
     Score.h \

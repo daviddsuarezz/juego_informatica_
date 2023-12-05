@@ -9,7 +9,7 @@ EscenaInicial::EscenaInicial(char *argv[], QWidget *parent)
     scene = new QGraphicsScene();
     vist = new QGraphicsView(scene);
     setFixedSize(800,600);
-    scene ->setSceneRect(0,0,800,600);
+    scene->setSceneRect(0,0,800,600);
     setScene(scene);
     if(isdigit(*argv[1]))
         uno = std::stoi(argv[1]);
@@ -59,6 +59,7 @@ void EscenaInicial::displayMainMenu()
 
 void EscenaInicial::start()
 {
-    MainWindow w(uno,dos,tres, vist, scene);
+
+    Juego w(uno,dos,tres, scene);
 }
 

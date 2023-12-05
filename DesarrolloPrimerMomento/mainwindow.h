@@ -30,19 +30,21 @@
 
 #include <QGraphicsTextItem>
 
-class MainWindow : public QMainWindow
+#include <QObject>
+
+class juego : public QGraphicsView
 {
     Q_OBJECT
 
 public:
-    MainWindow(int uno, int dos, int tres,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent = 0);
-    ~MainWindow();
+    juego(int uno, int dos, int tres,QGraphicsView *vist,QGraphicsScene *scen, QWidget *parent = 0);
+    ~juego();
     void crearEnemigos(int cantEnem);
     void crearObstaculos();
 
 public slots:
     void checkGameOver(); // Función para verificar el fin del juego.
-    void aparecerJugador();
+    void aparecerJugado();
     void cambiarTexto();
     void reducirVidas();
     void actualizarTexto();

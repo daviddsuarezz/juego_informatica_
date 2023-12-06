@@ -29,15 +29,7 @@ SOURCES += \
     obstaculo.cpp \
     Button.cpp \
     portal.cpp \
-    power.cpp \
-    Bullet2.cpp \
-    Enemy2.cpp \
-    Game2.cpp \
-    character.cpp \
-    enemybullet.cpp \
-    enemyshoots.cpp \
-    obstacle.cpp \
-    obstacle2.cpp
+    power.cpp
 
 
 
@@ -62,15 +54,7 @@ HEADERS += \
     obstaculo.h \
     Button.h    \
     portal.h \
-    power.h \
-    Bullet2.h \
-    Enemy2.h \
-    Game2.h \
-    character.h \
-    enemybullet.h \
-    enemyshoots.h \
-    obstacle.h \
-    obstacle2.h
+    power.h
 
 
 
@@ -84,6 +68,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Recursos.qrc \
-    rs.qrc \
-    res.qrc
+    rs.qrc
 

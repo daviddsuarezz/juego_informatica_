@@ -7,10 +7,10 @@
 
 #include <QPen>
 
-#include "Game2.h"
+#include "Game.h"
 
 
-Game2 * game;
+Game * game;
 
 bool colisiona(QGraphicsItem *item, const QList<QGraphicsItem *> *items) {
     foreach (QGraphicsItem *other, *items) {
@@ -156,23 +156,17 @@ void MainWindow::checkGameOver()
     // Verificar si no hay más enemigos
     if (enemigosRestantes == 0)
     {
+        gameOverTimer->stop();
+        delete vista;
+        game = new Game(uno,dos);
+        game->show();
+        game->start();
+
+    }
+    else if (vidas <0){
 
         qApp->quit();
         QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
-
-        /*
-        gameOverTimer->stop();
-
-        game2 = new Game(uno,dos);
-        game2->show();
-        game2->start();
-*/
-    }
-    else if (vidas <0){
-        delete vista;
-        game = new Game2;
-        game->show();
-
     }
 }
 

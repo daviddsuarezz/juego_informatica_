@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>tower.png</file>
+        <file>bullet.png</file>
+        <file>enemy.png</file>
+        <file>piedra.png</file>
+        <file>spider.png</file>
+        <file>tank1.png</file>
+        <file>tank2.png</file>
+        <file>tank3.png</file>
+        <file>trunk.png</file>
+        <file>brisa.png</file>
+        <file>charco.png</file>
+        <file>bala.png</file>
+        <file>level1.1.jpg</file>
+        <file>character 1.2.png</file>
+        <file>level1.2.png</file>
+        <file>level1.3.png</file>
+        <file>level1.4.png</file>
+        <file>player2.png</file>
+        <file>bullet2.png</file>
+    </qresource>
+</RCC>

@@ -56,7 +56,6 @@ void CanonBullet::Move()
     if(posy > game->scene->height()){
         game->scene->removeItem(this);
         delete this;
-        qDebug() << "Bala de canon eliminada";
         return;
     }
 

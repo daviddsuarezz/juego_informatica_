@@ -70,6 +70,8 @@ private:
     QGraphicsRectItem *emptyRect; // Rectángulo vacío
     QGraphicsTextItem *texto;
 
+    QTimer *cambioTimer;
+    QTimer *timerAparecerJugador;
     QTimer *gameOverTimer;
 
     int uno, dos;

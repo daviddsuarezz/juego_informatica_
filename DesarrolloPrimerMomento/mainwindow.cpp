@@ -64,7 +64,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     texto->setPos(0,-30);
     escena->addItem(texto);
 
-    QTimer *cambioTimer = new QTimer(this);
+    cambioTimer = new QTimer(this);
     connect(cambioTimer, SIGNAL(timeout()), this, SLOT(cambiarTexto()));
     cambioTimer->start(10000); // Cambiar el texto después de 10000 milisegundos (10 segundos)
 
@@ -109,7 +109,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     gameOverTimer->start(100);
 
 
-    QTimer *timerAparecerJugador = new QTimer(this);
+    timerAparecerJugador = new QTimer(this);
     connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
     timerAparecerJugador->start(100);
 
@@ -122,6 +122,9 @@ MainWindow::~MainWindow()
     foreach (QGraphicsItem *other, items){
         delete other;
     }
+    delete cambioTimer;
+    delete timerAparecerJugador;
+    delete gameOverTimer;
 }
 
 
@@ -164,6 +167,7 @@ void MainWindow::checkGameOver()
     if (enemigosRestantes == 0)
     {
         gameOverTimer->stop();
+        cambioTimer->stop();
         delete vista;
         game = new Game(uno,dos);
         game->show();
@@ -201,5 +205,6 @@ void MainWindow::aparecerJugador(){
     if(vidas == 0){
         jugador = new MiCaracter(&items);
         escena->addItem(jugador);
+        timerAparecerJugador->stop();
     }
 }

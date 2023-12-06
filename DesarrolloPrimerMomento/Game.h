@@ -25,7 +25,7 @@ public:
     Score * score;
     Health * health;
     Power *power;
-    void displayMainMenu();
+
     QGraphicsTextItem * timerText;  // Temporizador
     QTimer * clockTimer;  // Temporizador para agregar la torre
     QTime * time;  // Tiempo transcurrido

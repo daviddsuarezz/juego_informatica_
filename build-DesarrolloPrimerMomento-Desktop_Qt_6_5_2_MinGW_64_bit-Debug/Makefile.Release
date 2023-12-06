@@ -220,6 +220,7 @@ release/qrc_rs.cpp: ../DesarrolloPrimerMomento/rs.qrc \
 		../DesarrolloPrimerMomento/portal.png \
 		../DesarrolloPrimerMomento/metal.png \
 		../DesarrolloPrimerMomento/bullet_2.png \
+		../DesarrolloPrimerMomento/canonbullet.png \
 		../DesarrolloPrimerMomento/enemy.png \
 		../DesarrolloPrimerMomento/player.png \
 		../DesarrolloPrimerMomento/pendulum.png \

@@ -13,5 +13,6 @@
         <file>metal.png</file>
         <file>bullet_2.png</file>
         <file>portal.png</file>
+        <file>canonbullet.png</file>
     </qresource>
 </RCC>

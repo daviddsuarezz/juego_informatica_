@@ -34,8 +34,15 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     vista = new QGraphicsView(escena);
     texto = new QGraphicsTextItem();
     vidas = 1;
-    uno = std::stoi(argv[2]);
-    dos = std::stoi(argv[3]);
+    if(isdigit(*argv[2]))
+        uno = std::stoi(argv[2]);
+    else
+        uno = 200;
+    if (isdigit(*argv[3]))
+        dos = std::stoi(argv[3]);
+    else
+        dos = 90;
+
     escena->addItem(jugador);
 
 
@@ -106,7 +113,7 @@ MainWindow::MainWindow(char *argv[], QWidget *parent)
     connect(timerAparecerJugador, &QTimer::timeout, this, &MainWindow::aparecerJugador);
     timerAparecerJugador->start(100);
 
-    vista->show();qDebug()<< 25;
+    vista->show();
 }
 
 MainWindow::~MainWindow()
